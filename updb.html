@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPDB (Open Database) — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>UPDB</h1>
+    <p>UAP Public Database — Open access to our data</p>
+  </div>
+</section>
+
+<header class="topbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="mark">◉</span>
+      UAP Cyprus Centre
+    </a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="ufo-cases.html">UFO Cases</a></li>
+          <li><a href="historical-overview.html">Historical Overview</a></li>
+          <li><a href="assertions.html">Assertions: UFOs are Real</a></li>
+          <li><a href="characteristics.html">UFO/UAP Characteristics</a></li>
+          <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="scientific-papers.html">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="cyprus.html">Cyprus</a></li>
+          <li><a href="cyprus-cases.html">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="data-collection.html">Data Collection</a></li>
+          <li><a href="updb.html" class="active">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="report-uap.html">Report a UAP</a></li>
+          <li><a href="supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="galaxy-bg">
+  <main class="content">
+
+    <p class="lead glass">
+      The UAP Public Database (UPDB) is an open-access resource that we are building to share
+      validated observations, case files, and analytical findings with researchers, journalists,
+      and the public.
+    </p>
+
+    <div class="section-block glass">
+      <h2>Coming Soon</h2>
+      <p style="color: #cbd5e1;">
+        The UPDB is currently under development. Once launched, it will provide searchable access
+        to case reports, observational data, and analytical documents. Check our Announcements
+        page for updates.
+      </p>
+    </div>
+
+    <div class="section-block glass">
+      <h2>Data Principles</h2>
+      <p>
+        Our database is guided by three principles: <strong>transparency</strong> (data is
+        shared openly), <strong>privacy</strong> (witness identities are protected unless they
+        consent otherwise), and <strong>rigour</strong> (only verified and peer-reviewed
+        observations are published).
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.addEventListener('click', e => {
+      const parent = link.parentElement;
+      if (parent.querySelector('.dropdown') && window.innerWidth <= 1000) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
