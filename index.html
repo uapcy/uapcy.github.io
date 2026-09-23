@@ -4,11 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UAP Cyprus Centre — Scientific Investigation of UAP</title>
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body data-lang="en">
 
-<!-- ============ TOP NAV ============ -->
+<!-- ============ HERO (TOP BANNER) ============ -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>UAP Cyprus Centre</h1>
+    <p class="lang-en">Scientific investigation of Unidentified Anomalous Phenomena in Cyprus & the Eastern Mediterranean</p>
+    <p class="lang-el">Επιστημονική διερεύνηση Αγνώστων Αφύσικων Φαινομένων στην Κύπρο και την Ανατολική Μεσόγειο</p>
+  </div>
+</section>
+
+<!-- ============ NAV BAR (below hero) ============ -->
 <header class="topbar">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
@@ -156,15 +165,6 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>UAP Cyprus Centre</h1>
-    <p class="lang-en">Scientific investigation of Unidentified Anomalous Phenomena in Cyprus & the Eastern Mediterranean</p>
-    <p class="lang-el">Επιστημονική διερεύνηση Αγνώστων Αφύσικων Φαινομένων στην Κύπρο και την Ανατολική Μεσόγειο</p>
-  </div>
-</section>
-
 <!-- ============ GALAXY CONTENT AREA ============ -->
 <div class="galaxy-bg">
 
@@ -273,7 +273,6 @@
 </footer>
 
 <script>
-  // ========== LANGUAGE TOGGLE ==========
   function setLang(lang) {
     document.body.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', lang === 'el' ? 'el' : 'en');
@@ -281,11 +280,9 @@
     document.getElementById('btn-el').classList.toggle('active', lang === 'el');
     localStorage.setItem('uapcy_lang', lang);
   }
-  // Restore language preference
   const savedLang = localStorage.getItem('uapcy_lang');
   if (savedLang === 'el') setLang('el');
 
-  // ========== MOBILE DROPDOWN TOGGLE ==========
   document.querySelectorAll('.nav-menu > li > a').forEach(link => {
     link.addEventListener('click', e => {
       const parent = link.parentElement;
@@ -296,7 +293,6 @@
     });
   });
 
-  // ========== DISMISSIBLE LATEST-UPDATE BANNER ==========
   function dismissBanner() {
     const banner = document.getElementById('latestBanner');
     banner.classList.add('hidden');
