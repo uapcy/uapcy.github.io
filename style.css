@@ -1,4 +1,4 @@
-/* ============ UAP CYPRUS CENTRE — MODERN v7 (Hero Above Nav) ============ */
+/* ============ UAP CYPRUS CENTRE — MODERN v8 (Bigger Fonts, Brighter BGs) ============ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -7,47 +7,48 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: #e2e8f0;
   background: #0a1628;
-  line-height: 1.75;
-  font-size: 16.5px;
+  line-height: 1.8;
+  font-size: 19px;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- HERO (Top Banner, above nav) ---------- */
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: 380px;
+  min-height: 420px;
   background:
-    linear-gradient(180deg, rgba(10,22,40,0.25) 0%, rgba(10,22,40,0.55) 70%, rgba(10,22,40,1) 100%),
+    linear-gradient(180deg, rgba(10,22,40,0.15) 0%, rgba(10,22,40,0.45) 60%, rgba(10,22,40,1) 100%),
     url('cyprus-hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 4rem 1.5rem 5rem;
+  padding: 5rem 1.5rem 6rem;
   overflow: hidden;
 }
-.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-content { position: relative; z-index: 2; max-width: 960px; }
 .hero h1 {
-  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 800;
   letter-spacing: 1.5px;
   background: linear-gradient(135deg, #ffffff 40%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 4px 30px rgba(56,189,248,0.4));
-  margin-bottom: 1.1rem;
+  filter: drop-shadow(0 4px 30px rgba(56,189,248,0.5));
+  margin-bottom: 1.2rem;
 }
 .hero p {
-  color: #e2e8f0;
-  font-size: 1.25rem;
-  max-width: 720px;
+  color: #f1f5f9;
+  font-size: 1.35rem;
+  max-width: 780px;
   margin: 0 auto;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+  font-weight: 400;
 }
 
-/* ---------- NAV BAR (sits below the hero) ---------- */
+/* ---------- NAV BAR ---------- */
 .topbar {
   position: sticky;
   top: 0;
@@ -59,9 +60,9 @@ body {
   box-shadow: 0 4px 30px rgba(10,22,40,0.5);
 }
 .nav-container {
-  max-width: 1320px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0.85rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,26 +71,26 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.8rem;
   color: #fff;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   text-decoration: none;
   letter-spacing: 0.3px;
   flex-shrink: 0;
 }
 .nav-logo .mark {
-  width: 38px; height: 38px;
+  width: 42px; height: 42px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #7dd3fc, #0ea5e9 50%, #0369a1);
   display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.1rem;
-  box-shadow: 0 0 22px rgba(56,189,248,0.55), inset 0 0 8px rgba(255,255,255,0.3);
+  color: #fff; font-size: 1.2rem;
+  box-shadow: 0 0 24px rgba(56,189,248,0.6), inset 0 0 8px rgba(255,255,255,0.3);
   animation: pulse 3s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 22px rgba(56,189,248,0.55), inset 0 0 8px rgba(255,255,255,0.3); }
-  50%     { box-shadow: 0 0 34px rgba(56,189,248,0.85), inset 0 0 12px rgba(255,255,255,0.5); }
+  0%,100% { box-shadow: 0 0 24px rgba(56,189,248,0.6), inset 0 0 8px rgba(255,255,255,0.3); }
+  50%     { box-shadow: 0 0 38px rgba(56,189,248,0.9), inset 0 0 12px rgba(255,255,255,0.5); }
 }
 
 /* ---------- NAV MENU ---------- */
@@ -105,22 +106,22 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #cbd5e1;
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1.1rem;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 .nav-menu > li > a:hover,
 .nav-menu > li > a.active {
   color: #7dd3fc;
-  background: rgba(56,189,248,0.1);
+  background: rgba(56,189,248,0.12);
 }
 .nav-menu .caret {
-  font-size: 0.6rem;
-  opacity: 0.65;
+  font-size: 0.7rem;
+  opacity: 0.7;
   transition: transform 0.25s ease;
   margin-top: 1px;
 }
@@ -133,16 +134,16 @@ body {
   border: 1px solid rgba(56,189,248,0.25);
   border-radius: 999px;
   padding: 3px;
-  margin-left: 0.75rem;
+  margin-left: 0.85rem;
 }
 .lang-toggle button {
   background: transparent;
   border: none;
   color: #94a3b8;
   font-family: inherit;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.2s;
@@ -160,13 +161,13 @@ body {
   display: inline-block;
   background: #10b981;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  margin-left: 0.55rem;
+  margin-left: 0.6rem;
   box-shadow: 0 0 12px rgba(16,185,129,0.55);
   animation: badgePulse 2s ease-in-out infinite;
   vertical-align: middle;
@@ -176,17 +177,17 @@ body {
   50%     { box-shadow: 0 0 20px rgba(16,185,129,0.9); }
 }
 
-/* ---------- DROPDOWN (opens below the nav row) ---------- */
+/* ---------- DROPDOWN ---------- */
 .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   margin-top: 6px;
-  min-width: 300px;
+  min-width: 340px;
   background: #0f2038;
   border: 1px solid rgba(56,189,248,0.2);
   border-radius: 12px;
-  padding: 0.6rem;
+  padding: 0.7rem;
   list-style: none;
   opacity: 0;
   visibility: hidden;
@@ -206,10 +207,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #cbd5e1;
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
+  font-size: 1.05rem;
+  padding: 0.85rem 1.1rem;
   border-radius: 8px;
   transition: all 0.15s;
   border-left: 2px solid transparent;
@@ -218,7 +219,7 @@ body {
   background: rgba(56,189,248,0.1);
   color: #7dd3fc;
   border-left-color: #38bdf8;
-  padding-left: 1.2rem;
+  padding-left: 1.3rem;
 }
 
 /* ---------- HAMBURGER ---------- */
@@ -227,22 +228,23 @@ body {
   background: transparent;
   border: 1px solid rgba(56,189,248,0.3);
   color: #fff;
-  padding: 0.55rem 0.9rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-/* ---------- GALAXY CONTENT AREA ---------- */
+/* ---------- GALAXY CONTENT AREA (brighter) ---------- */
 .galaxy-bg {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.7) 35%, rgba(10,22,40,0.85) 100%),
+    linear-gradient(180deg, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.35) 30%, rgba(10,22,40,0.55) 70%, rgba(10,22,40,0.8) 100%),
     url('galaxy.jpg') center/cover fixed no-repeat;
-  padding: 4.5rem 2rem 5.5rem;
+  padding: 5rem 2rem 6rem;
 }
+
 .content {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -253,19 +255,19 @@ body {
   background: rgba(15,32,56,0.55);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(56,189,248,0.18);
+  border: 1px solid rgba(56,189,248,0.2);
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 /* ---------- LATEST UPDATE BANNER ---------- */
 .latest-update {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto 2rem;
-  padding: 1.4rem 1.6rem;
+  padding: 1.6rem 1.8rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
   position: relative;
   border-left: 4px solid #10b981;
   transition: all 0.3s ease;
@@ -275,18 +277,18 @@ body {
 .latest-update .text strong {
   color: #fff;
   display: block;
-  margin-bottom: 0.2rem;
-  font-size: 1.08rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
 }
 .latest-update .text span {
-  color: #94a3b8;
-  font-size: 0.98rem;
+  color: #cbd5e1;
+  font-size: 1.05rem;
 }
 .latest-update a {
   color: #7dd3fc;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
   white-space: nowrap;
   transition: color 0.2s;
 }
@@ -294,9 +296,9 @@ body {
 .latest-update .close-btn {
   background: transparent;
   border: none;
-  color: #64748b;
+  color: #94a3b8;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   padding: 0.3rem 0.6rem;
   line-height: 1;
   transition: color 0.2s;
@@ -305,30 +307,30 @@ body {
 
 /* ---------- LEAD / MISSION ---------- */
 .lead {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #e2e8f0;
   margin-bottom: 2.5rem;
-  line-height: 1.85;
-  padding: 1.9rem 1.9rem 1.9rem 2.1rem;
+  line-height: 1.9;
+  padding: 2.1rem 2.1rem 2.1rem 2.3rem;
   border-left: 3px solid #38bdf8;
 }
 
 /* ---------- SECTION BLOCKS ---------- */
 .section-block {
-  padding: 2.5rem;
-  margin-bottom: 1.9rem;
+  padding: 2.75rem;
+  margin-bottom: 2rem;
   transition: all 0.3s ease;
 }
 .section-block:hover {
-  border-color: rgba(56,189,248,0.4);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08);
+  border-color: rgba(56,189,248,0.45);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 .section-block h2 {
-  font-size: 1.55rem;
+  font-size: 1.9rem;
   color: #fff;
   font-weight: 700;
-  margin-bottom: 1.6rem;
-  padding-bottom: 0.8rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.9rem;
   border-bottom: 2px solid #38bdf8;
   display: inline-block;
   letter-spacing: 0.3px;
@@ -337,39 +339,39 @@ body {
 /* ---------- LEADER CARDS ---------- */
 .leader-card {
   display: flex;
-  gap: 1.6rem;
+  gap: 1.7rem;
   align-items: flex-start;
-  padding: 1.6rem;
+  padding: 1.7rem;
   border-radius: 12px;
   transition: background 0.2s;
 }
 .leader-card:hover { background: rgba(56,189,248,0.06); }
-.leader-card + .leader-card { border-top: 1px solid rgba(148,163,184,0.12); }
+.leader-card + .leader-card { border-top: 1px solid rgba(148,163,184,0.15); }
 .leader-avatar {
-  width: 84px; height: 84px;
+  width: 92px; height: 92px;
   border-radius: 50%;
   background: linear-gradient(135deg, #1e3a5f 0%, #0ea5e9 100%);
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 1.5rem;
+  font-weight: 700; font-size: 1.65rem;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(14,165,233,0.35);
+  box-shadow: 0 8px 20px rgba(14,165,233,0.4);
   letter-spacing: 0.5px;
 }
-.leader-info h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
-.leader-role { color: #38bdf8; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.7rem; }
-.leader-info p { color: #94a3b8; font-size: 1rem; }
+.leader-info h3 { color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+.leader-role { color: #38bdf8; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+.leader-info p { color: #cbd5e1; font-size: 1.1rem; }
 
 /* ---------- CTA BOX ---------- */
 .cta-box {
-  background: linear-gradient(135deg, rgba(14,165,233,0.9) 0%, rgba(3,105,161,0.9) 100%);
+  background: linear-gradient(135deg, rgba(14,165,233,0.92) 0%, rgba(3,105,161,0.92) 100%);
   backdrop-filter: blur(10px);
   color: #fff;
-  padding: 2.75rem 2rem;
+  padding: 3rem 2rem;
   border-radius: 16px;
   text-align: center;
-  margin-top: 2.75rem;
-  box-shadow: 0 20px 50px rgba(14,165,233,0.35);
+  margin-top: 3rem;
+  box-shadow: 0 20px 50px rgba(14,165,233,0.4);
   border: 1px solid rgba(125,211,252,0.3);
   position: relative;
   overflow: hidden;
@@ -383,17 +385,17 @@ body {
   animation: shine 8s linear infinite;
 }
 @keyframes shine { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.cta-box h3 { font-size: 1.55rem; font-weight: 700; margin-bottom: 0.7rem; position: relative; z-index: 2; }
-.cta-box p { opacity: 0.95; margin-bottom: 1.6rem; position: relative; z-index: 2; font-size: 1.05rem; }
+.cta-box h3 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.85rem; position: relative; z-index: 2; }
+.cta-box p { opacity: 0.97; margin-bottom: 1.8rem; position: relative; z-index: 2; font-size: 1.15rem; }
 .btn {
   display: inline-block;
   background: #fff;
   color: #0369a1;
-  padding: 0.95rem 2.2rem;
+  padding: 1.05rem 2.4rem;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   letter-spacing: 0.3px;
   transition: all 0.25s ease;
   position: relative;
@@ -405,10 +407,10 @@ body {
 /* ---------- FOOTER ---------- */
 .site-footer {
   background: linear-gradient(180deg, #06101e 0%, #030810 100%);
-  color: #64748b;
+  color: #94a3b8;
   text-align: center;
-  padding: 2.25rem 1.5rem;
-  font-size: 0.92rem;
+  padding: 2.5rem 1.5rem;
+  font-size: 1.05rem;
   border-top: 1px solid rgba(56,189,248,0.1);
 }
 
@@ -422,6 +424,7 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
 
 /* ---------- MOBILE ---------- */
 @media (max-width: 1000px) {
+  body { font-size: 17px; }
   .hamburger { display: block; }
   .nav-container { padding: 0.85rem 1.25rem; }
   .nav-menu {
@@ -439,7 +442,7 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
     margin-left: 0;
   }
   .nav-menu.open { max-height: 100vh; overflow-y: auto; }
-  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.05rem; }
+  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.1rem; }
   .dropdown {
     position: static;
     opacity: 1;
@@ -458,11 +461,13 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
   }
   .nav-menu > li.open .dropdown { display: block; }
   .lang-toggle { margin-left: 0; margin-top: 0.5rem; align-self: flex-start; }
-  .hero { min-height: 280px; padding: 3rem 1.25rem 3.5rem; }
-  .hero h1 { font-size: 2.1rem; }
-  .hero p { font-size: 1rem; }
-  .galaxy-bg { padding: 2.75rem 1.25rem 3.25rem; background-attachment: scroll; }
+  .hero { min-height: 320px; padding: 3rem 1.25rem 3.5rem; }
+  .hero h1 { font-size: 2.3rem; }
+  .hero p { font-size: 1.05rem; }
+  .galaxy-bg { padding: 3rem 1.25rem 3.5rem; background-attachment: scroll; }
   .leader-card { flex-direction: column; align-items: center; text-align: center; }
-  .section-block { padding: 1.6rem; }
+  .section-block { padding: 1.75rem; }
+  .section-block h2 { font-size: 1.5rem; }
   .latest-update { flex-direction: column; align-items: flex-start; }
+  .lead { font-size: 1.08rem; }
 }
