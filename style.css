@@ -139,12 +139,11 @@ body {
   50%     { box-shadow: 0 0 20px rgba(16,185,129,0.9); }
 }
 
-/* ---------- DROPDOWN (now centered under heading) ---------- */
+/* ---------- DROPDOWN (aligned under heading, no overlap) ---------- */
 .dropdown {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  top: calc(100% - 4px);
+  left: 0;
   min-width: 300px;
   background: #0f2038;
   border: 1px solid rgba(56,189,248,0.15);
@@ -153,14 +152,18 @@ body {
   list-style: none;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-6px);
   transition: all 0.25s ease;
   box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+  z-index: 1200;
+  margin-top: 4px;
 }
 .nav-menu > li:hover .dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
+
 /* small hover-bridge so dropdown doesn't disappear while moving cursor */
 .nav-menu > li::after {
   content: '';
