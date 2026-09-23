@@ -12,12 +12,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO (enhanced to match galaxy) ---------- */
 .hero {
   position: relative;
   min-height: 420px;
   background:
-    linear-gradient(180deg, rgba(10,22,40,0.15) 0%, rgba(10,22,40,0.45) 60%, rgba(10,22,40,1) 100%),
+    linear-gradient(180deg, rgba(10,22,40,0.15) 0%, rgba(10,22,40,0.5) 55%, rgba(10,22,40,1) 100%),
     url('cyprus-hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -26,6 +26,26 @@ body {
   color: #fff;
   padding: 5rem 1.5rem 6rem;
   overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 15%, #7dd3fc, transparent),
+    radial-gradient(1.5px 1.5px at 85% 45%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 55% 85%, #7dd3fc, transparent);
+  opacity: 0.55;
+  animation: twinkle 5s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes twinkle {
+  from { opacity: 0.35; }
+  to   { opacity: 0.7; }
 }
 .hero-content { position: relative; z-index: 2; max-width: 960px; }
 .hero h1 {
