@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UAP Cyprus Centre — Scientific Investigation of UAP</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
       <li>
         <a href="#">About <span class="caret">▾</span></a>
         <ul class="dropdown">
-          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
           <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
           <li><a href="friends.html">Friends & Associates</a></li>
         </ul>
@@ -80,46 +80,60 @@
   </div>
 </section>
 
-<!-- ============ CONTENT ============ -->
-<main class="content">
+<!-- ============ GALAXY CONTENT AREA ============ -->
+<div class="galaxy-bg">
 
-  <p class="lead">
-    UAP Cyprus is an all-volunteer, non-profit research centre dedicated to the scientific
-    investigation of Unidentified Anomalous (also known as Aerial) Phenomena (UAP) occurring
-    in the airspace and maritime domains of the Republic of Cyprus, and in the Eastern
-    Mediterranean region. The work of our interdisciplinary team is dedicated to the pursuit
-    of truth in a scientific manner and is subject to peer-reviewed validation.
-  </p>
+  <!-- Latest Update Banner -->
+  <div class="latest-update glass" id="latestBanner">
+    <span class="badge-new">New</span>
+    <div class="text">
+      <strong>Welcome to our new website</strong>
+      <span>Modern redesign with improved navigation — more updates coming soon.</span>
+    </div>
+    <a href="announcements.html">Read more →</a>
+    <button class="close-btn" onclick="dismissBanner()" aria-label="Dismiss">✕</button>
+  </div>
 
-  <div class="section-block">
-    <h2>Leadership</h2>
+  <main class="content">
 
-    <div class="leader-card">
-      <div class="leader-avatar">GF</div>
-      <div class="leader-info">
-        <h3>Dr. Georgios Florides</h3>
-        <div class="leader-role">President / Co-Founder</div>
-        <p>MPhil, PhD (Mechanical Engineering)</p>
+    <p class="lead glass">
+      UAP Cyprus is an all-volunteer, non-profit research centre dedicated to the scientific
+      investigation of Unidentified Anomalous (also known as Aerial) Phenomena (UAP) occurring
+      in the airspace and maritime domains of the Republic of Cyprus, and in the Eastern
+      Mediterranean region. The work of our interdisciplinary team is dedicated to the pursuit
+      of truth in a scientific manner and is subject to peer-reviewed validation.
+    </p>
+
+    <div class="section-block glass">
+      <h2>Leadership</h2>
+
+      <div class="leader-card">
+        <div class="leader-avatar">GF</div>
+        <div class="leader-info">
+          <h3>Dr. Georgios Florides</h3>
+          <div class="leader-role">President / Co-Founder</div>
+          <p>MPhil, PhD (Mechanical Engineering)</p>
+        </div>
+      </div>
+
+      <div class="leader-card">
+        <div class="leader-avatar">LT</div>
+        <div class="leader-info">
+          <h3>Dr. Lilian Tsappa</h3>
+          <div class="leader-role">Vice-President / Co-Founder</div>
+          <p>PhD (Comparative Literature), Member MUFON</p>
+        </div>
       </div>
     </div>
 
-    <div class="leader-card">
-      <div class="leader-avatar">LT</div>
-      <div class="leader-info">
-        <h3>Dr. Lilian Tsappa</h3>
-        <div class="leader-role">Vice-President / Co-Founder</div>
-        <p>PhD (Comparative Literature), Member MUFON</p>
-      </div>
+    <div class="cta-box">
+      <h3>Membership is Free</h3>
+      <p>Open to all individuals interested in the scientific investigation of UAP.</p>
+      <a href="membership.html" class="btn">Become a Member</a>
     </div>
-  </div>
 
-  <div class="cta-box">
-    <h3>Membership is Free</h3>
-    <p>Open to all individuals interested in the scientific investigation of UAP.</p>
-    <a href="membership.html" class="btn">Become a Member</a>
-  </div>
-
-</main>
+  </main>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
@@ -136,6 +150,19 @@
         parent.classList.toggle('open');
       }
     });
+  });
+
+  // Dismissible latest-update banner (remembers for 7 days)
+  function dismissBanner() {
+    const banner = document.getElementById('latestBanner');
+    banner.classList.add('hidden');
+    localStorage.setItem('uapcy_banner_dismissed', Date.now());
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const dismissed = localStorage.getItem('uapcy_banner_dismissed');
+    if (dismissed && Date.now() - parseInt(dismissed) < 7 * 24 * 60 * 60 * 1000) {
+      document.getElementById('latestBanner').classList.add('hidden');
+    }
   });
 </script>
 
