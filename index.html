@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UAP Cyprus Centre — Scientific Investigation of UAP</title>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=14">
 </head>
 <body data-lang="en">
 
@@ -124,6 +124,7 @@
 
 <div class="galaxy-bg">
 
+  <!-- Latest Update Banner (permanent, no close button) -->
   <div class="latest-update glass" id="latestBanner">
     <span class="badge-new">New</span>
     <div class="text lang-en">
@@ -138,7 +139,6 @@
       <span class="lang-en-inline">Read more →</span>
       <span class="lang-el-inline">Διαβάστε περισσότερα →</span>
     </a>
-    <button class="close-btn" onclick="dismissBanner()" aria-label="Dismiss">✕</button>
   </div>
 
   <main class="content">
@@ -156,7 +156,8 @@
         αφιερωμένο στην επιστημονική διερεύνηση αγνώστων αφύσικων φαινομένων (UAP/UFO)
         στον εναέριο και θαλάσσιο χώρο της Κυπριακής Δημοκρατίας και στην περιοχή της
         Ανατολικής Μεσογείου. Το έργο της διεπιστημονικής μας ομάδας είναι αφιερωμένο
-        στην αναζήτηση της αλήθειας με επιστημονικό τρόπο και υπόκειται σε επικύρωση        από άλλους επιστήμονες.
+        στην αναζήτηση της αλήθειας με επιστημονικό τρόπο και υπόκειται σε επικύρωση
+        από άλλους επιστήμονες.
       </span>
     </p>
 
@@ -217,18 +218,6 @@
         parent.classList.toggle('open');
       }
     });
-  });
-
-  function dismissBanner() {
-    const banner = document.getElementById('latestBanner');
-    banner.classList.add('hidden');
-    localStorage.setItem('uapcy_banner_dismissed', Date.now());
-  }
-  window.addEventListener('DOMContentLoaded', () => {
-    const dismissed = localStorage.getItem('uapcy_banner_dismissed');
-    if (dismissed && Date.now() - parseInt(dismissed) < 7 * 24 * 60 * 60 * 1000) {
-      document.getElementById('latestBanner').classList.add('hidden');
-    }
   });
 </script>
 
