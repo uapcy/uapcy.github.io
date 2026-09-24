@@ -1,4 +1,4 @@
-/* ============ UAP CYPRUS CENTRE — MODERN v10 (Bigger Nav, Single-Line, Squared CTA) ============ */
+/* ============ UAP CYPRUS CENTRE — MODERN v11 (Bright Galaxy, Three-Color Labels) ============ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,7 +58,7 @@ body {
   50%     { box-shadow: 0 0 38px rgba(56,189,248,0.9), inset 0 0 14px rgba(255,255,255,0.55); }
 }
 
-/* ---------- NAV MENU (Bigger, Single-Line) ---------- */
+/* ---------- NAV MENU ---------- */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -101,7 +101,7 @@ body {
 }
 .nav-menu > li:hover .caret { transform: rotate(180deg); }
 
-/* ---------- CTA BUTTON IN NAV (Squared Green like Home CTA) ---------- */
+/* ---------- CTA BUTTON IN NAV ---------- */
 .nav-cta {
   display: inline-flex;
   align-items: center;
@@ -238,7 +238,7 @@ body {
   font-size: 1.3rem;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO (UNCHANGED — Cyprus image) ---------- */
 .hero {
   position: relative;
   min-height: 340px;
@@ -294,12 +294,10 @@ body {
   font-weight: 400;
 }
 
-/* ---------- GALAXY CONTENT AREA ---------- */
+/* ---------- GALAXY CONTENT AREA (NO OVERLAY — image at full brightness) ---------- */
 .galaxy-bg {
   position: relative;
-  background:
-    linear-gradient(180deg, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.35) 30%, rgba(10,22,40,0.55) 70%, rgba(10,22,40,0.8) 100%),
-    url('galaxy.jpg') center/cover fixed no-repeat;
+  background: url('galaxy.jpg') center/cover fixed no-repeat;
   padding: 4.5rem 2rem 5.5rem;
 }
 .content {
@@ -309,9 +307,9 @@ body {
   z-index: 2;
 }
 
-/* ---------- GLASS CARDS ---------- */
+/* ---------- GLASS CARDS (slightly more opaque for text readability) ---------- */
 .glass {
-  background: rgba(15,32,56,0.55);
+  background: rgba(15,32,56,0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(56,189,248,0.2);
@@ -333,17 +331,42 @@ body {
 }
 .latest-update.hidden { display: none; }
 .latest-update .text { flex: 1; }
-.latest-update .text strong { color: #fff; display: block; margin-bottom: 0.3rem; font-size: 1.2rem; }
-.latest-update .text span { color: #cbd5e1; font-size: 1.05rem; }
-.latest-update a { color: #7dd3fc; text-decoration: none; font-weight: 600; font-size: 1.05rem; white-space: nowrap; transition: color 0.2s; }
+.latest-update .text strong {
+  color: #10b981;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.latest-update .text span {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+}
+.latest-update a {
+  color: #7dd3fc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
 .latest-update a:hover { color: #38bdf8; }
-.latest-update .close-btn { background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 1.35rem; padding: 0.3rem 0.6rem; line-height: 1; transition: color 0.2s; }
+.latest-update .close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1.35rem;
+  padding: 0.3rem 0.6rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
 .latest-update .close-btn:hover { color: #f87171; }
 
-/* ---------- LEAD / MISSION ---------- */
+/* ---------- LEAD / MISSION (GREY) ---------- */
 .lead {
   font-size: 1.25rem;
-  color: #e2e8f0;
+  color: #cbd5e1;
   margin-bottom: 2.5rem;
   line-height: 1.9;
   padding: 2.1rem 2.1rem 2.1rem 2.3rem;
@@ -362,11 +385,11 @@ body {
 }
 .section-block h2 {
   font-size: 1.9rem;
-  color: #fff;
+  color: #a78bfa;
   font-weight: 700;
   margin-bottom: 1.8rem;
   padding-bottom: 0.9rem;
-  border-bottom: 2px solid #38bdf8;
+  border-bottom: 2px solid #a78bfa;
   display: inline-block;
   letter-spacing: 0.3px;
 }
@@ -397,7 +420,7 @@ body {
 .leader-role { color: #38bdf8; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
 .leader-info p { color: #cbd5e1; font-size: 1.1rem; }
 
-/* ---------- CTA BOX (matches nav CTA shape) ---------- */
+/* ---------- CTA BOX ---------- */
 .cta-box {
   background: linear-gradient(135deg, rgba(14,165,233,0.92) 0%, rgba(3,105,161,0.92) 100%);
   backdrop-filter: blur(10px);
