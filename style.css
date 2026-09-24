@@ -1,4 +1,4 @@
-/* ============ UAP CYPRUS CENTRE — MODERN v9 (Sticky Top Nav, Bold Logo) ============ */
+/* ============ UAP CYPRUS CENTRE — MODERN v10 (Bigger Nav, Single-Line, Squared CTA) ============ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- STICKY TOP NAV (always at top) ---------- */
+/* ---------- STICKY TOP NAV ---------- */
 .topbar {
   position: sticky;
   top: 0;
@@ -22,7 +22,7 @@ body {
   box-shadow: 0 4px 30px rgba(0,0,0,0.6);
 }
 .nav-container {
-  max-width: 1480px;
+  max-width: 1560px;
   margin: 0 auto;
   padding: 0.9rem 2rem;
   display: flex;
@@ -33,22 +33,22 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.9rem;
   color: #fff;
-  font-weight: 800;
-  font-size: 1.75rem;
+  font-weight: 900;
+  font-size: 1.9rem;
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   flex-shrink: 0;
   white-space: nowrap;
 }
 .nav-logo .mark {
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #7dd3fc, #0ea5e9 50%, #0369a1);
   display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.25rem;
+  color: #fff; font-size: 1.35rem;
   box-shadow: 0 0 24px rgba(56,189,248,0.6), inset 0 0 10px rgba(255,255,255,0.35);
   animation: pulse 3s ease-in-out infinite;
   flex-shrink: 0;
@@ -58,11 +58,11 @@ body {
   50%     { box-shadow: 0 0 38px rgba(56,189,248,0.9), inset 0 0 14px rgba(255,255,255,0.55); }
 }
 
-/* ---------- NAV MENU ---------- */
+/* ---------- NAV MENU (Bigger, Single-Line) ---------- */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.15rem;
   list-style: none;
   margin-left: auto;
 }
@@ -71,14 +71,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #cbd5e1;
+  color: #e2e8f0;
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.75rem 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.85rem 1.05rem;
   border-radius: 10px;
   transition: all 0.2s ease;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  line-height: 1;
 }
 .nav-menu > li > a:hover {
   color: #7dd3fc;
@@ -91,33 +93,36 @@ body {
 }
 .nav-menu > li > a.active .caret { color: #0a1628; }
 .nav-menu .caret {
-  font-size: 0.7rem;
-  opacity: 0.7;
+  font-size: 0.8rem;
+  opacity: 0.75;
   transition: transform 0.25s ease;
-  margin-top: 1px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 .nav-menu > li:hover .caret { transform: rotate(180deg); }
 
-/* ---------- CTA BUTTON IN NAV (Report a UAP) ---------- */
+/* ---------- CTA BUTTON IN NAV (Squared Green like Home CTA) ---------- */
 .nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #10b981, #059669);
   color: #fff !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
-  padding: 0.7rem 1.4rem !important;
-  border-radius: 999px !important;
-  margin-left: 0.5rem;
-  box-shadow: 0 0 20px rgba(16,185,129,0.4);
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+  padding: 0.9rem 1.6rem !important;
+  border-radius: 10px !important;
+  margin-left: 0.75rem;
+  box-shadow: 0 8px 20px rgba(16,185,129,0.4);
   transition: all 0.25s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  line-height: 1;
 }
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(16,185,129,0.7);
+  box-shadow: 0 12px 30px rgba(16,185,129,0.65);
   background: linear-gradient(135deg, #34d399, #10b981) !important;
   color: #fff !important;
 }
@@ -129,20 +134,22 @@ body {
   border: 1px solid rgba(56,189,248,0.25);
   border-radius: 999px;
   padding: 3px;
-  margin-left: 0.85rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
 }
 .lang-toggle button {
   background: transparent;
   border: none;
   color: #94a3b8;
   font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 0.4rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.2s;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .lang-toggle button.active {
   background: #38bdf8;
@@ -178,11 +185,11 @@ body {
   top: 100%;
   left: 0;
   margin-top: 8px;
-  min-width: 340px;
+  min-width: 380px;
   background: #0f2038;
   border: 1px solid rgba(56,189,248,0.22);
   border-radius: 12px;
-  padding: 0.7rem;
+  padding: 0.75rem;
   list-style: none;
   opacity: 0;
   visibility: hidden;
@@ -204,18 +211,19 @@ body {
   align-items: center;
   color: #e2e8f0;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  padding: 0.85rem 1.1rem;
+  padding: 0.9rem 1.15rem;
   border-radius: 8px;
   transition: all 0.15s;
   border-left: 2px solid transparent;
+  white-space: nowrap;
 }
 .dropdown li a:hover {
   background: rgba(56,189,248,0.1);
   color: #7dd3fc;
   border-left-color: #38bdf8;
-  padding-left: 1.3rem;
+  padding-left: 1.35rem;
 }
 
 /* ---------- HAMBURGER ---------- */
@@ -230,7 +238,7 @@ body {
   font-size: 1.3rem;
 }
 
-/* ---------- HERO (slimmer now that nav is above) ---------- */
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
   min-height: 340px;
@@ -325,35 +333,11 @@ body {
 }
 .latest-update.hidden { display: none; }
 .latest-update .text { flex: 1; }
-.latest-update .text strong {
-  color: #fff;
-  display: block;
-  margin-bottom: 0.3rem;
-  font-size: 1.2rem;
-}
-.latest-update .text span {
-  color: #cbd5e1;
-  font-size: 1.05rem;
-}
-.latest-update a {
-  color: #7dd3fc;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
+.latest-update .text strong { color: #fff; display: block; margin-bottom: 0.3rem; font-size: 1.2rem; }
+.latest-update .text span { color: #cbd5e1; font-size: 1.05rem; }
+.latest-update a { color: #7dd3fc; text-decoration: none; font-weight: 600; font-size: 1.05rem; white-space: nowrap; transition: color 0.2s; }
 .latest-update a:hover { color: #38bdf8; }
-.latest-update .close-btn {
-  background: transparent;
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  font-size: 1.35rem;
-  padding: 0.3rem 0.6rem;
-  line-height: 1;
-  transition: color 0.2s;
-}
+.latest-update .close-btn { background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 1.35rem; padding: 0.3rem 0.6rem; line-height: 1; transition: color 0.2s; }
 .latest-update .close-btn:hover { color: #f87171; }
 
 /* ---------- LEAD / MISSION ---------- */
@@ -413,7 +397,7 @@ body {
 .leader-role { color: #38bdf8; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
 .leader-info p { color: #cbd5e1; font-size: 1.1rem; }
 
-/* ---------- CTA BOX ---------- */
+/* ---------- CTA BOX (matches nav CTA shape) ---------- */
 .cta-box {
   background: linear-gradient(135deg, rgba(14,165,233,0.92) 0%, rgba(3,105,161,0.92) 100%);
   backdrop-filter: blur(10px);
@@ -473,11 +457,20 @@ body[data-lang="en"] .lang-en-inline { display: inline; }
 body[data-lang="el"] .lang-el-inline { display: inline; }
 .lang-en-inline, .lang-el-inline { display: none; }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 1200px) {
-  .nav-logo { font-size: 1.4rem; }
-  .nav-menu > li > a { font-size: 1rem; padding: 0.65rem 0.9rem; }
-  .nav-cta { font-size: 0.92rem !important; padding: 0.6rem 1.1rem !important; }
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1400px) {
+  .nav-logo { font-size: 1.55rem; }
+  .nav-logo .mark { width: 42px; height: 42px; }
+  .nav-menu > li > a { font-size: 1.05rem; padding: 0.75rem 0.85rem; }
+  .nav-cta { font-size: 1rem !important; padding: 0.8rem 1.3rem !important; }
+  .lang-toggle button { font-size: 0.9rem; padding: 0.4rem 0.85rem; }
+}
+@media (max-width: 1180px) {
+  .nav-logo { font-size: 1.3rem; }
+  .nav-logo .mark { width: 36px; height: 36px; font-size: 1rem; }
+  .nav-menu > li > a { font-size: 0.95rem; padding: 0.65rem 0.7rem; }
+  .nav-cta { font-size: 0.9rem !important; padding: 0.7rem 1.1rem !important; margin-left: 0.4rem; }
+  .lang-toggle button { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
 }
 @media (max-width: 1000px) {
   body { font-size: 17px; }
@@ -500,7 +493,7 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
     margin-left: 0;
   }
   .nav-menu.open { max-height: 100vh; overflow-y: auto; }
-  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.1rem; }
+  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.15rem; }
   .dropdown {
     position: static;
     opacity: 1;
