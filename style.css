@@ -1,4 +1,4 @@
-/* ============ UAP CYPRUS CENTRE — MODERN v14 (Shine Effects + Lighter Mission) ============ */
+/* ============ UAP CYPRUS CENTRE — MODERN v15 (Solid Card Classes) ============ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -125,6 +125,10 @@ body {
   box-shadow: 0 12px 30px rgba(16,185,129,0.65);
   background: linear-gradient(135deg, #34d399, #10b981) !important;
   color: #fff !important;
+}
+.nav-cta.active {
+  background: linear-gradient(135deg, #34d399, #10b981) !important;
+  box-shadow: 0 0 25px rgba(16,185,129,0.75);
 }
 
 /* ---------- LANGUAGE TOGGLE ---------- */
@@ -307,7 +311,7 @@ body {
   z-index: 2;
 }
 
-/* ---------- GLASS (default for other pages) ---------- */
+/* ---------- DEFAULT GLASS (fallback for cards without a color class) ---------- */
 .glass {
   background: rgba(15,32,56,0.72);
   backdrop-filter: blur(14px);
@@ -317,7 +321,7 @@ body {
   box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-/* ---------- LATEST UPDATE BANNER — DARK TEAL + SHINE ---------- */
+/* ---------- LATEST UPDATE BANNER — TEAL + SHINE ---------- */
 .latest-update {
   max-width: 1000px;
   margin: 0 auto 2rem;
@@ -375,29 +379,15 @@ body {
   transition: color 0.2s;
 }
 .latest-update a:hover { color: #a5f3fc; }
-.latest-update .close-btn {
-  background: transparent;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.35rem;
-  padding: 0.3rem 0.6rem;
-  line-height: 1;
-  transition: color 0.2s;
-  opacity: 0.8;
-}
-.latest-update .close-btn:hover { color: #fecaca; opacity: 1; }
 
-/* ---------- LEAD / MISSION — LIGHTER SLATE ---------- */
+/* ---------- LEAD / MISSION ---------- */
 .lead {
   font-size: 1.25rem;
   color: #ffffff;
   margin-bottom: 2.5rem;
   line-height: 1.9;
   padding: 2.1rem 2.1rem 2.1rem 2.3rem;
-  background: #3e4a5c !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: #3e4a5c;
   border: 1px solid rgba(148,163,184,0.4);
   border-left: 3px solid #94a3b8;
   border-radius: 16px;
@@ -410,10 +400,6 @@ body {
   margin-bottom: 2rem;
   transition: all 0.3s ease;
 }
-.section-block:hover {
-  border-color: rgba(56,189,248,0.45);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.1);
-}
 .section-block h2 {
   font-size: 1.9rem;
   color: #ffffff;
@@ -424,8 +410,9 @@ body {
   display: inline-block;
   letter-spacing: 0.3px;
 }
+.section-block p { color: #ffffff; }
 
-/* ---------- LEADERSHIP — STONE GREY ---------- */
+/* ---------- LEADERSHIP — STONE GREY (legacy class, kept for index.html) ---------- */
 .section-block.leadership-solid {
   background: #3f3f46 !important;
   backdrop-filter: none !important;
@@ -434,10 +421,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
-.section-block.leadership-solid h2 {
-  color: #ffffff;
-  border-bottom-color: #a1a1aa;
-}
+.section-block.leadership-solid h2 { color: #ffffff; border-bottom-color: #a1a1aa; }
 .section-block.leadership-solid .leader-info h3 { color: #ffffff; }
 .section-block.leadership-solid .leader-role { color: #e4e4e7; }
 .section-block.leadership-solid .leader-info p { color: #ffffff; opacity: 0.95; }
@@ -453,8 +437,7 @@ body {
   border-radius: 12px;
   transition: background 0.2s;
 }
-.leader-card:hover { background: rgba(56,189,248,0.06); }
-.leader-card + .leader-card { border-top: 1px solid rgba(148,163,184,0.15); }
+.leader-card + .leader-card { border-top: 1px solid rgba(255,255,255,0.15); }
 .leader-avatar {
   width: 92px; height: 92px;
   border-radius: 50%;
@@ -470,7 +453,7 @@ body {
 .leader-role { color: #38bdf8; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
 .leader-info p { color: #cbd5e1; font-size: 1.1rem; }
 
-/* ---------- CTA BOX — SLATE + SHINE ---------- */
+/* ---------- CTA BOX — MEDIUM SLATE + SHINE ---------- */
 .cta-box {
   background: #475569;
   color: #fff;
@@ -537,6 +520,81 @@ body[data-lang="el"] .lang-el { display: block; }
 body[data-lang="en"] .lang-en-inline { display: inline; }
 body[data-lang="el"] .lang-el-inline { display: inline; }
 .lang-en-inline, .lang-el-inline { display: none; }
+
+/* ============================================================
+   SOLID COLOR CARD CLASSES (used on all pages)
+   Use in HTML as: <div class="section-block card-1"> ... </div>
+   Position rule:
+     card-1  →  First card on page    (dark teal)
+     card-2  →  Second card on page   (light slate)
+     card-3  →  Third card on page    (stone grey)
+     card-4  →  Fourth card on page   (medium slate)
+   ============================================================ */
+
+.card-1 {
+  background: #0a3a47 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(15,118,110,0.5) !important;
+  border-left: 4px solid #0d5c6e !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
+  color: #ffffff;
+}
+
+.card-2 {
+  background: #3e4a5c !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(148,163,184,0.4) !important;
+  border-left: 3px solid #94a3b8 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
+  color: #ffffff;
+}
+
+.card-3 {
+  background: #3f3f46 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(161,161,170,0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
+  color: #ffffff;
+}
+
+.card-4 {
+  background: #475569 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(148,163,184,0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45) !important;
+  color: #ffffff;
+}
+
+/* Ensure all headings and text inside solid cards stay white */
+.card-1 h1, .card-1 h2, .card-1 h3,
+.card-2 h1, .card-2 h2, .card-2 h3,
+.card-3 h1, .card-3 h2, .card-3 h3,
+.card-4 h1, .card-4 h2, .card-4 h3 { color: #ffffff; }
+
+.card-1 p, .card-2 p, .card-3 p, .card-4 p { color: #ffffff; }
+
+.card-1 a, .card-2 a, .card-3 a, .card-4 a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.card-1 a:hover, .card-2 a:hover, .card-3 a:hover, .card-4 a:hover {
+  color: #d1fae5;
+}
+
+/* Ensure the section headings still have their accent underline */
+.card-1 h2, .card-2 h2, .card-3 h2, .card-4 h2 {
+  border-bottom: 2px solid rgba(255,255,255,0.35);
+}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1400px) {
