@@ -4,25 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UAP Cyprus Centre — Scientific Investigation of UAP</title>
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body data-lang="en">
 
-<!-- ============ HERO (TOP BANNER) ============ -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>UAP Cyprus Centre</h1>
-    <p class="lang-en">Scientific investigation of Unidentified Anomalous Phenomena in Cyprus & the Eastern Mediterranean</p>
-    <p class="lang-el">Επιστημονική διερεύνηση Αγνώστων Αφύσικων Φαινομένων στην Κύπρο και την Ανατολική Μεσόγειο</p>
-  </div>
-</section>
-
-<!-- ============ NAV BAR (below hero) ============ -->
+<!-- ============ STICKY TOP NAV ============ -->
 <header class="topbar">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
       <span class="mark">◉</span>
-      UAP Cyprus Centre
+      UAP CYPRUS CENTRE
     </a>
 
     <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
@@ -139,10 +130,6 @@
             <span class="lang-en-inline">Become a Member</span>
             <span class="lang-el-inline">Γίνετε Μέλος</span>
           </a></li>
-          <li><a href="report-uap.html">
-            <span class="lang-en-inline">Report a UAP</span>
-            <span class="lang-el-inline">Αναφέρετε UAP</span>
-          </a></li>
           <li><a href="supplemental-links.html">
             <span class="lang-en-inline">Supplemental Links</span>
             <span class="lang-el-inline">Συμπληρωματικοί Σύνδεσμοι</span>
@@ -155,7 +142,13 @@
         <span class="lang-el-inline">Επικοινωνία</span>
       </a></li>
 
-      <li style="margin-left: 0.5rem;">
+      <li>
+        <a href="report-uap.html" class="nav-cta">
+          🛰 Report a UAP
+        </a>
+      </li>
+
+      <li>
         <div class="lang-toggle">
           <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
           <button id="btn-el" onclick="setLang('el')">ΕΛ</button>
@@ -165,10 +158,18 @@
   </div>
 </header>
 
-<!-- ============ GALAXY CONTENT AREA ============ -->
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>UAP Cyprus Centre</h1>
+    <p class="lang-en">Scientific investigation of Unidentified Anomalous Phenomena in Cyprus & the Eastern Mediterranean</p>
+    <p class="lang-el">Επιστημονική διερεύνηση Αγνώστων Αφύσικων Φαινομένων στην Κύπρο και την Ανατολική Μεσόγειο</p>
+  </div>
+</section>
+
+<!-- ============ GALAXY CONTENT ============ -->
 <div class="galaxy-bg">
 
-  <!-- Latest Update Banner -->
   <div class="latest-update glass" id="latestBanner">
     <span class="badge-new">New</span>
     <div class="text lang-en">
@@ -267,7 +268,6 @@
   </main>
 </div>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   © Fieland WebArts 2024–2026 · UAP Cyprus Centre
 </footer>
