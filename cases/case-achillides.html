@@ -10,9 +10,9 @@
 .info-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 1rem 1.25rem; }
 .info-pill .label { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; font-weight: 700; margin-bottom: 0.35rem; }
 .info-pill .value { font-size: 1.15rem; color: #ffffff; font-weight: 700; }
-.case-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
-/* FIX: Book cover fits naturally without stretching */
-.case-gallery img { width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 12px; border: 1px solid rgba(148,163,184,0.3); }
+.case-gallery { display: flex; justify-content: center; margin-top: 1.25rem; }
+/* FIXED: Constrain the image size and center it */
+.case-gallery img { width: 100%; max-width: 400px; height: auto; border-radius: 12px; border: 1px solid rgba(148,163,184,0.3); display: block; }
 .back-link { display: inline-block; color: #7dd3fc; text-decoration: none; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.05rem; }
 .back-link:hover { color: #38bdf8; }
 .case-list { list-style-type: none; padding-left: 0; }
@@ -186,7 +186,6 @@
       </h2>
       
       <div class="case-gallery">
-        <!-- FIXED: Filename is .JPG (uppercase) -->
         <img src="../images/case-achillides/book-cover.JPG" alt="Book cover — Το Σύμπαν, Η Ζωή, Τα UFOs">
       </div>
 
@@ -195,7 +194,6 @@
         <span class="lang-el-inline">Πηγή: Αχιλλίδης, Α. (1992). <em>Το Σύμπαν, Η Ζωή, Τα UFOs</em>. Κυπριακή Εταιρεία Μελέτης Ανεξήγητων Ουρανίων Φαινομένων.</span>
       </p>
 
-      <!-- PDF Download Links -->
       <div class="pdf-links">
         <p><strong>Original Documents (PDF):</strong></p>
         <a href="../images/case-achillides/DATABASE%20of%20Cyprus%20UAPs_Achillides.pdf" target="_blank">📄 DATABASE of Cyprus UAPs_Achillides.pdf</a>
