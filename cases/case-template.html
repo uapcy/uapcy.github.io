@@ -16,53 +16,172 @@
 .back-link:hover { color: #38bdf8; }
 </style>
 </head>
-<body>
+<body data-lang="en">
 
-<!-- Same nav bar as case-paphos.html — copy it verbatim -->
+<header class="topbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><span class="mark">◉</span> UAP CYPRUS CENTRE</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="../announcements.html">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="../updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="../friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="../ufo-cases.html">UFO Cases</a></li>
+          <li><a href="../historical-overview.html">Historical Overview</a></li>
+          <li><a href="../assertions.html">Assertions: UFOs are Real</a></li>
+          <li><a href="../characteristics.html">UFO/UAP Characteristics</a></li>
+          <li><a href="../investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="../scientific-papers.html">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="../cyprus.html">Cyprus</a></li>
+          <li><a href="../cyprus-cases.html" class="active">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="../data-collection.html">Data Collection</a></li>
+          <li><a href="../updb.html">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="../membership.html">Become a Member</a></li>
+          <li><a href="../supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../report-uap.html" class="nav-cta">🛰 Report a UAP</a></li>
+      <li>
+        <div class="lang-toggle">
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button id="btn-el" onclick="setLang('el')">ΕΛ</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
 
 <section class="hero">
   <div class="hero-content">
-    <h1>CASE TITLE HERE</h1>
-    <p>DATE · LOCATION</p>
+    <h1>
+      <span class="lang-en-inline">CASE TITLE HERE</span>
+      <span class="lang-el-inline">ΤΙΤΛΟΣ ΠΕΡΙΠΤΩΣΗΣ ΕΔΩ</span>
+    </h1>
+    <p>
+      <span class="lang-en-inline">DATE · LOCATION</span>
+      <span class="lang-el-inline">ΗΜΕΡΟΜΗΝΙΑ · ΤΟΠΟΘΕΣΙΑ</span>
+    </p>
   </div>
 </section>
 
 <div class="galaxy-bg">
   <main class="content">
 
-    <a href="../cyprus-cases.html" class="back-link">← Back to all Cyprus Cases</a>
+    <a href="../cyprus-cases.html" class="back-link">
+      <span class="lang-en-inline">← Back to all Cyprus Cases</span>
+      <span class="lang-el-inline">← Πίσω σε όλες τις Περιπτώσεις Κύπρου</span>
+    </a>
 
     <div class="section-block card-1">
       <div class="info-pills">
-        <div class="info-pill"><div class="label">Date</div><div class="value">—</div></div>
-        <div class="info-pill"><div class="label">Location</div><div class="value">—</div></div>
-        <div class="info-pill"><div class="label">Type</div><div class="value">—</div></div>
+        <div class="info-pill">
+          <div class="label">
+            <span class="lang-en-inline">Date</span>
+            <span class="lang-el-inline">Ημερομηνία</span>
+          </div>
+          <div class="value">—</div>
+        </div>
+        <div class="info-pill">
+          <div class="label">
+            <span class="lang-en-inline">Location</span>
+            <span class="lang-el-inline">Τοποθεσία</span>
+          </div>
+          <div class="value">—</div>
+        </div>
+        <div class="info-pill">
+          <div class="label">
+            <span class="lang-en-inline">Type</span>
+            <span class="lang-el-inline">Τύπος</span>
+          </div>
+          <div class="value">—</div>
+        </div>
       </div>
     </div>
 
     <div class="section-block card-2">
-      <h2>Description</h2>
-      <p>Case description goes here.</p>
+      <h2>
+        <span class="lang-en-inline">Description</span>
+        <span class="lang-el-inline">Περιγραφή</span>
+      </h2>
+
+      <span class="lang-en">
+        <p>Case description goes here in English.</p>
+      </span>
+
+      <span class="lang-el">
+        <p>Η περιγραφή της περίπτωσης πηγαίνει εδώ στα Ελληνικά.</p>
+      </span>
     </div>
 
     <div class="section-block card-3">
-      <h2>Source Material</h2>
+      <h2>
+        <span class="lang-en-inline">Source Material</span>
+        <span class="lang-el-inline">Πηγαίο Υλικό</span>
+      </h2>
       <div class="case-gallery">
         <img src="../images/case-XXX/1.jpg" alt="Image 1">
       </div>
     </div>
 
     <div class="section-block card-4">
-      <h2>Notes</h2>
-      <p>Additional notes.</p>
+      <h2>
+        <span class="lang-en-inline">Notes</span>
+        <span class="lang-el-inline">Σημειώσεις</span>
+      </h2>
+      <p>
+        <span class="lang-en-inline">Additional notes in English.</span>
+        <span class="lang-el-inline">Πρόσθετες σημειώσεις στα Ελληνικά.</span>
+      </p>
     </div>
 
   </main>
 </div>
 
-<footer class="site-footer">© Fieland WebArts 2024–2026 · UAP Cyprus Centre</footer>
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
 
 <script>
+  // ===== LANGUAGE TOGGLE =====
+  function setLang(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'el' ? 'el' : 'en');
+    var btnEn = document.getElementById('btn-en');
+    var btnEl = document.getElementById('btn-el');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    if (btnEl) btnEl.classList.toggle('active', lang === 'el');
+    localStorage.setItem('uapcy_lang', lang);
+  }
+  // Restore saved language on load
+  const savedLang = localStorage.getItem('uapcy_lang');
+  if (savedLang === 'el') setLang('el');
+
+  // ===== MOBILE DROPDOWN TOGGLE =====
   document.querySelectorAll('.nav-menu > li > a').forEach(link => {
     link.addEventListener('click', e => {
       const parent = link.parentElement;
