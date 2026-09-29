@@ -1,10 +1,12 @@
 /* ============ UAP CYPRUS CENTRE — MODERN v15 (Solid Card Classes) ============ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* ← Fix A: added &subset=greek,greek-ext,latin,latin-ext so Greek ω renders in Inter, not a fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&subset=greek,greek-ext,latin,latin-ext');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* ← Fix C: added Noto Sans / Segoe UI / Helvetica Neue as Greek-capable fallbacks before system-ui */
+  font-family: 'Inter', 'Noto Sans', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
   color: #e2e8f0;
   background: #0a1628;
   line-height: 1.75;
@@ -520,6 +522,14 @@ body[data-lang="el"] .lang-el { display: block; }
 body[data-lang="en"] .lang-en-inline { display: inline; }
 body[data-lang="el"] .lang-el-inline { display: inline; }
 .lang-en-inline, .lang-el-inline { display: none; }
+
+/* ---------- GREEK TEXT — prevent glyph fallback compression (Fix A + Fix C) ---------- */
+.lang-el, .lang-el-inline,
+[lang="el"], [data-lang="el"] {
+  font-family: 'Inter', 'Noto Sans', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+  letter-spacing: normal;
+  font-feature-settings: normal;
+}
 
 /* ============================================================
    SOLID COLOR CARD CLASSES (used on all pages)
