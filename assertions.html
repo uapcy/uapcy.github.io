@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assertions: UFOs are Real — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=16">
+<style>
+/* ---- Entry block: video left, text right ---- */
+.entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.entry:last-child { border-bottom: none; padding-bottom: 0; }
+.entry-video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(148,163,184,0.3);
+  background: #000;
+}
+.entry-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.entry-video--unavailable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  padding-top: 0;
+  height: 220px;
+}
+.entry-text { color: #ffffff; }
+.entry-year {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.entry-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.entry-role {
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.entry-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  opacity: 0.95;
+  margin-bottom: 0.7rem;
+}
+.entry-quote {
+  font-style: italic;
+  opacity: 0.95;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(125,211,252,0.5);
+  margin: 0.8rem 0;
+}
+.entry-link {
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.entry-link:hover { color: #a5f3fc; }
+.entry-chapters {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+.entry-chapters a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,0.3);
+}
+.entry-chapters a:hover { color: #a5f3fc; }
+@media (max-width: 780px) {
+  .entry { grid-template-columns: 1fr; }
+  .entry-chapters { columns: 1; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span class="mark">◉</span> UAP CYPRUS CENTRE</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="important-ufo-cases.html">Important UFO Cases</a></li>
+          <li><a href="assertions.html" class="active">Assertions: UFOs are Real</a></li>
+          <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="scientific-papers.html">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="cyprus.html">Cyprus</a></li>
+          <li><a href="cyprus-cases.html">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="data-collection.html">Data Collection</a></li>
+          <li><a href="updb.html">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="report-uap.html" class="nav-cta">🛰 Report a UAP</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Assertions: UFOs are Real</h1>
+    <p>First-hand testimony from heads of state, astronauts, military officers and scientists</p>
+  </div>
+</section>
+
+<div class="galaxy-bg">
+  <main class="content">
+
+    <p class="lead card-1">
+      This page collects short, verifiable, first-hand statements from individuals who have
+      held senior positions in government, the military, the intelligence community, or
+      scientific research — and who have publicly stated that the UAP phenomenon is real,
+      or that they have personally encountered it. The entries are arranged chronologically
+      by the date of the event or witness account, from the 1960s to the present. No
+      editorial framing is added; the reader is invited to assess each statement on its
+      own merits.
+    </p>
+
+    <div class="section-block card-2">
+      <h2>First-Hand Testimony</h2>
+
+      <!-- ===================== 1965 — James McDivitt ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/K3pF8ABoe14"
+                  title="Gemini IV astronaut James McDivitt on his UFO sighting"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">4 June 1965</span>
+          <div class="entry-name">Gemini IV astronaut James McDivitt talks about his UFO sighting in space</div>
+          <div class="entry-role">NASA astronaut · Commander, Gemini IV and Apollo 9</div>
+          <div class="entry-desc">
+            During the Gemini IV mission, McDivitt observed and photographed an object from
+            orbit that he could not identify. He discussed the sighting in an interview with
+            Mario Machado.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=K3pF8ABoe14" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 1974 — Ronald Reagan ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/e-TgQWVcxU4"
+                  title="Ronald Reagan's UFO encounter"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">19 September 1974</span>
+          <div class="entry-name">Ronald Reagan's UFO Encounter</div>
+          <div class="entry-role">Governor of California (1967–1975), later 40th President of the United States</div>
+          <div class="entry-desc">
+            Reagan's UFO encounter on 19 September 1974, while he was Governor of California,
+            sparked a lifelong interest in the subject. As President, he addressed the 42nd
+            Session of the United Nations General Assembly in 1987. In 1984 he created the
+            Strategic Defense Initiative (SDI), also known as the "Star Wars program"
+            (renamed in 1993, and currently managed by the National Defense Space Architecture).
+          </div>
+          <div class="entry-quote">
+            "Can we and all nations not live in peace? In our obsession with antagonisms of
+            the moment, we often forget how much unites all the members of humanity. Perhaps
+            we need some outside, universal threat to make us recognize this common bond. I
+            occasionally think how quickly our differences worldwide would vanish if we were
+            facing an alien threat from outside this world. And yet, I ask you, is not an
+            alien force already among us?"
+          </div>
+          <a class="entry-link" href="https://www.presidency.ucsb.edu/documents/address-the-42d-session-the-united-nations-general-assembly-new-york-new-york" target="_blank" rel="noopener">Full UN address (PDF/transcript) →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 1997 — Philip Corso ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/NWg5IZgssGs"
+                  title="1997 Phillip Corso complete interview"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">1997</span>
+          <div class="entry-name">US Army Col. Philip Corso — complete interview</div>
+          <div class="entry-role">US Army Colonel, former National Security Council staff</div>
+          <div class="entry-desc">
+            Author of the book <em>The Day After Roswell</em>. His book is described here as
+            the most detailed and authoritative account of what happened with the advanced
+            technologies obtained from the craft and bodies recovered in the Roswell crash.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=NWg5IZgssGs" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2005 — Paul Hellyer ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>External video — click the link below</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2005</span>
+          <div class="entry-name">Paul Hellyer on UFOs</div>
+          <div class="entry-role">Former Canadian Minister of National Defence (1963–1967) and Member of Parliament (1958–1974)</div>
+          <div class="entry-desc">
+            In 2005, the former Canadian Minister of National Defence publicly announced that
+            he believed in the existence of UFOs, having seen one with his late wife and
+            friends — though he had discounted the experience at the time. In his 2010 book
+            <em>Light at the End of the Tunnel</em>, Mr. Hellyer claimed that the US has a
+            "shadow government that has black ops installations that have already created new
+            forms of energy using extra-terrestrial technology."
+          </div>
+          <a class="entry-link" href="https://www.tvo.org/video/archive/hon-paul-hellyer-on-ufos" target="_blank" rel="noopener">Watch on TVO →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2005 — Gordon Cooper ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/ultdRkS-gME"
+                  title="Gordon Cooper: An Astronaut and His UFO Experiences"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2005</span>
+          <div class="entry-name">Astronaut Gordon Cooper: An Astronaut and His UFO Experiences</div>
+          <div class="entry-role">NASA astronaut · Mercury and Gemini programmes</div>
+          <div class="entry-desc">
+            Gordon Cooper publicly described UFO experiences from his career as a NASA
+            astronaut, including an encounter during the Mercury programme at Edwards Air
+            Force Base.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=ultdRkS-gME" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2008 — Edgar Mitchell ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/3CCOKsfkzGc"
+                  title="Dr Edgar Mitchell on ET visitation"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2008</span>
+          <div class="entry-name">Dr Edgar Mitchell on ET visitation, crashed craft, recovered bodies and disinformation programmes</div>
+          <div class="entry-role">NASA astronaut · Apollo 14 Lunar Module Pilot, sixth man on the Moon</div>
+          <div class="entry-desc">
+            Dr Edgar Mitchell stated publicly that he believed extraterrestrial visitation
+            was real, that crashed craft and recovered bodies existed, and that disinformation
+            programmes had been used to conceal the subject from the public.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=3CCOKsfkzGc" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2010s — Garry Nolan ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/uTCc2-1tbBQ"
+                  title="Garry Nolan: UFOs and Aliens — Lex Fridman Podcast #262"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2022</span>
+          <div class="entry-name">Garry Nolan: UFOs and Aliens — Lex Fridman Podcast #262</div>
+          <div class="entry-role">Professor, Stanford University School of Medicine</div>
+          <div class="entry-desc">
+            Garry Nolan is a professor at Stanford University School of Medicine. His research
+            is in microbiology, immunology, bio-computation, and analysis of UFO artifacts,
+            materials, and reports of UFO encounters.
+          </div>
+          <div class="entry-chapters">
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=0s" target="_blank" rel="noopener">0:00</a> Introduction<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=43s" target="_blank" rel="noopener">0:43</a> Biology<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=396s" target="_blank" rel="noopener">6:36</a> Alien civilizations<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=640s" target="_blank" rel="noopener">10:40</a> UFO encounters<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=2860s" target="_blank" rel="noopener">47:40</a> Atacama skeleton<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=3297s" target="_blank" rel="noopener">54:57</a> UFO materials<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=3979s" target="_blank" rel="noopener">1:06:19</a> Jacques Vallée<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=4227s" target="_blank" rel="noopener">1:10:27</a> UFO data<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=4893s" target="_blank" rel="noopener">1:21:33</a> Alien hardware in US possession<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=5170s" target="_blank" rel="noopener">1:26:10</a> Bob Lazar<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=5345s" target="_blank" rel="noopener">1:29:05</a> Avi Loeb and Oumuamua<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=5587s" target="_blank" rel="noopener">1:33:07</a> Advice for young people<br>
+            <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ&t=5995s" target="_blank" rel="noopener">1:39:55</a> Meaning of life
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 2020s — Eric Davis ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>Video reference pending</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2020s</span>
+          <div class="entry-name">Dr Eric Davis</div>
+          <div class="entry-role">Aerospace consultant and physicist</div>
+          <div class="entry-desc">
+            Dr Eric Davis is a leading expert in special theories and data analysis. He knows
+            the director of a company that held six craft obtained from foreign countries
+            which the company was attempting to understand. According to Davis, they succeeded
+            in activating one craft — which remained airborne, because they could not bring it
+            back down.
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 2022 — 5 intelligence directors ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>Video currently unavailable on YouTube</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2022</span>
+          <div class="entry-name">2022 intelligence: 5 directors on UFOs</div>
+          <div class="entry-role">Directors of US national intelligence and the CIA</div>
+          <div class="entry-desc">
+            A compilation of public statements by five senior US intelligence officials:
+            <strong>James Clapper</strong> (former Director of National Intelligence),
+            <strong>John Ratcliffe</strong> (former DNI),
+            <strong>Avril Haines</strong> (Director of National Intelligence at the time),
+            <strong>Jim Semivan</strong> (former Director, CIA Clandestine Operations),
+            and <strong>John Brennan</strong> (former Director of the CIA).
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=P5sY-fTNkg8" target="_blank" rel="noopener">Original video link →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2023 — David Grusch ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>Video reference pending</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">9 June 2026</span>
+          <div class="entry-name">David Grusch</div>
+          <div class="entry-role">Former US intelligence officer</div>
+          <div class="entry-desc">
+            Speaking at a press conference outside the Capitol on 9 June 2026, organised by
+            the <em>Task Force on the Declassification of Federal Secrets</em>, Grusch stated
+            that the American government is aware of a continuous spectrum of non-human
+            intelligence — ranging from physical, bipedal life to ensouled plasma life.
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 2024 — Lue Elizondo ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>Video reference pending</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2024</span>
+          <div class="entry-name">Lue Elizondo</div>
+          <div class="entry-role">Former head of the Pentagon's AATIP programme</div>
+          <div class="entry-desc">
+            Lue Elizondo was the former head of the Pentagon's classified AATIP programme for
+            the study of UFOs. Regarding the Roswell incident of 1947, he states that it
+            involved <strong>two</strong> flying objects. From the wreckage of both craft, the
+            authorities are said to have recovered <strong>four dead beings</strong>. This
+            claim is also made in his book, <em>Imminent</em>.
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 2024 — James T. Lacatski ===================== -->
+      <div class="entry">
+        <div class="entry-video entry-video--unavailable">
+          <div>Video reference pending</div>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2024</span>
+          <div class="entry-name">James T. Lacatski</div>
+          <div class="entry-role">Director, Advanced Aerospace Weapon System Applications Program (AAWSAP), DIA (2008–2016)</div>
+          <div class="entry-desc">
+            Lacatski recently stated that the United States possessed a craft of unknown
+            origin and had successfully gained access to its interior. The craft had a
+            configuration suitable for aerodynamic flight, but had no air intakes, no exhaust,
+            no wings, and no control surfaces. It appeared to have no engine, no fuel tanks,
+            and no fuel.
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== 2026 — Donald Trump ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/fT2rgAPQuX0"
+                  title="Trump Confirms Aliens Are REAL & Obama Is In Trouble!"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">19 February 2026</span>
+          <div class="entry-name">Trump Confirms Aliens Are REAL &amp; Obama Is In Trouble!</div>
+          <div class="entry-role">President of the United States</div>
+          <div class="entry-desc">
+            Coverage of President Trump's February 2026 statements on UFO/UAP declassification.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=fT2rgAPQuX0" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2026 — Barack Obama ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/xp6Ph5iTIgc"
+                  title="Reggie Watts to Barack Obama: What's w/ Dem Aliens?"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2026</span>
+          <div class="entry-name">Reggie Watts to Barack Obama: What's w/ Dem Aliens?</div>
+          <div class="entry-role">44th President of the United States</div>
+          <div class="entry-desc">
+            Late Late Show bandleader Reggie Watts uses his "question of the night" to press
+            President Barack Obama on his knowledge about UFOs — footage of which was being
+            declassified at the time.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=xp6Ph5iTIgc" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+      <!-- ===================== 2026 — Fife Symington ===================== -->
+      <div class="entry">
+        <div class="entry-video">
+          <iframe src="https://www.youtube.com/embed/v1Fh0g5wJ7A"
+                  title="Former Arizona Governor Fife Symington on witnessing the Phoenix Lights"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="entry-text">
+          <span class="entry-year">2026</span>
+          <div class="entry-name">Former Arizona Governor Fife Symington on witnessing the Phoenix Lights</div>
+          <div class="entry-role">Governor of Arizona (1991–1997)</div>
+          <div class="entry-desc">
+            Governor Symington publicly described witnessing the Phoenix Lights of 13 March
+            1997 — a mass sighting of a large, silent, V-shaped formation of lights over
+            Arizona and Nevada.
+          </div>
+          <a class="entry-link" href="https://www.youtube.com/watch?v=v1Fh0g5wJ7A" target="_blank" rel="noopener">Watch on YouTube →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-block card-4">
+      <h2>Reporting a Sighting</h2>
+      <p>
+        If you have witnessed a UAP event and wish to add your testimony to our public
+        record, please contact us via the <a href="report-uap.html">Report a UAP</a> form.
+        All reports are treated confidentially.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.addEventListener('click', e => {
+      const parent = link.parentElement;
+      if (parent.querySelector('.dropdown') && window.innerWidth <= 1000) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
