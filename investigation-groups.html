@@ -19,7 +19,6 @@
   line-height: 1.35;
   margin-bottom: 0.35rem;
 }
-.group-title .flag { margin-right: 0.4rem; }
 .group-meta {
   font-size: 0.9rem;
   color: #7dd3fc;
@@ -43,6 +42,67 @@
   text-decoration-color: rgba(255,255,255,0.5);
 }
 .group-link:hover { color: #a5f3fc; }
+
+/* ---- Country flag badge (CSS-drawn, no emoji dependency) ---- */
+.flag {
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+/* France — vertical blue/white/red */
+.flag-fr {
+  background: linear-gradient(
+    90deg,
+    #0055a4 0%, #0055a4 33.33%,
+    #ffffff 33.33%, #ffffff 66.66%,
+    #ef4135 66.66%, #ef4135 100%
+  );
+}
+/* United States — simplified stripes + blue canton */
+.flag-us {
+  background:
+    linear-gradient(90deg, #3c3b6e 0%, #3c3b6e 40%, transparent 40%),
+    repeating-linear-gradient(
+      180deg,
+      #b22234 0px, #b22234 2px,
+      #ffffff 2px, #ffffff 4px
+    );
+}
+/* Brazil — green field, yellow diamond, blue circle */
+.flag-br {
+  background:
+    radial-gradient(circle at 50% 50%, #002776 0%, #002776 22%, transparent 23%),
+    linear-gradient(135deg, transparent 42%, #ffdf00 42%, #ffdf00 58%, transparent 58%),
+    #009c3b;
+}
+/* Chile — white/red bands + blue canton with white star */
+.flag-cl {
+  background:
+    linear-gradient(90deg, #0039a6 0%, #0039a6 33%, transparent 33%),
+    linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #d52b1e 50%, #d52b1e 100%);
+}
+/* United Kingdom — Union Jack simplified */
+.flag-uk {
+  background:
+    linear-gradient(45deg, transparent 44%, #ffffff 44%, #ffffff 48%, #cf142b 48%, #cf142b 52%, #ffffff 52%, #ffffff 56%, transparent 56%),
+    linear-gradient(-45deg, transparent 44%, #ffffff 44%, #ffffff 48%, #cf142b 48%, #cf142b 52%, #ffffff 52%, #ffffff 56%, transparent 56%),
+    linear-gradient(90deg, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%),
+    linear-gradient(180deg, transparent 35%, #ffffff 35%, #ffffff 65%, transparent 65%),
+    #012169;
+}
+/* Greece — blue/white stripes + blue canton */
+.flag-gr {
+  background:
+    linear-gradient(90deg, #0d5eaf 0%, #0d5eaf 37%, transparent 37%),
+    linear-gradient(180deg, #0d5eaf 0%, #0d5eaf 11%, #ffffff 11%, #ffffff 22%, #0d5eaf 22%, #0d5eaf 33%, #ffffff 33%, #ffffff 44%, #0d5eaf 44%, #0d5eaf 55%, #ffffff 55%, #ffffff 66%, #0d5eaf 66%, #0d5eaf 77%, #ffffff 77%, #ffffff 88%, #0d5eaf 88%, #0d5eaf 100%);
+}
 
 /* ---- Section heading ---- */
 .section-heading {
@@ -135,7 +195,7 @@
       <h2>Government Bodies</h2>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇫🇷</span> France — GEIPAN</div>
+        <div class="group-title"><span class="flag flag-fr" aria-label="France"></span>France — GEIPAN</div>
         <div class="group-meta">Group for Study and Information on Unidentified Aerospace Phenomena · CNES</div>
         <div class="group-summary">
           GEIPAN provides scientific data to support the scientific exploitation of UAP
@@ -148,7 +208,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> United States — AARO</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>United States — AARO</div>
         <div class="group-meta">All-domain Anomaly Resolution Office · US Department of Defense</div>
         <div class="group-summary">
           Established in July 2022 within the US Department of Defense, AARO synchronises
@@ -161,7 +221,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇧🇷</span> Brazil — National Archives</div>
+        <div class="group-title"><span class="flag flag-br" aria-label="Brazil"></span>Brazil — National Archives</div>
         <div class="group-meta">National Aerospace Defense Command · Arquivo Nacional</div>
         <div class="group-summary">
           The government of Brazil ordered all military and civilian pilots, as well as air
@@ -175,7 +235,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇨🇱</span> Chile — SEFAA</div>
+        <div class="group-title"><span class="flag flag-cl" aria-label="Chile"></span>Chile — SEFAA</div>
         <div class="group-meta">Section for the Study of Anomalous Aerial Phenomena · DGAC</div>
         <div class="group-summary">
           The Committee for the Study of Anomalous Aerial Phenomena (CEFAA) was created in
@@ -190,7 +250,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇬🇧</span> United Kingdom — National Archives</div>
+        <div class="group-title"><span class="flag flag-uk" aria-label="United Kingdom"></span>United Kingdom — National Archives</div>
         <div class="group-meta">Official archive and publisher for the UK Government</div>
         <div class="group-summary">
           The United Kingdom National Archives released a wide range of UFO-related
@@ -206,7 +266,7 @@
       <h2>Private, Non-Profit & Academic Bodies</h2>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇬🇷</span> Grufon — Greek UFO Network</div>
+        <div class="group-title"><span class="flag flag-gr" aria-label="Greece"></span>Grufon — Greek UFO Network</div>
         <div class="group-meta">Greek UFO research network</div>
         <div class="group-summary">
           Grufon is a Greek UFO research network publishing UAP case records, research
@@ -220,7 +280,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇬🇷</span> Ερ.Ε.Ν.Ζω</div>
+        <div class="group-title"><span class="flag flag-gr" aria-label="Greece"></span>Ερ.Ε.Ν.Ζω</div>
         <div class="group-meta">Greek research group for the search for extraterrestrial life</div>
         <div class="group-summary">
           A Greek website for the search for extraterrestrial life. The main purpose of the
@@ -235,7 +295,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> UAPx</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>UAPx</div>
         <div class="group-meta">Non-profit scientific research organisation · founded 2021</div>
         <div class="group-summary">
           Founded in 2021 by a team of former military scientists, UAPx is a non-profit
@@ -251,7 +311,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> The Galileo Project — Harvard University</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>The Galileo Project — Harvard University</div>
         <div class="group-meta">Academic research project led by Prof. Avi Loeb</div>
         <div class="group-summary">
           The goal of the Galileo Project is to bring the search for extraterrestrial
@@ -267,7 +327,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> MUFON</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>MUFON</div>
         <div class="group-meta">Mutual UFO Network · founded 1969</div>
         <div class="group-summary">
           Founded in 1969 for "The Scientific Study of UFOs for the Benefit of Humanity,"
@@ -285,7 +345,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> The SETI Institute</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>The SETI Institute</div>
         <div class="group-meta">Non-profit research organisation · Northern California</div>
         <div class="group-summary">
           A non-profit research organisation located in Northern California. The Institute
@@ -298,7 +358,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> NASA UAP Independent Study Team</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>NASA UAP Independent Study Team</div>
         <div class="group-meta">NASA · commissioned June 2022</div>
         <div class="group-summary">
           In June 2022, NASA commissioned an independent study team to examine UAP from a
@@ -314,7 +374,7 @@
       </div>
 
       <div class="group">
-        <div class="group-title"><span class="flag">🇺🇸</span> The Scientific Coalition for UAP Studies (SCU)</div>
+        <div class="group-title"><span class="flag flag-us" aria-label="United States"></span>The Scientific Coalition for UAP Studies (SCU)</div>
         <div class="group-meta">Scientific research coalition · founded 2017</div>
         <div class="group-summary">
           SCU promotes and encourages the rigorous scientific examination of Unidentified
