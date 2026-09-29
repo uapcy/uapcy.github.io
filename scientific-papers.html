@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Papers — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=16">
+<style>
+/* ---- Category jump pills ---- */
+.cat-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.cat-jump a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.cat-jump a:hover {
+  background: #38bdf8;
+  color: #0a1628 !important;
+  border-color: #38bdf8;
+}
+
+/* ---- Category heading ---- */
+.cat-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(56,189,248,0.3);
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 100px;
+}
+.cat-heading:first-of-type { margin-top: 0; }
+
+/* ---- Paper row ---- */
+.paper {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.paper:last-child { border-bottom: none; padding-bottom: 0; }
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+.paper-meta {
+  font-size: 0.92rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  margin-bottom: 0.55rem;
+  letter-spacing: 0.2px;
+}
+.paper-summary {
+  font-size: 0.98rem;
+  color: #ffffff;
+  opacity: 0.92;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+}
+.paper-link {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.paper-link:hover { color: #a5f3fc; }
+
+/* ---- Type tag ---- */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.tag-peer { background: #10b981; color: #ffffff; }
+.tag-preprint { background: #f59e0b; color: #1a1a1a; }
+.tag-field { background: #3b82f6; color: #ffffff; }
+.tag-journal { background: #8b5cf6; color: #ffffff; }
+.tag-contested { background: #ef4444; color: #ffffff; }
+
+/* ---- Sub-list inside grouped paper ---- */
+.paper-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0.6rem 1rem;
+  border-left: 2px solid rgba(56,189,248,0.3);
+}
+.paper-sublist li {
+  font-size: 0.95rem;
+  color: #ffffff;
+  opacity: 0.9;
+  padding: 0.35rem 0 0.35rem 1rem;
+  line-height: 1.5;
+}
+.paper-sublist li a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,0.4);
+}
+.paper-sublist li a:hover { color: #a5f3fc; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span class="mark">◉</span> UAP CYPRUS CENTRE</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="important-ufo-cases.html">Important UFO Cases</a></li>
+          <li><a href="assertions.html">Assertions: UFOs are Real</a></li>
+          <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="scientific-papers.html" class="active">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="cyprus.html">Cyprus</a></li>
+          <li><a href="cyprus-cases.html">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="data-collection.html">Data Collection</a></li>
+          <li><a href="updb.html">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="report-uap.html" class="nav-cta">🛰 Report a UAP</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Scientific Papers</h1>
+    <p>Peer-reviewed research, field studies, and government investigations of UAP</p>
+  </div>
+</section>
+
+<div class="galaxy-bg">
+  <main class="content">
+
+    <p class="lead card-1">
+      Despite the persistent popular belief that science has ignored the UFO phenomenon, the
+      study of UAP has a substantial peer-reviewed literature stretching back more than half
+      a century. The papers collected here represent the current scientific work — from
+      archival astronomy and instrumented field studies, to physics analyses of anomalous
+      flight characteristics and materials forensics. Each entry is tagged by its
+      publication type: <strong>peer-reviewed</strong>, <strong>preprint</strong>,
+      <strong>field report</strong>, or <strong>journal</strong>.
+    </p>
+
+    <div class="section-block card-2">
+      <h2>Jump to Category</h2>
+      <div class="cat-jump">
+        <a href="#cat-astronomy">Astronomy & Archival Plates</a>
+        <a href="#cat-field">Field Studies & Instrumentation</a>
+        <a href="#cat-physics">Flight Characteristics & Physics</a>
+        <a href="#cat-aviation">Aviation Safety</a>
+        <a href="#cat-materials">Materials & Isotope Analysis</a>
+        <a href="#cat-theory">Hypotheses & Theory</a>
+        <a href="#cat-government">Government & Historical Studies</a>
+        <a href="#cat-journals">Journals & Research Organisations</a>
+      </div>
+    </div>
+
+    <div class="section-block card-3">
+      <h2>Peer-Reviewed Literature</h2>
+
+      <!-- ============================================================ -->
+      <!-- ASTRONOMY & ARCHIVAL PLATES                                   -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-astronomy">Astronomy & Archival Plates</div>
+
+      <div class="paper">
+        <div class="paper-title">Fast Astronomical Transients in Archival Photographic Plates: Using Optical Aberrations as a Tool for Discerning Real Images from Plate Artifacts</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Ivo Busko (PhD astronomer, former NASA engineer)
+        </div>
+        <div class="paper-summary">
+          Analysis of pre-Sputnik photographic plates from a German telescope known to suffer
+          from severe optical aberrations. Busko demonstrated that the transients appear on
+          the plates and exhibit the same aberrations as the stars themselves — slightly
+          narrower and sharper, consistent with brief flashes. This proves the transient light
+          passed through the telescope optics, indicating real objects producing light rather
+          than plate defects or cosmic-ray contamination. Busko also showed the transients
+          cluster spatially and correlate with periods near nuclear tests.
+        </div>
+        <a class="paper-link" href="https://arxiv.org/pdf/2606.08319" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">A glint in the eye: Photographic plate archive searches for non-terrestrial artefacts</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Villarroel, Mattsson, Guergouri, Solano, Geier, Dom, Ward
+        </div>
+        <div class="paper-summary">
+          Presents a method for identifying Non-Terrestrial Artefacts (NTAs) in or near
+          geosynchronous Earth orbits using old photographic plates exposed before the launch
+          of the first human satellite in 1957. Shows that even small pieces of reflective
+          debris in orbit can be identified through searches for multiple transients. Provides
+          probability calculations for distinguishing real point sources from plate defects,
+          and sets an upper limit for NTAs with reflective surfaces in geosynchronous orbits.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Is there a background population of high-albedo objects in geosynchronous orbits around Earth?</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Villarroel, Solano, Guergouri, Streblyanska, Mattsson, Bär, Mimouni, Geier, Gupta, Okororie, Laggoune, Shultz, Freitas, Ward · 2022
+        </div>
+        <div class="paper-summary">
+          First optical search for non-terrestrial artifacts near Earth using the First Palomar
+          Sky Survey. Searches for simultaneous transients that are point-like and aligned.
+          Provides a shortlist of candidate transients that require microscope examination to
+          separate celestial sources from plate defects. Explores a possible interpretation in
+          terms of fast reflections off high-albedo objects in geosynchronous orbits.
+        </div>
+        <a class="paper-link" href="https://doi.org/10.48550/arXiv.2204.06091" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">A bright triple transient that vanished within 50 minutes</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Solano, Marcy, Villarroel, Geier, Streblyanska, Lombardi, Bär, Andruk · 2023
+        </div>
+        <div class="paper-summary">
+          Reports three optically bright (~15th mag) point-sources within 10 arcseconds of
+          each other that vanished within one hour, based on two consecutive Palomar
+          Observatory exposures on 19 July 1952. The three sources have remained absent in
+          exposures during 71 years. When bright in 1952, the most isolated transient had a
+          profile nearly the same as comparison stars, implying sub-arcsecond angular size
+          with no elongation due to movement. The explanation for these transients remains
+          unclear.
+        </div>
+        <a class="paper-link" href="https://arxiv.org/abs/2310.09035" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- FIELD STUDIES & INSTRUMENTATION                               -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-field">Field Studies & Instrumentation</div>
+
+      <div class="paper">
+        <div class="paper-title">Eye on the Sky: A UAP Research and Field Study off New York's Long Island Coast</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          John Joseph Tedesco, Gerald Thomas Tedesco · 2024
+        </div>
+        <div class="paper-summary">
+          Ten-month field study at Robert Moses State Park on Long Island, NY, to determine
+          whether aerial phenomena of unknown nature exist over a coastal location. Used
+          forensic engineering principles, 3 cm X-band radar in two scan geometries, and
+          multispectral electro-optical devices. Data collected across VIS, NIR, SWIR, LWIR,
+          UVA/UVB/UVC, and ionizing radiation (alpha, beta, gamma, X-ray).
+        </div>
+        <a class="paper-link" href="https://doi.org/10.4236/ojapps.2024.148152" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Initial Results from the First Field Expedition of UAPx to Study Unidentified Anomalous Phenomena</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Szydagis, Knuth, Kugielsky, Levy, McGowan, Phelan, Voorhis · 2023
+        </div>
+        <div class="paper-summary">
+          In July 2021, UAlbany Department of Physics faculty participated in a week-long
+          field expedition with UAPx in Avalon, California. Reviews hardware and software
+          techniques employed, discusses successes and failures, and provides lessons for
+          future expeditions. Deployed visible-light and infrared cameras plus sensors for
+          non-EM emissions. Reports on 600+ hours of untriggered IR video and 55 hours of
+          background radiation measurements. Focuses on one remaining ambiguity: a dark spot
+          possibly coincident with ionizing radiation that resists a prosaic explanation.
+        </div>
+        <a class="paper-link" href="https://arxiv.org/abs/2312.00558" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Exploring Unidentified Aerospace Phenomena Through Instrumented Field Studies: Historical Insights, Current Challenges, and Future Directions</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Philippe Ailleris · January 2024
+        </div>
+        <div class="paper-summary">
+          Argues that UAP research requires a shift from narrative-based approaches to
+          scientific and technology-based study. Reviews the benefits and considerations of
+          instrumented field studies, highlighting common limitations. Provides an overview of
+          past and current UAP military and civilian projects and a timetable of instrumented
+          projects spanning 1950–2023. Concludes with recommendations for future field
+          experiments using newer technologies including AI, big data analytics, and satellite
+          imagery.
+        </div>
+        <a class="paper-link" href="https://doi.org/10.59661/001c.92682" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">The Galileo Project — UAP Search Publications</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          Harvard University · 2023
+        </div>
+        <div class="paper-summary">
+          The Galileo Project, led by Prof. Avi Loeb at Harvard, has published its methods and
+          instrumentation design across five papers in the <em>Journal of Astronomical
+          Instrumentation</em> (Volume 12, Issue 01, Special Issue on UAP Instrumentation,
+          March 2023).
+        </div>
+        <ul class="paper-sublist">
+          <li>Scientific method — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400068" target="_blank" rel="noopener">Read →</a></li>
+          <li>Hardware & software — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400020" target="_blank" rel="noopener">Read →</a></li>
+          <li>Passive radar — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400044" target="_blank" rel="noopener">Read →</a></li>
+          <li>Using satellites — <a href="https://worldscientific.com/doi/epdf/10.1142/S225117172340007X" target="_blank" rel="noopener">Read →</a></li>
+          <li>Acoustic sensors — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400056" target="_blank" rel="noopener">Read →</a></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- FLIGHT CHARACTERISTICS & PHYSICS                              -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-physics">Flight Characteristics & Physics</div>
+
+      <div class="paper">
+        <div class="paper-title">Estimating Flight Characteristics of Anomalous Unidentified Aerial Vehicles</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Knuth, Powell, Reali · <em>Entropy</em> 21(10):939 · 2019
+        </div>
+        <div class="paper-summary">
+          Estimates lower bounds on accelerations exhibited by anomalous craft observed during
+          well-documented encounters, including the 2004 Nimitz Carrier Group encounters.
+          Estimated accelerations range from ~100g to thousands of g's, with no observed air
+          disturbance, no sonic booms, and no evidence of excessive heat. Concludes the
+          observations are either fabricated, seriously in error, or exhibit technology far
+          more advanced than any known craft on Earth — and that the quality of witnesses and
+          tracking equipment favors the latter hypothesis.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Physical Constraints on Unidentified Aerial Phenomena</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Abraham (Avi) Loeb, Sean M. Kirkpatrick · 2023
+        </div>
+        <div class="paper-summary">
+          Derives physical constraints on interpretations of "highly maneuverable" UAP based
+          on standard physics. Shows that friction of UAP with surrounding air or water would
+          generate a bright optical fireball, ionization shell, and tail — implying radio
+          signatures. Concludes that the lack of these signatures could imply inaccurate
+          distance measurements (and hence derived velocity) for single-site sensors without
+          a range gate capability.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">"Down to Earth" Limits on Unidentified Aerial Phenomena</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Abraham Loeb · October 2022
+        </div>
+        <div class="paper-summary">
+          A rebuttal to Zhilyaev et al.'s reported observations of dark "phantom" objects
+          over Ukraine. Loeb shows that the friction of such objects with surrounding air
+          would have generated a bright optical fireball. Suggests that reducing the inferred
+          distance of the objects by a factor of ten is fully consistent with the size and
+          speed of artillery shells.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Hypersonic Unidentified Aerial Objects</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Geoffrey W. Marcy, Beatriz Villarroel · 2023
+        </div>
+        <div class="paper-summary">
+          An addendum to Loeb's paper, exploring whether hypersonic objects of ~10 m size
+          moving at ~10 km/s would necessarily produce a bright optical fireball. Argues that
+          aircraft engineered with a nanoscale frontal cross-sectional area would drastically
+          reduce air "plow-through" and energy deposition, minimizing any meteor trail — as
+          achieved by stealth drone aircraft. Notes the same principle benefits interstellar
+          spacecraft.
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- AVIATION SAFETY                                               -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-aviation">Aviation Safety</div>
+
+      <div class="paper">
+        <div class="paper-title">Impact of Unidentified Aerial Phenomena on Air Safety: Evidence from Airbus TCAS/ROSE Simulator</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Escolà-Gascón, Dagnall, Denovan, Drinkwater · <em>Journal of Air Transport Management</em>, Vol. 119 · August 2024
+        </div>
+        <div class="paper-summary">
+          Study of 408 airline pilots in Airbus TCAS/ROSE simulators, testing how causal
+          illusions interact with perceptual biases. Results indicated causal illusions were
+          82.4% predictive of UAP sightings only when "magical inference" was present.
+          Argues that some UAP sightings may be explained as cognitive biases — and that
+          these pose a threat to aviation safety if pilots or aircraft AIs detect them in an
+          irrational way.
+        </div>
+        <a class="paper-link" href="https://doi.org/10.1016/j.jairtraman.2024.102617" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">An Environmental Analysis of Public UAP Sightings and Sky View Potential</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Medina, Brewer, Kirkpatrick
+        </div>
+        <div class="paper-summary">
+          Bayesian regression analysis of over 98,000 publicly reported UAP sightings in the
+          continental US between 2001 and 2020. Tests hypotheses about sky view potential
+          (light pollution, tree canopy, cloud cover) and the potential for objects to be
+          present (aircraft and military installations). Finds credible correlations
+          suggesting people see more phenomena when they have more opportunity to.
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- MATERIALS & ISOTOPE ANALYSIS                                  -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-materials">Materials & Isotope Analysis</div>
+
+      <div class="paper">
+        <div class="paper-title">Improved Instrumental Techniques, Including Isotopic Analysis, Applicable to the Characterization of Unusual Materials with Potential Relevance to Aerospace Forensics</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Nolan, Vallée, Jiang, Lemke · <em>Progress in Aerospace Sciences</em> 128:100788 · 2022
+        </div>
+        <div class="paper-summary">
+          Reviews modern mass spectrometry techniques applicable to characterization of
+          unknown materials. Applies these to the study of a well-documented, still-unexplained
+          incident involving deposition of unknown material, with correlations between witness
+          patterns and laboratory analysis. The lessons are applicable to reverse engineering
+          of complex esoteric materials and aerospace forensics.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Isotope Ratios and Chemical Analysis of the 1957 Brazilian Ubatuba Fragment</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Powell, Swords, Rodeghier, Budinger · <em>Journal of Scientific Exploration</em> 36(1):39–48 · 2022
+        </div>
+        <div class="paper-summary">
+          HR-ICPMS analysis of a sample from the Ubatuba fragment collected in Brazil in 1957.
+          Magnesium isotope ratios were found to fall within terrestrial limits; isotope
+          ratios of trace elements (strontium, barium, copper, zinc) were inconclusive. Reviews
+          the history of chemical testing of the Ubatuba fragments from the 1960s to the 1980s
+          at multiple labs.
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- HYPOTHESES & THEORY                                           -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-theory">Hypotheses & Theory</div>
+
+      <div class="paper">
+        <div class="paper-title">Plasmoids — Self-Illuminating, Pulsating Plasma-Like UAPs</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Joseph RG, Planchon O, Impey C, Armstrong R, Gibson C, Schild R · SCIRP
+        </div>
+        <div class="paper-summary">
+          Proposes that a subset of UAP are plasmoids — self-illuminating, pulsating
+          plasma-like objects that come in many shapes and sizes. These are attracted to
+          electromagnetic activity, can make sharp turns, collide, and have been filmed by
+          NASA, the US Navy, and border patrol aircraft diving into the ocean. May cause
+          hallucinations and interfere with electronics. Argues plasmoids may represent a
+          fourth domain of life, while noting they cannot explain all UAPs — some of which
+          may be extraterrestrial.
+        </div>
+        <a class="paper-link" href="https://www.scirp.org/journal/paperinformation?paperid=136922" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">The Cryptoterrestrial Hypothesis: A Case for Scientific Openness to a Concealed Earthly Explanation for Unidentified Anomalous Phenomena</div>
+        <div class="paper-meta">
+          <span class="tag tag-peer">Peer-reviewed</span>
+          Lomas, Case, Masters · <em>Philosophy and Cosmology</em> 33 · 2024
+        </div>
+        <div class="paper-summary">
+          Proposes a third class of UAP hypothesis beyond conventional terrestrial and
+          extraterrestrial explanations: the "ultraterrestrial" hypothesis, with the
+          cryptoterrestrial subset being the notion that UAP may reflect activities of
+          intelligent beings concealed in stealth here on Earth (e.g. underground), in its
+          near environs (e.g. the Moon), or even "walking among us." Argues this possibility
+          should not be summarily dismissed.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Advanced Space Propulsion Based on Vacuum (Spacetime Metric) Engineering</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Harold E. Puthoff · 2012
+        </div>
+        <div class="paper-summary">
+          Proposes that empty space itself — the quantum vacuum, or spacetime metric — might
+          be engineered to provide energy and thrust for future space vehicles. Grounded in
+          modern physical theory. Discusses warp drives, traversable wormholes, and time
+          machines that provide for such vacuum engineering possibilities. Relevant to the
+          theoretical physics backdrop of UAP propulsion speculation.
+        </div>
+        <a class="paper-link" href="https://arxiv.org/abs/1204.2184" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- GOVERNMENT & HISTORICAL STUDIES                               -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-government">Government & Historical Studies</div>
+
+      <div class="paper">
+        <div class="paper-title">The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)</div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Knuth, Ailleris, Agrama, et al. · arXiv:2502.06794
+        </div>
+        <div class="paper-summary">
+          Reviews and summarises approximately 20 historical government studies dating from
+          1933 to the present (Scandinavia, WWII, US, Canada, France, Russia, China), plus
+          historical private research studies (France, UK, US) and recent scientific research
+          efforts (Ireland, Germany, Norway, Sweden, US). Dispel the misconception that UAPs
+          are an American phenomenon. Aims to enable future studies to draw on the depth of
+          prior documented experience.
+        </div>
+        <a class="paper-link" href="https://arxiv.org/pdf/2502.06794" target="_blank" rel="noopener">Read paper →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          <span class="tag tag-contested">Contested</span>
+          UAP Observations over Ukraine — Zhilyaev et al. (2022–2024)
+        </div>
+        <div class="paper-meta">
+          <span class="tag tag-preprint">Preprint</span>
+          Main Astronomical Observatory, NAS of Ukraine — with published rebuttals by Avi Loeb
+        </div>
+        <div class="paper-summary">
+          A series of papers by Boris Zhilyaev and colleagues at the Main Astronomical
+          Observatory of Ukraine report observations of "Cosmics" (bright) and "Phantoms"
+          (dark) objects over Kyiv, claimed to move at hypersonic speeds with sizes of
+          3–100 m. The observations are contested — astronomer Avi Loeb and others have
+          argued the objects are more consistent with artillery shells, insects, or
+          misidentified objects at closer distances. Both the claims and the rebuttals are
+          listed below so readers can assess the exchange directly.
+        </div>
+        <ul class="paper-sublist">
+          <li>Zhilyaev et al., <em>UAP I. Observations of Events</em> — arXiv:2208.11215</li>
+          <li>Zhilyaev et al., <em>UAP II. Evaluation of UAP Properties</em> — arXiv:2211.17085</li>
+          <li>Zhilyaev et al., <em>UAP over Kyiv</em> — DOI:10.13140/RG.2.2.20467.60966</li>
+          <li>Zhilyaev, <em>UAP. Heaven Battle</em> — ResearchGate publication 384081518</li>
+          <li>Zhilyaev, Petukhov, <em>Observations of Night Events</em> — 2024</li>
+          <li>Zhilyaev, Tcheng, Petukhov, <em>Observations of Variable Objects</em> — 2023</li>
+          <li>Zhilyaev, Caro, <em>Events over Kyiv and New York</em> — 2024</li>
+          <li style="margin-top: 0.5rem;"><strong>Rebuttal:</strong> Loeb, <em>"Down to Earth" Limits on UAP</em> — October 2022</li>
+          <li><strong>Rebuttal:</strong> Marcy & Villarroel, <em>Hypersonic Unidentified Aerial Objects</em> — 2023</li>
+        </ul>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Ukrainian UFO Archive and Soviet Legacy</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          Collection · May 2023
+        </div>
+        <div class="paper-summary">
+          A collection of publications concerning UFOs in Ukraine and the former Soviet Union,
+          compiling historical documents and contemporary research from the Soviet and
+          post-Soviet period. A companion volume to the Main Astronomical Observatory's
+          contemporary observation programme.
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- JOURNALS & RESEARCH ORGANISATIONS                             -->
+      <!-- ============================================================ -->
+      <div class="cat-heading" id="cat-journals">Journals & Research Organisations</div>
+
+      <div class="paper">
+        <div class="paper-title">Limina — The Journal of UAP Studies</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          Published by the Society for UAP Studies
+        </div>
+        <div class="paper-summary">
+          A peer-reviewed academic journal dedicated entirely to the study of UAP. Published
+          through Scholastica. Articles are freely available via the journal's website and
+          the publisher's platform.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Scientific Coalition for UAP Studies — Peer-Reviewed Articles</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          SCU
+        </div>
+        <div class="paper-summary">
+          The Scientific Coalition for UAP Studies (SCU) publishes peer-reviewed articles and
+          maintains a research library for the scientific study of UAP. A reference source
+          for primary literature and case analysis.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Journal of Astronomical Instrumentation — Special Issue on UAP Instrumentation</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          Guest Editors: Cloete, Watters, Little, Loeb · Volume 12, Issue 01 · March 2023
+        </div>
+        <div class="paper-summary">
+          A special issue of the <em>Journal of Astronomical Instrumentation</em> dedicated
+          to instrumentation and software for the detection and characterisation of
+          unidentified aerospace phenomena. Includes papers from the Galileo Project and
+          other research groups.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">IFEX — Interdisciplinary Research Center for Extraterrestrial Studies</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Journal</span>
+          University of Würzburg, Germany — Prof. Dr.-Ing. Hakan Kayal
+        </div>
+        <div class="paper-summary">
+          The University of Würzburg's interdisciplinary research centre dedicated to the
+          study of extraterrestrial intelligence and UAP. Operates the SkyCAM-5 instrument,
+          a dedicated UAP observation system. Publications and media articles are available
+          through the centre's website.
+        </div>
+        <a class="paper-link" href="https://www.informatik.uni-wuerzburg.de/en/aerospaceinfo/staff/kayal/research-activities/uap-seti/" target="_blank" rel="noopener">Visit centre →</a>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Scientific and Scholarly Articles about UFOs — Curated Bibliography</div>
+        <div class="paper-meta">
+          <span class="tag tag-journal">Reference</span>
+          Compiled by Chris Rutkowski, developed by Isaac Koi
+        </div>
+        <div class="paper-summary">
+          A curated bibliography of UFO-related articles published in peer-reviewed scientific
+          and academic journals — a demonstration that science has taken the subject seriously
+          across many decades, contrary to common belief.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-block card-4">
+      <h2>Submitting a Paper</h2>
+      <p>
+        If you are a researcher working on UAP-related topics and would like your work to be
+        considered for inclusion in this index, please contact us via the
+        <a href="report-uap.html">Report a UAP</a> form. We welcome peer-reviewed publications,
+        arXiv preprints, instrumented field study reports, and government research documents.
+        Please include the paper's full citation and a DOI or URL.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.addEventListener('click', e => {
+      const parent = link.parentElement;
+      if (parent.querySelector('.dropdown') && window.innerWidth <= 1000) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
