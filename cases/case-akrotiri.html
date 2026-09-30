@@ -10,10 +10,12 @@
 .info-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 1rem 1.25rem; }
 .info-pill .label { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; font-weight: 700; margin-bottom: 0.35rem; }
 .info-pill .value { font-size: 1.15rem; color: #ffffff; font-weight: 700; }
-.pdf-embed { position: relative; width: 100%; padding-top: 130%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,0.3); background: #0a1628; margin-top: 1.25rem; }
-.pdf-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.case-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+.case-gallery img { width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(148,163,184,0.3); display: block; }
 .back-link { display: inline-block; color: #7dd3fc; text-decoration: none; font-weight: 600; margin-bottom: 1.5rem; font-size: 1.05rem; }
 .back-link:hover { color: #38bdf8; }
+.pdf-embed { position: relative; width: 100%; height: 900px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,0.3); background: #0a1628; margin-top: 1.25rem; }
+.pdf-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 </style>
 </head>
 <body data-lang="en">
@@ -256,17 +258,18 @@
         <span class="lang-en-inline">
           Primary source: Robert Spearing, <em>"The Curious Case of the Gosport Fisherman"</em>,
           <em>Outer Limits Magazine</em>, December 2020, pp. 68–71. Reprinted with kind
-          permission of the author. The magazine issue is reproduced below.
+          permission of the author. The relevant issue is reproduced below.
         </span>
         <span class="lang-el-inline">
           Κύρια πηγή: Robert Spearing, <em>«The Curious Case of the Gosport Fisherman»</em>,
           <em>Outer Limits Magazine</em>, Δεκέμβριος 2020, σσ. 68–71. Ανατυπώνεται με την
-          ευγενική άδεια του συγγραφέα. Το τεύχος του περιοδικού αναπαράγεται παρακάτω.
+          ευγενική άδεια του συγγραφέα. Το σχετικό τεύχος αναπαράγεται παρακάτω.
         </span>
       </p>
 
       <div class="pdf-embed">
-        <iframe src="../images/case-akrotiri/OLM-1.pdf" title="Outer Limits Magazine, December 2020"></iframe>
+        <iframe src="../images/case-akrotiri/OLM-1.pdf"
+                title="Outer Limits Magazine — December 2020"></iframe>
       </div>
     </div>
 
