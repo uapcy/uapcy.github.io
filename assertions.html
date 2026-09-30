@@ -6,7 +6,7 @@
 <title>Assertions: UFOs are Real — UAP Cyprus Centre</title>
 <link rel="stylesheet" href="style.css?v=16">
 <style>
-/* ---- Entry block: video left, text right ---- */
+/* ---- Entry block: media left, text right ---- */
 .entry {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,7 +16,7 @@
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .entry:last-child { border-bottom: none; padding-bottom: 0; }
-.entry-video {
+.entry-media {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
@@ -25,21 +25,19 @@
   border: 1px solid rgba(148,163,184,0.3);
   background: #000;
 }
-.entry-video iframe {
+.entry-media iframe,
+.entry-media video {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   border: 0;
 }
-.entry-video--unavailable {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  padding-top: 0;
-  height: 220px;
+.entry-media img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .entry-text { color: #ffffff; }
 .entry-year {
@@ -166,7 +164,7 @@
 
       <!-- ===================== 2026 — Donald Trump ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/fT2rgAPQuX0"
                   title="Trump Confirms Aliens Are REAL & Obama Is In Trouble!"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -185,7 +183,7 @@
 
       <!-- ===================== 2026 — Barack Obama ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/xp6Ph5iTIgc"
                   title="Reggie Watts to Barack Obama: What's w/ Dem Aliens?"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -206,8 +204,11 @@
 
       <!-- ===================== 2026 — David Grusch ===================== -->
       <div class="entry">
-        <div class="entry-video entry-video--unavailable">
-          <div>Video reference pending</div>
+        <div class="entry-media">
+          <video controls preload="metadata">
+            <source src="videos/Grusch.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
         </div>
         <div class="entry-text">
           <span class="entry-year">2026</span>
@@ -224,8 +225,11 @@
 
       <!-- ===================== 2026 — Eric Davis ===================== -->
       <div class="entry">
-        <div class="entry-video entry-video--unavailable">
-          <div>Video reference pending</div>
+        <div class="entry-media">
+          <video controls preload="metadata">
+            <source src="videos/Davis.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
         </div>
         <div class="entry-text">
           <span class="entry-year">2026</span>
@@ -243,8 +247,11 @@
 
       <!-- ===================== 2024 — Lue Elizondo ===================== -->
       <div class="entry">
-        <div class="entry-video entry-video--unavailable">
-          <div>Video reference pending</div>
+        <div class="entry-media">
+          <video controls preload="metadata">
+            <source src="videos/Elizondo.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
         </div>
         <div class="entry-text">
           <span class="entry-year">2024</span>
@@ -262,8 +269,8 @@
 
       <!-- ===================== 2024 — James T. Lacatski ===================== -->
       <div class="entry">
-        <div class="entry-video entry-video--unavailable">
-          <div>Video reference pending</div>
+        <div class="entry-media">
+          <img src="images/Lacatski.png" alt="James T. Lacatski">
         </div>
         <div class="entry-text">
           <span class="entry-year">2024</span>
@@ -281,7 +288,7 @@
 
       <!-- ===================== 2014 — Fife Symington ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/v1Fh0g5wJ7A"
                   title="Former Arizona Governor Fife Symington on witnessing the Phoenix Lights"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -302,7 +309,7 @@
 
       <!-- ===================== 2008 — Edgar Mitchell ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/3CCOKsfkzGc"
                   title="Dr Edgar Mitchell on ET visitation"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -323,7 +330,7 @@
 
       <!-- ===================== 2005 — Gordon Cooper ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/ultdRkS-gME"
                   title="Gordon Cooper: An Astronaut and His UFO Experiences"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -344,8 +351,8 @@
 
       <!-- ===================== 2005 — Paul Hellyer ===================== -->
       <div class="entry">
-        <div class="entry-video entry-video--unavailable">
-          <div>External video — click the link below</div>
+        <div class="entry-media entry-video--unavailable">
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:0.95rem; letter-spacing:0.5px;">External video — click the link below</div>
         </div>
         <div class="entry-text">
           <span class="entry-year">2005</span>
@@ -365,7 +372,7 @@
 
       <!-- ===================== 1997 — Philip Corso ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/NWg5IZgssGs"
                   title="1997 Phillip Corso complete interview"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -386,7 +393,7 @@
 
       <!-- ===================== 1974 — Ronald Reagan ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/e-TgQWVcxU4"
                   title="Ronald Reagan's UFO encounter"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -417,7 +424,7 @@
 
       <!-- ===================== 1965 — James McDivitt ===================== -->
       <div class="entry">
-        <div class="entry-video">
+        <div class="entry-media">
           <iframe src="https://www.youtube.com/embed/K3pF8ABoe14"
                   title="Gemini IV astronaut James McDivitt on his UFO sighting"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
