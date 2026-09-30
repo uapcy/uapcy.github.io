@@ -5,6 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPDB (Open Database) — UAP Cyprus Centre</title>
 <link rel="stylesheet" href="style.css?v=16">
+<style>
+.group {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.group:last-child { border-bottom: none; padding-bottom: 0; }
+.group-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+.group-meta {
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.3px;
+}
+.group-summary {
+  font-size: 0.98rem;
+  color: #ffffff;
+  opacity: 0.92;
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+.group-link {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.group-link:hover { color: #a5f3fc; }
+</style>
 </head>
 <body>
 
@@ -48,7 +85,7 @@
       <li>
         <a href="#">Get Involved <span class="caret">▾</span></a>
         <ul class="dropdown">
-          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="../membership.html">Become a Member</a></li>
           <li><a href="supplemental-links.html">Supplemental Links</a></li>
         </ul>
       </li>
@@ -60,8 +97,8 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>UPDB</h1>
-    <p>UAP Public Database — Open access to our data</p>
+    <h1>Open Database</h1>
+    <p>Public resources for UAP case data and government documents</p>
   </div>
 </section>
 
@@ -69,28 +106,53 @@
   <main class="content">
 
     <p class="lead card-1">
-      The UAP Public Database (UPDB) is an open-access resource that we are building to share
-      validated observations, case files, and analytical findings with researchers, journalists,
-      and the public.
+      The following external databases provide public access to large collections of UAP
+      case data, government documents, and related research materials. Each resource is
+      maintained by an independent organisation and offers a different approach to
+      cataloguing the phenomenon — from AI-driven case aggregation to searchable archives
+      of official government releases.
     </p>
 
     <div class="section-block card-2">
-      <h2>Coming Soon</h2>
-      <p>
-        The UPDB is currently under development. Once launched, it will provide searchable access
-        to case reports, observational data, and analytical documents. Check our Announcements
-        page for updates.
-      </p>
-    </div>
+      <h2>External Public Databases</h2>
 
-    <div class="section-block card-3">
-      <h2>Data Principles</h2>
-      <p>
-        Our database is guided by three principles: <strong>transparency</strong> (data is
-        shared openly), <strong>privacy</strong> (witness identities are protected unless they
-        consent otherwise), and <strong>rigour</strong> (only verified and peer-reviewed
-        observations are published).
-      </p>
+      <div class="group">
+        <div class="group-title">PHENOMaiNON — Cases</div>
+        <div class="group-meta">AI-driven case database · 252,001 case files</div>
+        <div class="group-summary">
+          A cloud-native AI platform from PHENOM LLC that aggregates UAP case reports into
+          a single browsable master record. Users can filter cases by country, state,
+          object shape, theme, date range, and minimum number of corroborating sources.
+          Each case entry links through to its full case file and underlying references.
+        </div>
+        <a class="group-link" href="https://www.phenomainon.com/cases" target="_blank" rel="noopener">Visit PHENOMaiNON Cases →</a>
+      </div>
+
+      <div class="group">
+        <div class="group-title">The Black Vault — UFO Files Search Engine</div>
+        <div class="group-meta">Official US government release archive · 446 records</div>
+        <div class="group-summary">
+          A searchable archive of official UFO/UAP document releases from the United
+          States government. Each document has been processed with OCR so its full text
+          is searchable. The collection contains documents, videos, and images, and can
+          be filtered by agency, release batch, and file metadata.
+        </div>
+        <a class="group-link" href="https://www.theblackvault.com/documentarchive/ufo-files-search-engine/" target="_blank" rel="noopener">Search the archive →</a>
+      </div>
+
+      <div class="group">
+        <div class="group-title">UAP Records Archive</div>
+        <div class="group-meta">Independent machine-readable catalog</div>
+        <div class="group-summary">
+          A machine-readable dataset cataloguing US government UAP records and linking
+          directly to their authoritative sources — including the National Archives,
+          AARO, ODNI, NASA, FBI, and CIA. It includes a case layer of official case
+          designations and a media inventory of assets referenced across government
+          publications.
+        </div>
+        <a class="group-link" href="https://uap-archive.org/uap/data/" target="_blank" rel="noopener">Visit the archive →</a>
+      </div>
+
     </div>
 
   </main>
