@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Updates, Testimonies & Videos — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=16">
+<style>
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.case-card {
+  background: rgba(10,22,40,0.55);
+  border: 1px solid rgba(148,163,184,0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: #7dd3fc;
+  box-shadow: 0 20px 40px rgba(56,189,248,0.25);
+}
+.case-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+.case-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(220,38,38,0.92);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  padding-left: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+.case-card:hover .case-play { transform: translate(-50%, -50%) scale(1.1); }
+.case-body { padding: 1.15rem 1.25rem 1.35rem; }
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.case-meta {
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.75rem;
+}
+.case-readmore {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.category-heading {
+  grid-column: 1 / -1;
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(56,189,248,0.3);
+  padding-bottom: 0.5rem;
+  scroll-margin-top: 100px;
+}
+.category-heading:first-of-type { margin-top: 0; }
+.cat-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.cat-jump a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.cat-jump a:hover {
+  background: #38bdf8;
+  color: #0a1628 !important;
+  border-color: #38bdf8;
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span class="mark">◉</span> UAP CYPRUS CENTRE</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="updates.html" class="active">Updates, Testimonies & Videos</a></li>
+          <li><a href="friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="important-ufo-cases.html">Important UFO Cases</a></li>
+          <li><a href="assertions.html">Assertions: UFOs are Real</a></li>
+          <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="scientific-papers.html">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="cyprus.html">Cyprus</a></li>
+          <li><a href="cyprus-cases.html">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="data-collection.html">Data Collection</a></li>
+          <li><a href="updb.html">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="report-uap.html" class="nav-cta">🛰 Report a UAP</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Updates, Testimonies & Videos</h1>
+    <p>Congressional hearings, conferences, whistleblower testimonies and more</p>
+  </div>
+</section>
+
+<div class="galaxy-bg">
+  <main class="content">
+
+    <p class="lead card-1">
+      This archive collects significant videos relating to UAP — from congressional
+      hearings and open conferences to whistleblower testimonies, pilot reports, and
+      material analysis. Each entry links directly to its source. Videos are grouped by
+      theme, from most formal to most investigative.
+    </p>
+
+    <div class="section-block card-2">
+      <h2>Jump to Category</h2>
+      <div class="cat-jump">
+        <a href="#cat-congress">Congress Testimonies</a>
+        <a href="#cat-conferences">Open Conferences</a>
+        <a href="#cat-whistleblowers">Whistleblower Confessions</a>
+        <a href="#cat-pilots">Pilot Reports</a>
+        <a href="#cat-materials">Materials Analysis</a>
+        <a href="#cat-law">Law &amp; Policy Proposals</a>
+        <a href="#cat-documents">Important Documents</a>
+      </div>
+    </div>
+
+    <div class="section-block card-3">
+      <h2>Video Archive</h2>
+
+      <div class="case-grid">
+
+        <!-- ============================================================ -->
+        <!-- CONGRESS TESTIMONIES                                          -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-congress">Congress Testimonies</div>
+
+        <a href="https://www.youtube.com/watch?v=Efc9wTvrncY" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="Efc9wTvrncY">
+            <img class="case-thumb" src="https://img.youtube.com/vi/Efc9wTvrncY/hqdefault.jpg" alt="July 2023 Congressional UAP Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">House Oversight UAP Hearing — July 2023</div>
+            <div class="case-meta">2023 · Congress · Grusch, Fravor, Graves</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=kT2iWKZr0qA" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="kT2iWKZr0qA">
+            <img class="case-thumb" src="https://img.youtube.com/vi/kT2iWKZr0qA/hqdefault.jpg" alt="November 2024 Congressional UAP Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">House Oversight UAP Hearing — November 2024</div>
+            <div class="case-meta">2024 · Congress · Exposing the Truth</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=UfCzvS2a2sU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="UfCzvS2a2sU">
+            <img class="case-thumb" src="https://img.youtube.com/vi/UfCzvS2a2sU/hqdefault.jpg" alt="UAP Transparency and Whistleblower Protection Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Transparency and Whistleblower Protection Hearing</div>
+            <div class="case-meta">2025 · Congress · September 2025</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- OPEN CONFERENCES                                              -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-conferences">Open Conferences</div>
+
+        <a href="https://www.youtube.com/watch?v=4DrcG7VGgQU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="4DrcG7VGgQU">
+            <img class="case-thumb" src="https://img.youtube.com/vi/4DrcG7VGgQU/hqdefault.jpg" alt="National Press Club Event — Dr. Steven Greer">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">National Press Club — Dr. Steven Greer</div>
+            <div class="case-meta">2017 · Conference · Unlocking Hidden Tech</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@CitizenHearing" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="https://img.youtube.com/vi/placeholder/hqdefault.jpg" alt="Citizen Hearing on UFO Disclosure">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Citizen Hearing on UFO Disclosure</div>
+            <div class="case-meta">2013 · Conference · 40 witnesses, 10 countries</div>
+            <div class="case-readmore">Visit YouTube channel →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- WHISTLEBLOWER CONFESSIONS                                     -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-whistleblowers">Whistleblower Confessions</div>
+
+        <a href="https://www.youtube.com/watch?v=NWg5IZgssGs" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="NWg5IZgssGs">
+            <img class="case-thumb" src="https://img.youtube.com/vi/NWg5IZgssGs/hqdefault.jpg" alt="Philip Corso Interview">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Col. Philip Corso — Complete Interview</div>
+            <div class="case-meta">1997 · Whistleblower · The Day After Roswell</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- PILOT REPORTS                                                 -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-pilots">Pilot Reports</div>
+
+        <a href="https://www.youtube.com/watch?v=K3pF8ABoe14" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="K3pF8ABoe14">
+            <img class="case-thumb" src="https://img.youtube.com/vi/K3pF8ABoe14/hqdefault.jpg" alt="James McDivitt UFO sighting">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Gemini IV Astronaut James McDivitt</div>
+            <div class="case-meta">1965 · Pilot · Gemini IV sighting</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- MATERIALS ANALYSIS                                            -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-materials">Materials Analysis</div>
+
+        <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap" data-video-id="uTCc2-1tbBQ">
+            <img class="case-thumb" src="https://img.youtube.com/vi/uTCc2-1tbBQ/hqdefault.jpg" alt="Garry Nolan Lex Fridman Podcast">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Garry Nolan — UFOs and Aliens</div>
+            <div class="case-meta">2022 · Materials · Lex Fridman Podcast #262</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- LAW & POLICY PROPOSALS                                        -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-law">Law &amp; Policy Proposals</div>
+
+        <a href="https://www.govinfo.gov/content/pkg/BILLS-119hr1187ih/pdf/BILLS-119hr1187ih.pdf" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="images/law-uap-transparency-act.jpg" alt="UAP Transparency Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Transparency Act (H.R. 1187)</div>
+            <div class="case-meta">2025 · Law · Pending</div>
+            <div class="case-readmore">Read bill (PDF) →</div>
+          </div>
+        </a>
+
+        <a href="https://www.govtrack.us/congress/bills/119/hr5060/text/ih" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="images/law-uap-whistleblower.jpg" alt="UAP Whistleblower Protection Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Whistleblower Protection Act (H.R. 5060)</div>
+            <div class="case-meta">2025 · Law · Pending</div>
+            <div class="case-readmore">Read bill (PDF) →</div>
+          </div>
+        </a>
+
+        <a href="https://www.congress.gov/bill/118th-congress/senate-bill/2226" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="images/law-uap-disclosure-act.jpg" alt="UAP Disclosure Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Disclosure Act (S. 2226, 2023)</div>
+            <div class="case-meta">2023 · Law · Key provisions removed</div>
+            <div class="case-readmore">View on Congress.gov →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- IMPORTANT DOCUMENTS                                           -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-documents">Important Documents</div>
+
+        <a href="https://www.nationalarchives.gov.uk/ufos/" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="images/doc-uk-national-archives.jpg" alt="UK National Archives UFO files">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UK National Archives — UFO Files</div>
+            <div class="case-meta">2007–2009 · Documents · MoD UFO Desk</div>
+            <div class="case-readmore">Browse archive →</div>
+          </div>
+        </a>
+
+        <a href="https://www.nicap.org/NSID/NSID_DBListingbyDate.pdf" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img class="case-thumb" src="images/doc-nicap-listing.jpg" alt="NICAP UAP case listing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">NICAP — NSID Case Listing by Date</div>
+            <div class="case-meta">Historical · Documents · 334 pages</div>
+            <div class="case-readmore">View PDF →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="section-block card-4">
+      <h2>Reporting a Sighting</h2>
+      <p>
+        If you have witnessed a UAP event and wish to add your testimony to our public
+        record, please contact us via the <a href="report-uap.html">Report a UAP</a> form.
+        All reports are treated confidentially.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.addEventListener('click', e => {
+      const parent = link.parentElement;
+      if (parent.querySelector('.dropdown') && window.innerWidth <= 1000) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
