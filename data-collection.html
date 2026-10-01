@@ -5,6 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Collection — UAP Cyprus Centre</title>
 <link rel="stylesheet" href="style.css?v=16">
+<style>
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.case-card {
+  background: rgba(10,22,40,0.55);
+  border: 1px solid rgba(148,163,184,0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: #7dd3fc;
+  box-shadow: 0 20px 40px rgba(56,189,248,0.25);
+}
+.case-thumb {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+.case-thumb-contain {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  display: block;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+.case-body { padding: 1.15rem 1.25rem 1.35rem; }
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.case-meta {
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.75rem;
+}
+.case-readmore {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+@media (max-width: 640px) {
+  .case-thumb, .case-thumb-contain { height: 160px; }
+}
+</style>
 </head>
 <body>
 
@@ -61,7 +129,7 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Data Collection</h1>
-    <p>How we gather and validate observational data</p>
+    <p>Methods and systems we use to observe and analyse the sky</p>
   </div>
 </section>
 
@@ -69,37 +137,72 @@
   <main class="content">
 
     <p class="lead card-1">
-      Our data collection combines instrumented observations, volunteer reports, and validated
-      witness testimonies. Every piece of data is logged, timestamped, geolocated, and stored
-      for analysis.
+      UAP Cyprus collects information over Cypriot airspace using a combination of optical
+      cameras, passive radar, spectral analysis, and open-source observation networks. The
+      methods below describe the systems we operate, the software we use, and how each
+      contributes to our ongoing monitoring programme.
     </p>
 
     <div class="section-block card-2">
-      <h2>Instrumented Observation</h2>
-      <p>
-        We operate optical camera stations distributed across Cyprus, providing continuous
-        monitoring of the sky. Additional sensor data is collected from partner networks and
-        citizen scientists.
-      </p>
-    </div>
+      <h2>Observation Methods</h2>
 
-    <div class="section-block card-3">
-      <h2>Public Reports</h2>
-      <p>
-        Anyone can submit a UAP sighting report via our Report a UAP form. Reports are reviewed by
-        our investigative team, cross-referenced with instrument data where possible, and added
-        to the database (with the witness's permission).
-      </p>
-    </div>
+      <div class="case-grid">
 
-    <div class="section-block card-4">
-      <h2>Verification Process</h2>
-      <p>
-        All reported cases pass through a multi-step verification process: initial intake,
-        cross-referencing with aviation and meteorological data, instrument correlation, and
-        peer review. Findings are published on our site and shared with the wider research
-        community.
-      </p>
+        <a href="methods/method-ufodap.html" class="case-card">
+          <img class="case-thumb" src="methods/images/ufodap-screenshot.jpg" alt="UFODAP software">
+          <div class="case-body">
+            <div class="case-title">UFODAP Software</div>
+            <div class="case-meta">Automated optical analysis</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+        <a href="methods/method-photography.html" class="case-card">
+          <img class="case-thumb" src="methods/images/photography.jpg" alt="High-analysis photography">
+          <div class="case-body">
+            <div class="case-title">High-Analysis Photography</div>
+            <div class="case-meta">Full spectrum · IR · 4K · 120 fps</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+        <a href="methods/method-passive-radar.html" class="case-card">
+          <img class="case-thumb" src="methods/images/passive-radar.jpg" alt="SkyWatch passive radar">
+          <div class="case-body">
+            <div class="case-title">SkyWatch Passive Radar</div>
+            <div class="case-meta">Decentralized radar network</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+        <a href="methods/method-frequency.html" class="case-card">
+          <img class="case-thumb" src="methods/images/frequency.jpg" alt="Frequency detection">
+          <div class="case-body">
+            <div class="case-title">Frequency Detection</div>
+            <div class="case-meta">X and K band radar detection</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+        <a href="methods/method-sky360.html" class="case-card">
+          <img class="case-thumb-contain" src="methods/images/sky360.png" alt="Sky360 network">
+          <div class="case-body">
+            <div class="case-title">Sky360 Network</div>
+            <div class="case-meta">Open-source sky observation</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+        <a href="methods/method-lunar.html" class="case-card">
+          <img class="case-thumb" src="methods/images/lunar-rig.jpg" alt="Lunar observation rig">
+          <div class="case-body">
+            <div class="case-title">Lunar Observation Rig</div>
+            <div class="case-meta">Maksutov 60 · monochrome CMOS</div>
+            <div class="case-readmore">Read more →</div>
+          </div>
+        </a>
+
+      </div>
     </div>
 
   </main>
