@@ -55,6 +55,24 @@
   transition: background 0.2s;
 }
 .announcement-links a:hover { background: #0d5c6e; }
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(56,189,248,0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 </style>
 </head>
 <body data-lang="en">
@@ -149,6 +167,48 @@
         <span class="lang-en-inline">Latest Announcements</span>
         <span class="lang-el-inline">Πρόσφατες Ανακοινώσεις</span>
       </h2>
+
+      <!-- ============================================================ -->
+      <!-- NEW — Live video announcement -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">Live Stream</span>
+          <span class="lang-el-inline">Ζωντανή Μετάδοση</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">UAP Cyprus Centre — Live Stream</span>
+          <span class="lang-el-inline">UAP Cyprus Centre — Ζωντανή Μετάδοση</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              A new live stream from the UAP Cyprus Centre is now available. Watch the
+              full session below.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Μια νέα ζωντανή μετάδοση από το UAP Cyprus Centre είναι πλέον διαθέσιμη.
+              Παρακολουθήστε την πλήρη συνεδρία παρακάτω.
+            </p>
+          </span>
+        </div>
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/ugs9Rs78GPA"
+            title="UAP Cyprus Centre — Live Stream"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="announcement-links">
+          <a href="https://www.youtube.com/live/ugs9Rs78GPA" target="_blank" rel="noopener">
+            <span class="lang-en-inline">▶ Watch on YouTube</span>
+            <span class="lang-el-inline">▶ Παρακολουθήστε στο YouTube</span>
+          </a>
+        </div>
+      </div>
 
       <!-- ============================================================ -->
       <!-- 30/09/2026 — PPTX presentation -->
@@ -408,33 +468,6 @@
       </div>
 
     </div>
-
-    <!-- ============================================================ -->
-    <!-- TEMPLATE — copy this block to add a new announcement at the -->
-    <!-- top of the list above. Change date, title, body and links.  -->
-    <!-- ============================================================ -->
-    <!--
-    <div class="announcement">
-      <div class="announcement-date">
-        <span class="lang-en-inline">DD Month YYYY</span>
-        <span class="lang-el-inline">DD Μήνας YYYY</span>
-      </div>
-      <div class="announcement-title">
-        <span class="lang-en-inline">English title</span>
-        <span class="lang-el-inline">Ελληνικός τίτλος</span>
-      </div>
-      <div class="announcement-body">
-        <span class="lang-en"><p>English body text.</p></span>
-        <span class="lang-el"><p>Ελληνικό κείμενο.</p></span>
-      </div>
-      <div class="announcement-links">
-        <a href="announcements/FILENAME.pdf" target="_blank" rel="noopener">
-          <span class="lang-en-inline">📄 Read (PDF)</span>
-          <span class="lang-el-inline">📄 Διαβάστε (PDF)</span>
-        </a>
-      </div>
-    </div>
-    -->
 
   </main>
 </div>
