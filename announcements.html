@@ -55,11 +55,19 @@
   transition: background 0.2s;
 }
 .announcement-links a:hover { background: #0d5c6e; }
+
+/* ---- 50/50 split layout: video left, text right ---- */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  align-items: start;
+}
 .video-embed {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  margin-top: 1rem;
+  padding-bottom: 56.25%; /* 16:9 */
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(56,189,248,0.35);
@@ -72,6 +80,21 @@
   width: 100%;
   height: 100%;
   border: 0;
+}
+.split-text {
+  font-size: 0.98rem;
+  color: #ffffff;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+.split-text p { margin-bottom: 0.85rem; }
+.split-text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 800px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 </style>
 </head>
@@ -169,39 +192,65 @@
       </h2>
 
       <!-- ============================================================ -->
-      <!-- NEW — Live video announcement -->
+      <!-- 03/10/2026 — Ion Panidis video + text (split layout) -->
       <!-- ============================================================ -->
       <div class="announcement">
         <div class="announcement-date">
-          <span class="lang-en-inline">Live Stream</span>
-          <span class="lang-el-inline">Ζωντανή Μετάδοση</span>
+          <span class="lang-en-inline">3 October 2026</span>
+          <span class="lang-el-inline">3 Οκτωβρίου 2026</span>
         </div>
         <div class="announcement-title">
-          <span class="lang-en-inline">UAP Cyprus Centre — Live Stream</span>
-          <span class="lang-el-inline">UAP Cyprus Centre — Ζωντανή Μετάδοση</span>
+          <span class="lang-en-inline">Ion Panidis — Conference Recap, UAP &amp; High-Strangeness Phenomena, and the Atalanti Incident</span>
+          <span class="lang-el-inline">Ι. Πανίδης — Απολογισμός Συνεδρίου Αθήνας για UAP-Παράδοξα Φαινόμενα — Περιστατικό Αταλάντης</span>
         </div>
-        <div class="announcement-body">
-          <span class="lang-en">
-            <p>
-              A new live stream from the UAP Cyprus Centre is now available. Watch the
-              full session below.
-            </p>
-          </span>
-          <span class="lang-el">
-            <p>
-              Μια νέα ζωντανή μετάδοση από το UAP Cyprus Centre είναι πλέον διαθέσιμη.
-              Παρακολουθήστε την πλήρη συνεδρία παρακάτω.
-            </p>
-          </span>
+
+        <div class="split-layout">
+          <!-- Left: video -->
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/ugs9Rs78GPA"
+              title="Ion Panidis — UAP and the Atalanti Incident"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Right: text -->
+          <div class="split-text">
+            <span class="lang-en">
+              <p>
+                Ion Panidis has been part of research groups in Greece since 1990, visiting
+                landing sites, meeting contactees, and collecting UFO-related data. He has
+                written articles for <em>3rd Eye Magazine</em> and <em>Nexus Greece</em>,
+                and presents a program on Greek Radio called <em>"Invisible Travellers"</em>.
+                He is currently the President of the GRUFON–ERENZO Ufological Group in
+                Athens, Greece.
+              </p>
+              <p>
+                In this talk, Ion Panidis reviews the Athens conference on UAP and
+                high-strangeness phenomena, and discusses the Atalanti incident — one of
+                the most notable UFO cases in Greece.
+              </p>
+            </span>
+            <span class="lang-el">
+              <p>
+                Ο Ίων Πανίδης συμμετέχει σε ερευνητικές ομάδες στην Ελλάδα από το 1990,
+                επισκεπτόμενος τόπους προσγείωσης, συναντώντας μάρτυρες και συλλέγοντας
+                δεδομένα σχετικά με UFO. Έχει γράψει άρθρα για το περιοδικό
+                <em>3rd Eye Magazine</em> και το <em>Nexus Greece</em>, και παρουσιάζει
+                εκπομπή στον Ελληνικό Ραδιοφωνικό Σταθμό με τίτλο
+                <em>«Αόρατοι Ταξιδιώτες»</em>. Είναι σήμερα Πρόεδρος της ουφολογικής
+                ομάδας GRUFON–ERENZO στην Αθήνα.
+              </p>
+              <p>
+                Στην ομιλία του, ο Ίων Πανίδης κάνει απολογισμό του συνεδρίου της Αθήνας
+                για UAP και παράδοξα φαινόμενα, και συζητά το περιστατικό της Αταλάντης —
+                μία από τις πιο αξιοσημείωτες υποθέσεις UFO στην Ελλάδα.
+              </p>
+            </span>
+          </div>
         </div>
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/ugs9Rs78GPA"
-            title="UAP Cyprus Centre — Live Stream"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
+
         <div class="announcement-links">
           <a href="https://www.youtube.com/live/ugs9Rs78GPA" target="_blank" rel="noopener">
             <span class="lang-en-inline">▶ Watch on YouTube</span>
