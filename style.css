@@ -1,16 +1,14 @@
-/* ============ UAP CYPRUS CENTRE — MODERN v15 (Solid Card Classes) ============ */
-/* ← Fix A: added &subset=greek,greek-ext,latin,latin-ext so Greek ω renders in Inter, not a fallback */
+/* ============ UAP CYPRUS CENTRE — MODERN v16 (Standard Web Scale) ============ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&subset=greek,greek-ext,latin,latin-ext');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  /* ← Fix C: added Noto Sans / Segoe UI / Helvetica Neue as Greek-capable fallbacks before system-ui */
   font-family: 'Inter', 'Noto Sans', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
   color: #e2e8f0;
   background: #0a1628;
   line-height: 1.75;
-  font-size: 19px;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,7 +36,7 @@ body {
   gap: 0.9rem;
   color: #fff;
   font-weight: 900;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   text-decoration: none;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -46,11 +44,11 @@ body {
   white-space: nowrap;
 }
 .nav-logo .mark {
-  width: 48px; height: 48px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #7dd3fc, #0ea5e9 50%, #0369a1);
   display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.35rem;
+  color: #fff; font-size: 1.25rem;
   box-shadow: 0 0 24px rgba(56,189,248,0.6), inset 0 0 10px rgba(255,255,255,0.35);
   animation: pulse 3s ease-in-out infinite;
   flex-shrink: 0;
@@ -75,9 +73,9 @@ body {
   gap: 0.4rem;
   color: #e2e8f0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  padding: 0.85rem 1.05rem;
+  padding: 0.75rem 0.9rem;
   border-radius: 10px;
   transition: all 0.2s ease;
   letter-spacing: 0.1px;
@@ -95,7 +93,7 @@ body {
 }
 .nav-menu > li > a.active .caret { color: #0a1628; }
 .nav-menu .caret {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   opacity: 0.75;
   transition: transform 0.25s ease;
   margin-top: 2px;
@@ -111,8 +109,8 @@ body {
   background: linear-gradient(135deg, #10b981, #059669);
   color: #fff !important;
   font-weight: 800 !important;
-  font-size: 1.1rem !important;
-  padding: 0.9rem 1.6rem !important;
+  font-size: 0.98rem !important;
+  padding: 0.8rem 1.4rem !important;
   border-radius: 10px !important;
   margin-left: 0.75rem;
   box-shadow: 0 8px 20px rgba(16,185,129,0.4);
@@ -148,9 +146,9 @@ body {
   border: none;
   color: #94a3b8;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.2s;
@@ -169,11 +167,11 @@ body {
   display: inline-block;
   background: #10b981;
   color: #fff;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 0.22rem 0.65rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
   margin-left: 0.6rem;
   box-shadow: 0 0 12px rgba(16,185,129,0.55);
@@ -191,11 +189,11 @@ body {
   top: 100%;
   left: 0;
   margin-top: 8px;
-  min-width: 380px;
+  min-width: 340px;
   background: #0f2038;
   border: 1px solid rgba(56,189,248,0.22);
   border-radius: 12px;
-  padding: 0.75rem;
+  padding: 0.7rem;
   list-style: none;
   opacity: 0;
   visibility: hidden;
@@ -217,9 +215,9 @@ body {
   align-items: center;
   color: #e2e8f0;
   text-decoration: none;
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   font-weight: 500;
-  padding: 0.9rem 1.15rem;
+  padding: 0.8rem 1.05rem;
   border-radius: 8px;
   transition: all 0.15s;
   border-left: 2px solid transparent;
@@ -229,7 +227,7 @@ body {
   background: rgba(56,189,248,0.1);
   color: #7dd3fc;
   border-left-color: #38bdf8;
-  padding-left: 1.35rem;
+  padding-left: 1.25rem;
 }
 
 /* ---------- HAMBURGER ---------- */
@@ -241,13 +239,13 @@ body {
   padding: 0.6rem 1rem;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
-/* ---------- HERO (UNCHANGED) ---------- */
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: 340px;
+  min-height: 320px;
   background:
     linear-gradient(180deg, rgba(10,22,40,0.2) 0%, rgba(10,22,40,0.55) 60%, rgba(10,22,40,1) 100%),
     url('cyprus-hero.jpg') center/cover no-repeat;
@@ -256,7 +254,7 @@ body {
   justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 4rem 1.5rem 4.5rem;
+  padding: 3.5rem 1.5rem 4rem;
   overflow: hidden;
 }
 .hero::before {
@@ -279,9 +277,9 @@ body {
   from { opacity: 0.3; }
   to   { opacity: 0.65; }
 }
-.hero-content { position: relative; z-index: 2; max-width: 960px; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
 .hero h1 {
-  font-size: clamp(2.6rem, 5vw, 3.9rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 800;
   letter-spacing: 1.5px;
   background: linear-gradient(135deg, #ffffff 40%, #7dd3fc 100%);
@@ -289,12 +287,12 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 4px 30px rgba(56,189,248,0.5));
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 .hero p {
   color: #f1f5f9;
-  font-size: 1.3rem;
-  max-width: 780px;
+  font-size: 1.15rem;
+  max-width: 720px;
   margin: 0 auto;
   text-shadow: 0 2px 16px rgba(0,0,0,0.8);
   font-weight: 400;
@@ -304,7 +302,7 @@ body {
 .galaxy-bg {
   position: relative;
   background: url('galaxy.jpg') center/cover fixed no-repeat;
-  padding: 4.5rem 2rem 5.5rem;
+  padding: 4rem 2rem 5rem;
 }
 .content {
   max-width: 1000px;
@@ -327,7 +325,7 @@ body {
 .latest-update {
   max-width: 1000px;
   margin: 0 auto 2rem;
-  padding: 1.6rem 1.8rem;
+  padding: 1.5rem 1.7rem;
   display: flex;
   align-items: center;
   gap: 1.1rem;
@@ -362,12 +360,12 @@ body {
   color: #ffffff;
   display: block;
   margin-bottom: 0.3rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 .latest-update .text span {
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   opacity: 0.95;
 }
 .latest-update a {
@@ -376,7 +374,7 @@ body {
   text-decoration-color: rgba(255,255,255,0.5);
   text-underline-offset: 4px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   white-space: nowrap;
   transition: color 0.2s;
 }
@@ -384,11 +382,11 @@ body {
 
 /* ---------- LEAD / MISSION ---------- */
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #ffffff;
   margin-bottom: 2.5rem;
   line-height: 1.9;
-  padding: 2.1rem 2.1rem 2.1rem 2.3rem;
+  padding: 2rem 2rem 2rem 2.2rem;
   background: #3e4a5c;
   border: 1px solid rgba(148,163,184,0.4);
   border-left: 3px solid #94a3b8;
@@ -398,23 +396,23 @@ body {
 
 /* ---------- SECTION BLOCKS (default) ---------- */
 .section-block {
-  padding: 2.75rem;
+  padding: 2.5rem;
   margin-bottom: 2rem;
   transition: all 0.3s ease;
 }
 .section-block h2 {
-  font-size: 1.9rem;
+  font-size: 1.65rem;
   color: #ffffff;
   font-weight: 700;
-  margin-bottom: 1.8rem;
-  padding-bottom: 0.9rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 0.8rem;
   border-bottom: 2px solid #38bdf8;
   display: inline-block;
   letter-spacing: 0.3px;
 }
 .section-block p { color: #ffffff; }
 
-/* ---------- LEADERSHIP — STONE GREY (legacy class, kept for index.html) ---------- */
+/* ---------- LEADERSHIP — STONE GREY ---------- */
 .section-block.leadership-solid {
   background: #3f3f46 !important;
   backdrop-filter: none !important;
@@ -433,33 +431,33 @@ body {
 /* ---------- LEADER CARDS ---------- */
 .leader-card {
   display: flex;
-  gap: 1.7rem;
+  gap: 1.6rem;
   align-items: flex-start;
-  padding: 1.7rem;
+  padding: 1.6rem;
   border-radius: 12px;
   transition: background 0.2s;
 }
 .leader-card + .leader-card { border-top: 1px solid rgba(255,255,255,0.15); }
 .leader-avatar {
-  width: 92px; height: 92px;
+  width: 84px; height: 84px;
   border-radius: 50%;
   background: linear-gradient(135deg, #1e3a5f 0%, #0ea5e9 100%);
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 1.65rem;
+  font-weight: 700; font-size: 1.5rem;
   flex-shrink: 0;
   box-shadow: 0 8px 20px rgba(14,165,233,0.4);
   letter-spacing: 0.5px;
 }
-.leader-info h3 { color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
-.leader-role { color: #38bdf8; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
-.leader-info p { color: #cbd5e1; font-size: 1.1rem; }
+.leader-info h3 { color: #fff; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.35rem; }
+.leader-role { color: #38bdf8; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.7rem; }
+.leader-info p { color: #cbd5e1; font-size: 1rem; }
 
 /* ---------- CTA BOX — MEDIUM SLATE + SHINE ---------- */
 .cta-box {
   background: #475569;
   color: #fff;
-  padding: 3rem 2rem;
+  padding: 2.75rem 2rem;
   border-radius: 16px;
   text-align: center;
   margin-top: 3rem;
@@ -482,17 +480,17 @@ body {
   position: relative;
   z-index: 2;
 }
-.cta-box h3 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.85rem; color: #ffffff; }
-.cta-box p { opacity: 0.97; margin-bottom: 1.8rem; font-size: 1.15rem; color: #ffffff; }
+.cta-box h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.8rem; color: #ffffff; }
+.cta-box p { opacity: 0.97; margin-bottom: 1.7rem; font-size: 1.05rem; color: #ffffff; }
 .btn {
   display: inline-block;
   background: #ffffff;
   color: #475569;
-  padding: 1.05rem 2.4rem;
+  padding: 1rem 2.2rem;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   letter-spacing: 0.3px;
   transition: all 0.25s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -510,8 +508,8 @@ body {
   background: linear-gradient(180deg, #06101e 0%, #030810 100%);
   color: #94a3b8;
   text-align: center;
-  padding: 2.5rem 1.5rem;
-  font-size: 1.05rem;
+  padding: 2.25rem 1.5rem;
+  font-size: 0.98rem;
   border-top: 1px solid rgba(56,189,248,0.1);
 }
 
@@ -523,7 +521,7 @@ body[data-lang="en"] .lang-en-inline { display: inline; }
 body[data-lang="el"] .lang-el-inline { display: inline; }
 .lang-en-inline, .lang-el-inline { display: none; }
 
-/* ---------- GREEK TEXT — prevent glyph fallback compression (Fix A + Fix C) ---------- */
+/* ---------- GREEK TEXT — prevent glyph fallback compression ---------- */
 .lang-el, .lang-el-inline,
 [lang="el"], [data-lang="el"] {
   font-family: 'Inter', 'Noto Sans', 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
@@ -532,13 +530,7 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
 }
 
 /* ============================================================
-   SOLID COLOR CARD CLASSES (used on all pages)
-   Use in HTML as: <div class="section-block card-1"> ... </div>
-   Position rule:
-     card-1  →  First card on page    (dark teal)
-     card-2  →  Second card on page   (light slate)
-     card-3  →  Third card on page    (stone grey)
-     card-4  →  Fourth card on page   (medium slate)
+   SOLID COLOR CARD CLASSES
    ============================================================ */
 
 .card-1 {
@@ -583,7 +575,6 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
   color: #ffffff;
 }
 
-/* Ensure all headings and text inside solid cards stay white */
 .card-1 h1, .card-1 h2, .card-1 h3,
 .card-2 h1, .card-2 h2, .card-2 h3,
 .card-3 h1, .card-3 h2, .card-3 h3,
@@ -601,32 +592,31 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
   color: #d1fae5;
 }
 
-/* Ensure the section headings still have their accent underline */
 .card-1 h2, .card-2 h2, .card-3 h2, .card-4 h2 {
   border-bottom: 2px solid rgba(255,255,255,0.35);
 }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1400px) {
-  .nav-logo { font-size: 1.55rem; }
-  .nav-logo .mark { width: 42px; height: 42px; }
-  .nav-menu > li > a { font-size: 1.05rem; padding: 0.75rem 0.85rem; }
-  .nav-cta { font-size: 1rem !important; padding: 0.8rem 1.3rem !important; }
-  .lang-toggle button { font-size: 0.9rem; padding: 0.4rem 0.85rem; }
+  .nav-logo { font-size: 1.45rem; }
+  .nav-logo .mark { width: 40px; height: 40px; }
+  .nav-menu > li > a { font-size: 0.98rem; padding: 0.7rem 0.8rem; }
+  .nav-cta { font-size: 0.92rem !important; padding: 0.75rem 1.2rem !important; }
+  .lang-toggle button { font-size: 0.85rem; padding: 0.35rem 0.8rem; }
 }
 @media (max-width: 1180px) {
-  .nav-logo { font-size: 1.3rem; }
-  .nav-logo .mark { width: 36px; height: 36px; font-size: 1rem; }
-  .nav-menu > li > a { font-size: 0.95rem; padding: 0.65rem 0.7rem; }
-  .nav-cta { font-size: 0.9rem !important; padding: 0.7rem 1.1rem !important; margin-left: 0.4rem; }
-  .lang-toggle button { font-size: 0.85rem; padding: 0.35rem 0.7rem; }
+  .nav-logo { font-size: 1.25rem; }
+  .nav-logo .mark { width: 34px; height: 34px; font-size: 0.95rem; }
+  .nav-menu > li > a { font-size: 0.9rem; padding: 0.6rem 0.65rem; }
+  .nav-cta { font-size: 0.85rem !important; padding: 0.65rem 1rem !important; margin-left: 0.4rem; }
+  .lang-toggle button { font-size: 0.8rem; padding: 0.32rem 0.65rem; }
 }
 @media (max-width: 1000px) {
-  body { font-size: 17px; }
+  body { font-size: 16px; }
   .hamburger { display: block; }
   .nav-container { padding: 0.85rem 1.25rem; }
-  .nav-logo { font-size: 1.25rem; }
-  .nav-logo .mark { width: 38px; height: 38px; font-size: 1.05rem; }
+  .nav-logo { font-size: 1.2rem; }
+  .nav-logo .mark { width: 36px; height: 36px; font-size: 1rem; }
   .nav-menu {
     position: absolute;
     top: 100%; left: 0; right: 0;
@@ -642,7 +632,7 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
     margin-left: 0;
   }
   .nav-menu.open { max-height: 100vh; overflow-y: auto; }
-  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.15rem; }
+  .nav-menu > li > a { justify-content: space-between; padding: 1rem 1.15rem; font-size: 1.08rem; }
   .dropdown {
     position: static;
     opacity: 1;
@@ -662,13 +652,13 @@ body[data-lang="el"] .lang-el-inline { display: inline; }
   .nav-menu > li.open .dropdown { display: block; }
   .lang-toggle { margin-left: 0; margin-top: 0.5rem; align-self: flex-start; }
   .nav-cta { margin: 0.5rem 0 0 0; align-self: flex-start; }
-  .hero { min-height: 280px; padding: 3rem 1.25rem 3.5rem; }
-  .hero h1 { font-size: 2.1rem; }
-  .hero p { font-size: 1.05rem; }
+  .hero { min-height: 260px; padding: 3rem 1.25rem 3.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
   .galaxy-bg { padding: 3rem 1.25rem 3.5rem; background-attachment: scroll; }
   .leader-card { flex-direction: column; align-items: center; text-align: center; }
   .section-block { padding: 1.75rem; }
-  .section-block h2 { font-size: 1.5rem; }
+  .section-block h2 { font-size: 1.4rem; }
   .latest-update { flex-direction: column; align-items: flex-start; }
-  .lead { font-size: 1.08rem; }
+  .lead { font-size: 1.05rem; }
 }
