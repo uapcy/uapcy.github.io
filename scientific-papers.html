@@ -3,10 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scientific Papers — UAP Cyprus Centre</title>
-<link rel="stylesheet" href="style.css?v=16">
+<title>Updates, Testimonies & Videos — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=17">
 <style>
-/* ---- Category jump pills ---- */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.case-card {
+  background: rgba(10,22,40,0.55);
+  border: 1px solid rgba(148,163,184,0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+a.case-card { cursor: pointer; }
+a.case-card:hover {
+  transform: translateY(-4px);
+  border-color: #7dd3fc;
+  box-shadow: 0 20px 40px rgba(56,189,248,0.25);
+}
+.case-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+  display: block;
+}
+.case-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(220,38,38,0.92);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  padding-left: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+a.case-card:hover .case-play { transform: translate(-50%, -50%) scale(1.1); }
+.case-body { padding: 1.15rem 1.25rem 1.35rem; }
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.case-meta {
+  font-size: 0.9rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.75rem;
+}
+.case-desc {
+  font-size: 0.94rem;
+  color: #ffffff;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+.case-readmore {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.case-multi-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+.case-multi-links a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.case-multi-links a:hover {
+  background: rgba(56,189,248,0.15);
+  border-color: #7dd3fc;
+  color: #7dd3fc;
+}
+.category-heading {
+  grid-column: 1 / -1;
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(56,189,248,0.3);
+  padding-bottom: 0.5rem;
+  scroll-margin-top: 100px;
+}
+.category-heading:first-of-type { margin-top: 0; }
 .cat-jump {
   display: flex;
   flex-wrap: wrap;
@@ -30,99 +151,6 @@
   color: #0a1628 !important;
   border-color: #38bdf8;
 }
-
-/* ---- Category heading ---- */
-.cat-heading {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #7dd3fc;
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(56,189,248,0.3);
-  padding-bottom: 0.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  scroll-margin-top: 100px;
-}
-.cat-heading:first-of-type { margin-top: 0; }
-
-/* ---- Paper row ---- */
-.paper {
-  padding: 1.1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-.paper:last-child { border-bottom: none; padding-bottom: 0; }
-.paper-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.35;
-  margin-bottom: 0.4rem;
-}
-.paper-meta {
-  font-size: 0.92rem;
-  color: #7dd3fc;
-  font-weight: 600;
-  margin-bottom: 0.55rem;
-  letter-spacing: 0.2px;
-}
-.paper-summary {
-  font-size: 0.98rem;
-  color: #ffffff;
-  opacity: 0.92;
-  line-height: 1.6;
-  margin-bottom: 0.7rem;
-}
-.paper-link {
-  font-size: 0.95rem;
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(255,255,255,0.5);
-}
-.paper-link:hover { color: #a5f3fc; }
-
-/* ---- Type tag ---- */
-.tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
-.tag-peer { background: #10b981; color: #ffffff; }
-.tag-preprint { background: #f59e0b; color: #1a1a1a; }
-.tag-field { background: #3b82f6; color: #ffffff; }
-.tag-journal { background: #8b5cf6; color: #ffffff; }
-.tag-contested { background: #ef4444; color: #ffffff; }
-
-/* ---- Sub-list inside grouped paper ---- */
-.paper-sublist {
-  list-style: none;
-  padding: 0;
-  margin: 0.6rem 0 0.6rem 1rem;
-  border-left: 2px solid rgba(56,189,248,0.3);
-}
-.paper-sublist li {
-  font-size: 0.95rem;
-  color: #ffffff;
-  opacity: 0.9;
-  padding: 0.35rem 0 0.35rem 1rem;
-  line-height: 1.5;
-}
-.paper-sublist li a {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(255,255,255,0.4);
-}
-.paper-sublist li a:hover { color: #a5f3fc; }
 </style>
 </head>
 <body>
@@ -137,7 +165,7 @@
         <a href="#">About <span class="caret">▾</span></a>
         <ul class="dropdown">
           <li><a href="announcements.html">Announcements <span class="badge-new">New</span></a></li>
-          <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="updates.html" class="active">Updates, Testimonies & Videos</a></li>
           <li><a href="friends.html">Friends & Associates</a></li>
         </ul>
       </li>
@@ -147,7 +175,7 @@
           <li><a href="important-ufo-cases.html">Important UFO Cases</a></li>
           <li><a href="assertions.html">Assertions: UFOs are Real</a></li>
           <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
-          <li><a href="scientific-papers.html" class="active">Scientific Papers</a></li>
+          <li><a href="scientific-papers.html">Scientific Papers</a></li>
         </ul>
       </li>
       <li>
@@ -179,8 +207,8 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Scientific Papers</h1>
-    <p>Peer-reviewed research, field studies, and government investigations of UAP</p>
+    <h1>Updates, Testimonies & Videos</h1>
+    <p>Congressional hearings, conferences, whistleblower testimonies and more</p>
   </div>
 </section>
 
@@ -188,594 +216,452 @@
   <main class="content">
 
     <p class="lead card-1">
-      Despite the persistent popular belief that science has ignored the UFO phenomenon, the
-      study of UAP has a substantial peer-reviewed literature stretching back more than half
-      a century. The papers collected here represent the current scientific work — from
-      archival astronomy and instrumented field studies, to physics analyses of anomalous
-      flight characteristics and materials forensics. Each entry is tagged by its
-      publication type: <strong>peer-reviewed</strong>, <strong>preprint</strong>,
-      <strong>field report</strong>, or <strong>journal</strong>.
+      This archive collects significant videos relating to UAP — from congressional
+      hearings and open conferences to whistleblower testimonies, pilot reports, and
+      material analysis. Each entry links directly to its source. Videos are grouped by
+      theme, from most formal to most investigative.
     </p>
 
     <div class="section-block card-2">
       <h2>Jump to Category</h2>
       <div class="cat-jump">
-        <a href="#cat-astronomy">Astronomy & Archival Plates</a>
-        <a href="#cat-field">Field Studies & Instrumentation</a>
-        <a href="#cat-physics">Flight Characteristics & Physics</a>
-        <a href="#cat-aviation">Aviation Safety</a>
-        <a href="#cat-materials">Materials & Isotope Analysis</a>
-        <a href="#cat-theory">Hypotheses & Theory</a>
-        <a href="#cat-government">Government & Historical Studies</a>
-        <a href="#cat-journals">Journals & Research Organisations</a>
+        <a href="#cat-congress">Congress Testimonies</a>
+        <a href="#cat-conferences">Open Conferences</a>
+        <a href="#cat-whistleblowers">Whistleblower Confessions</a>
+        <a href="#cat-pilots">Pilot Reports</a>
+        <a href="#cat-materials">Materials Analysis</a>
+        <a href="#cat-guides">Guides &amp; Classification</a>
+        <a href="#cat-law">Law &amp; Policy Proposals</a>
+        <a href="#cat-documents">Important Documents</a>
       </div>
     </div>
 
     <div class="section-block card-3">
-      <h2>Peer-Reviewed Literature</h2>
+      <h2>Video Archive</h2>
 
-      <!-- ============================================================ -->
-      <!-- ASTRONOMY & ARCHIVAL PLATES                                   -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-astronomy">Astronomy & Archival Plates</div>
+      <div class="case-grid">
 
-      <div class="paper">
-        <div class="paper-title">Fast Astronomical Transients in Archival Photographic Plates: Using Optical Aberrations as a Tool for Discerning Real Images from Plate Artifacts</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Ivo Busko (PhD astronomer, former NASA engineer)
+        <!-- ============================================================ -->
+        <!-- CONGRESS TESTIMONIES                                          -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-congress">Congress Testimonies</div>
+
+        <a href="https://www.youtube.com/watch?v=u_emZmzkTtM&t=3s" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/u_emZmzkTtM/hqdefault.jpg" alt="David Grusch Returns to Congress">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">David Grusch Returns to Congress</div>
+            <div class="case-meta">2026 · Congress · UAP declassification push</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Efc9wTvrncY" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/Efc9wTvrncY/hqdefault.jpg" alt="July 2023 Congressional UAP Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">House Oversight UAP Hearing — July 2023</div>
+            <div class="case-meta">2023 · Congress · Grusch, Fravor, Graves</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=kT2iWKZr0qA" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/kT2iWKZr0qA/hqdefault.jpg" alt="November 2024 Congressional UAP Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">House Oversight UAP Hearing — November 2024</div>
+            <div class="case-meta">2024 · Congress · Exposing the Truth</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=UfCzvS2a2sU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/UfCzvS2a2sU/hqdefault.jpg" alt="UAP Transparency and Whistleblower Protection Hearing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Transparency and Whistleblower Protection Hearing</div>
+            <div class="case-meta">2025 · Congress · September 2025</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- OPEN CONFERENCES                                              -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-conferences">Open Conferences</div>
+
+        <a href="https://www.youtube.com/live/IVEPzcCuq3U" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/IVEPzcCuq3U/hqdefault.jpg" alt="2026 Press Conference — 25th Anniversary of the 2001 Disclosure">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">2026 Press Conference — 25th Anniversary of the 2001 Disclosure</div>
+            <div class="case-meta">2026 · Conference · Dr. Greer &amp; Jaime Maussan (Buga Sphere)</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=0nWBKPgyBJ4" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/0nWBKPgyBJ4/hqdefault.jpg" alt="Varginha, Brazil — Witness Testimony, National Press Club">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Varginha, Brazil — Witness Testimony (1996 Case)</div>
+            <div class="case-meta">2026 · Conference · National Press Club, James Fox</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=rcYNdj2UVqM" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/rcYNdj2UVqM/hqdefault.jpg" alt="Dr. Harold Puthoff UFO Crafts / Materials">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Dr. Harold Puthoff — UFO Crafts / Materials</div>
+            <div class="case-meta">2023 · Conference · Society for Scientific Exploration</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=4DrcG7VGgQU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/4DrcG7VGgQU/hqdefault.jpg" alt="National Press Club Event — Dr. Steven Greer">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">National Press Club — Dr. Steven Greer</div>
+            <div class="case-meta">2017 · Conference · Unlocking Hidden Tech</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@CitizenHearing" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/citizen-hearing.jpg" alt="Citizen Hearing on UFO Disclosure">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Citizen Hearing on UFO Disclosure</div>
+            <div class="case-meta">2013 · Conference · 40 witnesses, 10 countries</div>
+            <div class="case-readmore">Visit YouTube channel →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- WHISTLEBLOWER CONFESSIONS                                     -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-whistleblowers">Whistleblower Confessions</div>
+
+        <!-- NEW: Jay Stratton -->
+        <a href="https://www.youtube.com/watch?v=Wsb0AhKd60c" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/Wsb0AhKd60c/hqdefault.jpg" alt="Jay Stratton — Out of the Shadows">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Jay Stratton discusses his bombshell memoir — <em>Out of the Shadows</em> — on Fox News</div>
+            <div class="case-meta">2026 · Whistleblower · Fox News</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <div class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/ETBibSswLaw/hqdefault.jpg" alt="Dr. Jonathan Reed — Alien Encounter">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Dr. Jonathan Reed — Alien Encounter (1996)</div>
+            <div class="case-meta">1996 · Whistleblower · 4-part series</div>
+            <div class="case-multi-links">
+              <a href="https://www.youtube.com/watch?v=Wh7HMITj1SY" target="_blank" rel="noopener">▶ Full Video — Alien Encounter &amp; Examination</a>
+              <a href="https://www.youtube.com/watch?v=ETBibSswLaw" target="_blank" rel="noopener">▶ Part 1 — Upscaled NHI &amp; UFO Footage</a>
+              <a href="https://www.youtube.com/watch?v=Ms4sdjxhoAo" target="_blank" rel="noopener">▶ Part 2 — THE LINK: Teleportation &amp; Telepathy</a>
+              <a href="https://www.youtube.com/watch?v=jgAErTAggSY" target="_blank" rel="noopener">▶ The 1996 Interview — A Washington Encounter</a>
+            </div>
+          </div>
         </div>
-        <div class="paper-summary">
-          Analysis of pre-Sputnik photographic plates from a German telescope known to suffer
-          from severe optical aberrations. Busko demonstrated that the transients appear on
-          the plates and exhibit the same aberrations as the stars themselves — slightly
-          narrower and sharper, consistent with brief flashes. This proves the transient light
-          passed through the telescope optics, indicating real objects producing light rather
-          than plate defects or cosmic-ray contamination. Busko also showed the transients
-          cluster spatially and correlate with periods near nuclear tests.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/pdf/2606.08319" target="_blank" rel="noopener">Read paper →</a>
+
+        <a href="https://www.youtube.com/watch?v=t37-SKj4rtY" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/t37-SKj4rtY/hqdefault.jpg" alt="Jake Barber — Reality Check">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Jake Barber — Reality Check with Ross Coulthart</div>
+            <div class="case-meta">2025 · Whistleblower · "100% testify" under oath</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=dYPXINFcvmI&t=2711s" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/dYPXINFcvmI/hqdefault.jpg" alt="David Grusch on Joe Rogan">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">David Grusch — Joe Rogan Experience #2560</div>
+            <div class="case-meta">2024 · Podcast · Former USAF intelligence officer</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=hKiQselyENQ" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/hKiQselyENQ/hqdefault.jpg" alt="Dr. Eric Davis — Skinwalker Ranch">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Dr. Eric Davis — Skinwalker Ranch</div>
+            <div class="case-meta">Whistleblower · Physicist · NIDS &amp; AAWSAP</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=NWg5IZgssGs" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/NWg5IZgssGs/hqdefault.jpg" alt="Philip Corso Interview">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Col. Philip Corso — Complete Interview</div>
+            <div class="case-meta">1997 · Whistleblower · The Day After Roswell</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- PILOT REPORTS                                                 -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-pilots">Pilot Reports</div>
+
+        <a href="https://www.youtube.com/watch?v=v4DfYUgdros" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/v4DfYUgdros/hqdefault.jpg" alt="Gary Voorhis — Nimitz UAP">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Gary Voorhis — Nimitz UAP Navy Encounters</div>
+            <div class="case-meta">2004 · Pilot · USS Princeton radar operator</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=3lSL_Huhi3o" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/3lSL_Huhi3o/hqdefault.jpg" alt="Kevin Day — Nimitz UAP">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Kevin Day — Nimitz UAP Navy Encounters</div>
+            <div class="case-meta">2004 · Pilot · TOPGUN Air Intercept Controller</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=2sLdSj8eLzU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/2sLdSj8eLzU/hqdefault.jpg" alt="Ryan Graves — UAP Navy Encounters">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Ryan Graves — UAP Navy Encounters</div>
+            <div class="case-meta">Atlantic · Pilot · F/A-18F Super Hornet</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=K3pF8ABoe14" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/K3pF8ABoe14/hqdefault.jpg" alt="Gemini IV Astronaut James McDivitt">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Gemini IV Astronaut James McDivitt</div>
+            <div class="case-meta">1965 · Pilot · Gemini IV sighting</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- MATERIALS ANALYSIS                                            -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-materials">Materials Analysis</div>
+
+        <a href="https://www.youtube.com/watch?v=9r1NwdZ4AAk" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/9r1NwdZ4AAk/hqdefault.jpg" alt="Dr. Hal Puthoff — UFOs, AATIP and Beyond">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Dr. Hal Puthoff — UFOs, AATIP and Beyond</div>
+            <div class="case-meta">2020 · Materials · AATIP program</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=uTCc2-1tbBQ" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/uTCc2-1tbBQ/hqdefault.jpg" alt="Garry Nolan Lex Fridman Podcast">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Garry Nolan — UFOs and Aliens</div>
+            <div class="case-meta">2022 · Materials · Lex Fridman Podcast #262</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- GUIDES & CLASSIFICATION                                       -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-guides">Guides &amp; Classification</div>
+
+        <a href="https://www.youtube.com/watch?v=Ys_Kreuw8gU" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/Ys_Kreuw8gU/hqdefault.jpg" alt="Inside Skywatcher — 9 Types of UAPs">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Inside Skywatcher — Unveiling 9 Types of UAPs</div>
+            <div class="case-meta">2025 · Guide · Jake Barber &amp; team</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=yEWyUWiOwoI" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/yEWyUWiOwoI/hqdefault.jpg" alt="Skywatcher UAP Classification Guide">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Οδηγός Ταξινόμησης ΑΤΙΑ — Skywatcher</div>
+            <div class="case-meta">Guide · Greek · UAP classification</div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- LAW & POLICY PROPOSALS                                        -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-law">Law &amp; Policy Proposals</div>
+
+        <a href="https://www.govinfo.gov/content/pkg/BILLS-119hr1187ih/pdf/BILLS-119hr1187ih.pdf" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/law-uap-transparency-act.jpg" alt="UAP Transparency Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Transparency Act (H.R. 1187)</div>
+            <div class="case-meta">2025 · Law · Pending</div>
+            <div class="case-readmore">Read bill (PDF) →</div>
+          </div>
+        </a>
+
+        <a href="https://www.govtrack.us/congress/bills/119/hr5060/text/ih" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/law-uap-whistleblower.jpg" alt="UAP Whistleblower Protection Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Whistleblower Protection Act (H.R. 5060)</div>
+            <div class="case-meta">2025 · Law · Pending</div>
+            <div class="case-readmore">Read bill (PDF) →</div>
+          </div>
+        </a>
+
+        <a href="https://www.congress.gov/bill/118th-congress/senate-bill/2226" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/law-uap-disclosure-act.jpg" alt="UAP Disclosure Act">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UAP Disclosure Act (S. 2226, 2023)</div>
+            <div class="case-meta">2023 · Law · Key provisions removed</div>
+            <div class="case-readmore">View on Congress.gov →</div>
+          </div>
+        </a>
+
+        <!-- ============================================================ -->
+        <!-- IMPORTANT DOCUMENTS                                           -->
+        <!-- ============================================================ -->
+        <div class="category-heading" id="cat-documents">Important Documents</div>
+
+        <!-- NEW: U.S. Luring Operation -->
+        <a href="https://www.youtube.com/watch?v=oFsHIU1Gp5U" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="https://img.youtube.com/vi/oFsHIU1Gp5U/hqdefault.jpg" alt="Inside the UFO Files — What the Government Released">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">U.S. Conducted Successful UFO "Luring Operation," Advocate Claims</div>
+            <div class="case-meta">2026 · Declassified · Orb Encounters · Government Files</div>
+            <div class="case-desc">
+              The U.S. government has released previously classified files detailing UAP
+              "orb" encounters and claims of a successful "luring operation." This video
+              explores what was released.
+            </div>
+            <div class="case-readmore">Watch on YouTube →</div>
+          </div>
+        </a>
+
+        <a href="https://recordsearch.naa.gov.au/SearchNRetrieve/Gallery151/dist/JGalleryViewer.aspx?B=30030606&S=7&N=58&R=0" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/doc-australia-archives.jpg" alt="Australian National Archives UFO document">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">Australian National Archives — The Real UFO Story</div>
+            <div class="case-meta">1953 · Documents · JANAP 146 · CIA / USAF / Project Blue Book</div>
+            <div class="case-readmore">Browse archive →</div>
+          </div>
+        </a>
+
+        <a href="https://www.nationalarchives.gov.uk/ufos/" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/doc-uk-national-archives.jpg" alt="UK National Archives UFO files">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">UK National Archives — UFO Files</div>
+            <div class="case-meta">2007–2009 · Documents · MoD UFO Desk</div>
+            <div class="case-readmore">Browse archive →</div>
+          </div>
+        </a>
+
+        <a href="https://www.nicap.org/NSID/NSID_DBListingbyDate.pdf" target="_blank" rel="noopener" class="case-card">
+          <div class="case-thumb-wrap">
+            <img src="images/doc-nicap-listing.jpg" alt="NICAP UAP case listing">
+            <div class="case-play">▶</div>
+          </div>
+          <div class="case-body">
+            <div class="case-title">NICAP — NSID Case Listing by Date</div>
+            <div class="case-meta">Historical · Documents · 334 pages</div>
+            <div class="case-readmore">View PDF →</div>
+          </div>
+        </a>
+
       </div>
-
-      <div class="paper">
-        <div class="paper-title">A glint in the eye: Photographic plate archive searches for non-terrestrial artefacts</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Villarroel, Mattsson, Guergouri, Solano, Geier, Dom, Ward
-        </div>
-        <div class="paper-summary">
-          Presents a method for identifying Non-Terrestrial Artefacts (NTAs) in or near
-          geosynchronous Earth orbits using old photographic plates exposed before the launch
-          of the first human satellite in 1957. Shows that even small pieces of reflective
-          debris in orbit can be identified through searches for multiple transients. Provides
-          probability calculations for distinguishing real point sources from plate defects,
-          and sets an upper limit for NTAs with reflective surfaces in geosynchronous orbits.
-        </div>
-        <a class="paper-link" href="https://www.sciencedirect.com/science/article/pii/S0094576522000480" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Is there a background population of high-albedo objects in geosynchronous orbits around Earth?</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Villarroel, Solano, Guergouri, Streblyanska, Mattsson, Bär, Mimouni, Geier, Gupta, Okororie, Laggoune, Shultz, Freitas, Ward · 2022
-        </div>
-        <div class="paper-summary">
-          First optical search for non-terrestrial artifacts near Earth using the First Palomar
-          Sky Survey. Searches for simultaneous transients that are point-like and aligned.
-          Provides a shortlist of candidate transients that require microscope examination to
-          separate celestial sources from plate defects. Explores a possible interpretation in
-          terms of fast reflections off high-albedo objects in geosynchronous orbits.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/abs/2204.06091" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">A bright triple transient that vanished within 50 minutes</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Solano, Marcy, Villarroel, Geier, Streblyanska, Lombardi, Bär, Andruk · 2023
-        </div>
-        <div class="paper-summary">
-          Reports three optically bright (~15th mag) point-sources within 10 arcseconds of
-          each other that vanished within one hour, based on two consecutive Palomar
-          Observatory exposures on 19 July 1952. The three sources have remained absent in
-          exposures during 71 years. When bright in 1952, the most isolated transient had a
-          profile nearly the same as comparison stars, implying sub-arcsecond angular size
-          with no elongation due to movement. The explanation for these transients remains
-          unclear.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/abs/2310.09035" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- FIELD STUDIES & INSTRUMENTATION                               -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-field">Field Studies & Instrumentation</div>
-
-      <div class="paper">
-        <div class="paper-title">Eye on the Sky: A UAP Research and Field Study off New York's Long Island Coast</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          John Joseph Tedesco, Gerald Thomas Tedesco · 2024
-        </div>
-        <div class="paper-summary">
-          Ten-month field study at Robert Moses State Park on Long Island, NY, to determine
-          whether aerial phenomena of unknown nature exist over a coastal location. Used
-          forensic engineering principles, 3 cm X-band radar in two scan geometries, and
-          multispectral electro-optical devices. Data collected across VIS, NIR, SWIR, LWIR,
-          UVA/UVB/UVC, and ionizing radiation (alpha, beta, gamma, X-ray).
-        </div>
-        <a class="paper-link" href="https://www.scirp.org/journal/paperinformation?paperid=135539" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Initial Results from the First Field Expedition of UAPx to Study Unidentified Anomalous Phenomena</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Szydagis, Knuth, Kugielsky, Levy, McGowan, Phelan, Voorhis · 2023
-        </div>
-        <div class="paper-summary">
-          In July 2021, UAlbany Department of Physics faculty participated in a week-long
-          field expedition with UAPx in Avalon, California. Reviews hardware and software
-          techniques employed, discusses successes and failures, and provides lessons for
-          future expeditions. Deployed visible-light and infrared cameras plus sensors for
-          non-EM emissions. Reports on 600+ hours of untriggered IR video and 55 hours of
-          background radiation measurements. Focuses on one remaining ambiguity: a dark spot
-          possibly coincident with ionizing radiation that resists a prosaic explanation.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/abs/2312.00558" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Exploring Unidentified Aerospace Phenomena Through Instrumented Field Studies: Historical Insights, Current Challenges, and Future Directions</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Philippe Ailleris · January 2024
-        </div>
-        <div class="paper-summary">
-          Argues that UAP research requires a shift from narrative-based approaches to
-          scientific and technology-based study. Reviews the benefits and considerations of
-          instrumented field studies, highlighting common limitations. Provides an overview of
-          past and current UAP military and civilian projects and a timetable of instrumented
-          projects spanning 1950–2023. Concludes with recommendations for future field
-          experiments using newer technologies including AI, big data analytics, and satellite
-          imagery.
-        </div>
-        <a class="paper-link" href="https://limina.scholasticahq.com/article/92682-exploring-unidentified-aerospace-phenomena-through-instrumented-field-studies-historical-insights-current-challenges-and-future-directions" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">The Galileo Project — UAP Search Publications</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          Harvard University · 2023
-        </div>
-        <div class="paper-summary">
-          The Galileo Project, led by Prof. Avi Loeb at Harvard, has published its methods and
-          instrumentation design across five papers in the <em>Journal of Astronomical
-          Instrumentation</em> (Volume 12, Issue 01, Special Issue on UAP Instrumentation,
-          March 2023).
-        </div>
-        <ul class="paper-sublist">
-          <li>Scientific method — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400068" target="_blank" rel="noopener">Read →</a></li>
-          <li>Hardware & software — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400020" target="_blank" rel="noopener">Read →</a></li>
-          <li>Passive radar — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400044" target="_blank" rel="noopener">Read →</a></li>
-          <li>Using satellites — <a href="https://worldscientific.com/doi/epdf/10.1142/S225117172340007X" target="_blank" rel="noopener">Read →</a></li>
-          <li>Acoustic sensors — <a href="https://worldscientific.com/doi/epdf/10.1142/S2251171723400056" target="_blank" rel="noopener">Read →</a></li>
-          <li style="margin-top: 0.4rem;">Full publication index — <a href="https://projects.iq.harvard.edu/galileo/publications" target="_blank" rel="noopener">Visit →</a></li>
-        </ul>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- FLIGHT CHARACTERISTICS & PHYSICS                              -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-physics">Flight Characteristics & Physics</div>
-
-      <div class="paper">
-        <div class="paper-title">Estimating Flight Characteristics of Anomalous Unidentified Aerial Vehicles</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Knuth, Powell, Reali · <em>Entropy</em> 21(10):939 · 2019
-        </div>
-        <div class="paper-summary">
-          Estimates lower bounds on accelerations exhibited by anomalous craft observed during
-          well-documented encounters, including the 2004 Nimitz Carrier Group encounters.
-          Estimated accelerations range from ~100g to thousands of g's, with no observed air
-          disturbance, no sonic booms, and no evidence of excessive heat. Concludes the
-          observations are either fabricated, seriously in error, or exhibit technology far
-          more advanced than any known craft on Earth — and that the quality of witnesses and
-          tracking equipment favors the latter hypothesis.
-        </div>
-        <a class="paper-link" href="https://www.mdpi.com/1099-4300/21/10/939" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Physical Constraints on Unidentified Aerial Phenomena</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Abraham (Avi) Loeb, Sean M. Kirkpatrick · 2023
-        </div>
-        <div class="paper-summary">
-          Derives physical constraints on interpretations of "highly maneuverable" UAP based
-          on standard physics. Shows that friction of UAP with surrounding air or water would
-          generate a bright optical fireball, ionization shell, and tail — implying radio
-          signatures. Concludes that the lack of these signatures could imply inaccurate
-          distance measurements (and hence derived velocity) for single-site sensors without
-          a range gate capability.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/abs/2303.08860" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">"Down to Earth" Limits on Unidentified Aerial Phenomena</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Abraham Loeb · October 2022
-        </div>
-        <div class="paper-summary">
-          A rebuttal to Zhilyaev et al.'s reported observations of dark "phantom" objects
-          over Ukraine. Loeb shows that the friction of such objects with surrounding air
-          would have generated a bright optical fireball. Suggests that reducing the inferred
-          distance of the objects by a factor of ten is fully consistent with the size and
-          speed of artillery shells.
-        </div>
-        <a class="paper-link" href="https://lweb.cfa.harvard.edu/~loeb/arXiv_U.pdf" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Hypersonic Unidentified Aerial Objects</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Geoffrey W. Marcy, Beatriz Villarroel · 2023
-        </div>
-        <div class="paper-summary">
-          An addendum to Loeb's paper, exploring whether hypersonic objects of ~10 m size
-          moving at ~10 km/s would necessarily produce a bright optical fireball. Argues that
-          aircraft engineered with a nanoscale frontal cross-sectional area would drastically
-          reduce air "plow-through" and energy deposition, minimizing any meteor trail — as
-          achieved by stealth drone aircraft. Notes the same principle benefits interstellar
-          spacecraft.
-        </div>
-        <a class="paper-link" href="https://www.spacelaserawareness.org/wp-content/uploads/2023/03/hoover_uap-1.pdf" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- AVIATION SAFETY                                               -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-aviation">Aviation Safety</div>
-
-      <div class="paper">
-        <div class="paper-title">Impact of Unidentified Aerial Phenomena on Air Safety: Evidence from Airbus TCAS/ROSE Simulator</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Escolà-Gascón, Dagnall, Denovan, Drinkwater · <em>Journal of Air Transport Management</em>, Vol. 119 · August 2024
-        </div>
-        <div class="paper-summary">
-          Study of 408 airline pilots in Airbus TCAS/ROSE simulators, testing how causal
-          illusions interact with perceptual biases. Results indicated causal illusions were
-          82.4% predictive of UAP sightings only when "magical inference" was present.
-          Argues that some UAP sightings may be explained as cognitive biases — and that
-          these pose a threat to aviation safety if pilots or aircraft AIs detect them in an
-          irrational way.
-        </div>
-        <a class="paper-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0969699724000826" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">An Environmental Analysis of Public UAP Sightings and Sky View Potential</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Medina, Brewer, Kirkpatrick · <em>Scientific Reports</em> (Nature)
-        </div>
-        <div class="paper-summary">
-          Bayesian regression analysis of over 98,000 publicly reported UAP sightings in the
-          continental US between 2001 and 2020. Tests hypotheses about sky view potential
-          (light pollution, tree canopy, cloud cover) and the potential for objects to be
-          present (aircraft and military installations). Finds credible correlations
-          suggesting people see more phenomena when they have more opportunity to.
-        </div>
-        <a class="paper-link" href="https://www.nature.com/articles/s41598-023-49527-x" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- MATERIALS & ISOTOPE ANALYSIS                                  -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-materials">Materials & Isotope Analysis</div>
-
-      <div class="paper">
-        <div class="paper-title">Improved Instrumental Techniques, Including Isotopic Analysis, Applicable to the Characterization of Unusual Materials with Potential Relevance to Aerospace Forensics</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Nolan, Vallée, Jiang, Lemke · <em>Progress in Aerospace Sciences</em> 128:100788 · 2022
-        </div>
-        <div class="paper-summary">
-          Reviews modern mass spectrometry techniques applicable to characterization of
-          unknown materials. Applies these to the study of a well-documented, still-unexplained
-          incident involving deposition of unknown material, with correlations between witness
-          patterns and laboratory analysis. The lessons are applicable to reverse engineering
-          of complex esoteric materials and aerospace forensics.
-        </div>
-        <a class="paper-link" href="https://doi.org/10.1016/j.paerosci.2021.100788" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Isotope Ratios and Chemical Analysis of the 1957 Brazilian Ubatuba Fragment</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Powell, Swords, Rodeghier, Budinger · <em>Journal of Scientific Exploration</em> 36(1):39–48 · 2022
-        </div>
-        <div class="paper-summary">
-          HR-ICPMS analysis of a sample from the Ubatuba fragment collected in Brazil in 1957.
-          Magnesium isotope ratios were found to fall within terrestrial limits; isotope
-          ratios of trace elements (strontium, barium, copper, zinc) were inconclusive. Reviews
-          the history of chemical testing of the Ubatuba fragments from the 1960s to the 1980s
-          at multiple labs.
-        </div>
-        <a class="paper-link" href="https://www.explorescu.org/post/isotope-ratios-and-chemical-analysis-of-the-1957-brazilian-ubatuba-fragment" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Strongly Anisotropic Media: The THz Perspectives of Left-Handed Materials</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          arXiv:physics/0505024
-        </div>
-        <div class="paper-summary">
-          Study of the imaging properties of non-magnetic left-handed materials (LHMs) with
-          negative refractive index, and a proposal for their THz realization based on a
-          homogeneous, naturally occurring material. Included here as a theoretical materials
-          paper whose principles are relevant to speculation about engineered metamaterials
-          and exotic electromagnetic properties sometimes cited in UAP propulsion discussions.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/pdf/physics/0505024.pdf" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- HYPOTHESES & THEORY                                           -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-theory">Hypotheses & Theory</div>
-
-      <div class="paper">
-        <div class="paper-title">Plasmoids — Self-Illuminating, Pulsating Plasma-Like UAPs</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Joseph RG, Planchon O, Impey C, Armstrong R, Gibson C, Schild R · SCIRP
-        </div>
-        <div class="paper-summary">
-          Proposes that a subset of UAP are plasmoids — self-illuminating, pulsating
-          plasma-like objects that come in many shapes and sizes. These are attracted to
-          electromagnetic activity, can make sharp turns, collide, and have been filmed by
-          NASA, the US Navy, and border patrol aircraft diving into the ocean. May cause
-          hallucinations and interfere with electronics. Argues plasmoids may represent a
-          fourth domain of life, while noting they cannot explain all UAPs — some of which
-          may be extraterrestrial.
-        </div>
-        <a class="paper-link" href="https://www.scirp.org/journal/paperinformation?paperid=136922" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">The Cryptoterrestrial Hypothesis: A Case for Scientific Openness to a Concealed Earthly Explanation for Unidentified Anomalous Phenomena</div>
-        <div class="paper-meta">
-          <span class="tag tag-peer">Peer-reviewed</span>
-          Lomas, Case, Masters · <em>Philosophy and Cosmology</em> 33 · 2024
-        </div>
-        <div class="paper-summary">
-          Proposes a third class of UAP hypothesis beyond conventional terrestrial and
-          extraterrestrial explanations: the "ultraterrestrial" hypothesis, with the
-          cryptoterrestrial subset being the notion that UAP may reflect activities of
-          intelligent beings concealed in stealth here on Earth (e.g. underground), in its
-          near environs (e.g. the Moon), or even "walking among us." Argues this possibility
-          should not be summarily dismissed.
-        </div>
-        <a class="paper-link" href="https://www.researchgate.net/publication/381405238_The_cryptoterrestrial_hypothesis_A_case_for_scientific_openness_to_a_concealed_earthly_explanation_for_Unidentified_Anomalous_Phenomena" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Advanced Space Propulsion Based on Vacuum (Spacetime Metric) Engineering</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Harold E. Puthoff · 2012
-        </div>
-        <div class="paper-summary">
-          Proposes that empty space itself — the quantum vacuum, or spacetime metric — might
-          be engineered to provide energy and thrust for future space vehicles. Grounded in
-          modern physical theory. Discusses warp drives, traversable wormholes, and time
-          machines that provide for such vacuum engineering possibilities. Relevant to the
-          theoretical physics backdrop of UAP propulsion speculation.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/abs/1204.2184" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- GOVERNMENT & HISTORICAL STUDIES                               -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-government">Government & Historical Studies</div>
-
-      <div class="paper">
-        <div class="paper-title">The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)</div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Knuth, Ailleris, Agrama, et al. · arXiv:2502.06794
-        </div>
-        <div class="paper-summary">
-          Reviews and summarises approximately 20 historical government studies dating from
-          1933 to the present (Scandinavia, WWII, US, Canada, France, Russia, China), plus
-          historical private research studies (France, UK, US) and recent scientific research
-          efforts (Ireland, Germany, Norway, Sweden, US). Dispel the misconception that UAPs
-          are an American phenomenon. Aims to enable future studies to draw on the depth of
-          prior documented experience.
-        </div>
-        <a class="paper-link" href="https://arxiv.org/pdf/2502.06794" target="_blank" rel="noopener">Read paper →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">
-          <span class="tag tag-contested">Contested</span>
-          UAP Observations over Ukraine — Zhilyaev et al. (2022–2024)
-        </div>
-        <div class="paper-meta">
-          <span class="tag tag-preprint">Preprint</span>
-          Main Astronomical Observatory, NAS of Ukraine — with published rebuttals by Avi Loeb
-        </div>
-        <div class="paper-summary">
-          A series of papers by Boris Zhilyaev and colleagues at the Main Astronomical
-          Observatory of Ukraine report observations of "Cosmics" (bright) and "Phantoms"
-          (dark) objects over Kyiv, claimed to move at hypersonic speeds with sizes of
-          3–100 m. The observations are contested — astronomer Avi Loeb and others have
-          argued the objects are more consistent with artillery shells, insects, or
-          misidentified objects at closer distances. Both the claims and the rebuttals are
-          listed below so readers can assess the exchange directly.
-        </div>
-        <ul class="paper-sublist">
-          <li>Zhilyaev et al., <em>UAP I. Observations of Events</em> — <a href="https://doi.org/10.48550/arXiv.2208.11215" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev et al., <em>UAP II. Evaluation of UAP Properties</em> — <a href="https://arxiv.org/abs/2211.17085" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev et al., <em>UAP over Kyiv</em> — <a href="http://dx.doi.org/10.13140/RG.2.2.20467.60966" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev, <em>UAP. Heaven Battle</em> — <a href="https://www.researchgate.net/publication/384081518_Unidentified_Aerial_Phenomena_Heaven_Battle" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev & Petukhov, <em>Observations of Night Events</em> — <a href="http://dx.doi.org/10.13140/RG.2.2.17678.16965" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev, Tcheng & Petukhov, <em>Observations of Variable Objects</em> — <a href="https://www.researchgate.net/publication/371904811_Unidentified_aerial_phenomena_Observations_of_variable_objects" target="_blank" rel="noopener">Read →</a></li>
-          <li>Zhilyaev & Caro, <em>Events over Kyiv and New York</em> — <a href="http://dx.doi.org/10.13140/RG.2.2.30951.01449" target="_blank" rel="noopener">Read →</a></li>
-          <li style="margin-top: 0.6rem;"><strong>Rebuttal:</strong> Loeb, <em>"Down to Earth" Limits on UAP</em> — <a href="https://lweb.cfa.harvard.edu/~loeb/arXiv_U.pdf" target="_blank" rel="noopener">Read →</a></li>
-          <li><strong>Rebuttal:</strong> Marcy & Villarroel, <em>Hypersonic Unidentified Aerial Objects</em> — <a href="https://www.spacelaserawareness.org/wp-content/uploads/2023/03/hoover_uap-1.pdf" target="_blank" rel="noopener">Read →</a></li>
-          <li style="margin-top: 0.6rem;"><strong>Video:</strong> Zhilyaev, <em>Is UFO Activity Happening in the Skies of Kyiv?</em> — <a href="https://www.youtube.com/watch?v=qBTd0U5eMgM" target="_blank" rel="noopener">Watch →</a></li>
-          <li><strong>Video:</strong> <em>UFO Updates Over Ukraine: Artillery Shells, Insects & No Forensics</em> — <a href="https://www.youtube.com/watch?v=lugNsnYXdo8" target="_blank" rel="noopener">Watch →</a></li>
-          <li><strong>Video:</strong> <em>UFOs over Ukraine "not birds or insects"</em> — <a href="https://www.youtube.com/watch?v=56uWkT6l2g8" target="_blank" rel="noopener">Watch →</a></li>
-        </ul>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Ukrainian UFO Archive and Soviet Legacy</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          Collection · May 2023
-        </div>
-        <div class="paper-summary">
-          A collection of publications concerning UFOs in Ukraine and the former Soviet Union,
-          compiling historical documents and contemporary research from the Soviet and
-          post-Soviet period. A companion volume to the Main Astronomical Observatory's
-          contemporary observation programme.
-        </div>
-        <a class="paper-link" href="http://ufology-news.com/category/dokument-dnya" target="_blank" rel="noopener">Visit archive →</a>
-      </div>
-
-      <!-- ============================================================ -->
-      <!-- JOURNALS & RESEARCH ORGANISATIONS                             -->
-      <!-- ============================================================ -->
-      <div class="cat-heading" id="cat-journals">Journals & Research Organisations</div>
-
-      <div class="paper">
-        <div class="paper-title">Limina — The Journal of UAP Studies</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          Published by the Society for UAP Studies
-        </div>
-        <div class="paper-summary">
-          A peer-reviewed academic journal dedicated entirely to the study of UAP. Published
-          through Scholastica. Articles are freely available via the journal's website and
-          the publisher's platform.
-        </div>
-        <ul class="paper-sublist">
-          <li>Limina main site — <a href="http://limina.uapstudies.org/volume-1-number-1" target="_blank" rel="noopener">Visit →</a></li>
-          <li>Limina on Scholastica — <a href="https://limina.scholasticahq.com/" target="_blank" rel="noopener">Visit →</a></li>
-          <li>Society for UAP Studies — <a href="https://www.societyforuapstudies.org/limina" target="_blank" rel="noopener">Visit →</a></li>
-        </ul>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Scientific Coalition for UAP Studies — Peer-Reviewed Articles</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          SCU
-        </div>
-        <div class="paper-summary">
-          The Scientific Coalition for UAP Studies (SCU) publishes peer-reviewed articles and
-          maintains a research library for the scientific study of UAP. A reference source
-          for primary literature and case analysis.
-        </div>
-        <ul class="paper-sublist">
-          <li>SCU papers — <a href="https://www.explorescu.org/research-library/categories/scu-papers" target="_blank" rel="noopener">Visit →</a></li>
-          <li>SCU research library — <a href="https://www.explorescu.org/research-library" target="_blank" rel="noopener">Visit →</a></li>
-        </ul>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">UAP Caucus — Papers</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          UAP Caucus
-        </div>
-        <div class="paper-summary">
-          The UAP Caucus publishes analysis and insights shaping the policy conversation on
-          UAP, including papers and briefings for decision-makers.
-        </div>
-        <ul class="paper-sublist">
-          <li>Papers — <a href="https://www.uapcaucus.com/papers" target="_blank" rel="noopener">Visit →</a></li>
-          <li>UAP Caucus on X — <a href="https://x.com/uapcaucus" target="_blank" rel="noopener">Visit →</a></li>
-        </ul>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Journal of Astronomical Instrumentation — Special Issue on UAP Instrumentation</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          Guest Editors: Cloete, Watters, Little, Loeb · Volume 12, Issue 01 · March 2023
-        </div>
-        <div class="paper-summary">
-          A special issue of the <em>Journal of Astronomical Instrumentation</em> dedicated
-          to instrumentation and software for the detection and characterisation of
-          unidentified aerospace phenomena. Includes papers from the Galileo Project and
-          other research groups.
-        </div>
-        <a class="paper-link" href="https://www.worldscientific.com/toc/jai/12/01" target="_blank" rel="noopener">View issue →</a>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">IFEX — Interdisciplinary Research Center for Extraterrestrial Studies</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Journal</span>
-          University of Würzburg, Germany — Prof. Dr.-Ing. Hakan Kayal
-        </div>
-        <div class="paper-summary">
-          The University of Würzburg's interdisciplinary research centre dedicated to the
-          study of extraterrestrial intelligence and UAP. Operates the SkyCAM-5 instrument,
-          a dedicated UAP observation system. Publications and media articles are available
-          through the centre's website.
-        </div>
-        <ul class="paper-sublist">
-          <li>IFEX centre — <a href="https://www.uni-wuerzburg.de/en/ifex/" target="_blank" rel="noopener">Visit →</a></li>
-          <li>Hakan Kayal — UAP/SETI research — <a href="https://www.informatik.uni-wuerzburg.de/en/aerospaceinfo/staff/kayal/research-activities/uap-seti/" target="_blank" rel="noopener">Visit →</a></li>
-          <li>SkyCAM-5 — <a href="https://www.informatik.uni-wuerzburg.de/en/aerospaceinfo/mitarbeiter/kayal/forschungsprojekte/abgeschlossene-projekte/skycam-5/" target="_blank" rel="noopener">Visit →</a></li>
-        </ul>
-      </div>
-
-      <div class="paper">
-        <div class="paper-title">Scientific and Scholarly Articles about UFOs — Curated Bibliography</div>
-        <div class="paper-meta">
-          <span class="tag tag-journal">Reference</span>
-          Compiled by Chris Rutkowski, developed by Isaac Koi
-        </div>
-        <div class="paper-summary">
-          A curated bibliography of UFO-related articles published in peer-reviewed scientific
-          and academic journals — a demonstration that science has taken the subject seriously
-          across many decades, contrary to common belief.
-        </div>
-        <ul class="paper-sublist">
-          <li>Top UFO articles in scientific journals (PDF) — <a href="https://files.afu.se/Downloads/Magazines/0%20-%20Articles/0%20-%20Scientific%20Journal%20Articles/0%20-%20index%20partial%20Rutkowski%20Koi%20-%20Top%20UFO%20articles%20in%20scientific%20journals.pdf" target="_blank" rel="noopener">Open →</a></li>
-          <li>Full directory of scientific journal articles — <a href="https://files.afu.se/Downloads/?dir=.%2FMagazines%2F0%20-%20Articles%2F0%20-%20Scientific%20Journal%20Articles" target="_blank" rel="noopener">Browse →</a></li>
-          <li>Companion blog post — <a href="https://uforum.blogspot.com/2022/01/scientific-and-scholarly-articles-about.html" target="_blank" rel="noopener">Read →</a></li>
-        </ul>
-      </div>
-
     </div>
 
     <div class="section-block card-4">
-      <h2>Submitting a Paper</h2>
+      <h2>Reporting a Sighting</h2>
       <p>
-        If you are a researcher working on UAP-related topics and would like your work to be
-        considered for inclusion in this index, please contact us via the
-        <a href="report-uap.html">Report a UAP</a> form. We welcome peer-reviewed publications,
-        arXiv preprints, instrumented field study reports, and government research documents.
-        Please include the paper's full citation and a DOI or URL.
+        If you have witnessed a UAP event and wish to add your testimony to our public
+        record, please contact us via the <a href="report-uap.html">Report a UAP</a> form.
+        All reports are treated confidentially.
       </p>
     </div>
 
