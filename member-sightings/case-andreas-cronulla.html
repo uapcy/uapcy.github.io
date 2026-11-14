@@ -42,6 +42,11 @@
   height: auto;
   border-radius: 12px;
   border: 1px solid rgba(148,163,184,0.3);
+  cursor: pointer; /* Shows the user they can click */
+  transition: opacity 0.2s;
+}
+.case-gallery img:hover {
+  opacity: 0.8;
 }
 .back-link {
   display: inline-block;
@@ -52,6 +57,44 @@
   font-size: 1.05rem;
 }
 .back-link:hover { color: #38bdf8; }
+
+/* LIGHTBOX CSS */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  padding-top: 50px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); 
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #7dd3fc;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -191,9 +234,9 @@
     <div class="section-block card-3">
       <h2>Source Material</h2>
       <div class="case-gallery">
-        <!-- FIXED: Updated to your exact filenames. The %20 represents the space in the filename -->
-        <img src="../images/member-sightings/AP_UFO%20Sighting.png" alt="Illustration of the 5 stages of the sighting">
-        <img src="../images/member-sightings/AP_UFO.png" alt="Close-up illustration of the teardrop vessel">
+        <!-- ADDED: onclick="openModal(this.src)" to trigger the lightbox -->
+        <img src="../images/member-sightings/AP_UFO%20Sighting.png" alt="Illustration of the 5 stages of the sighting" onclick="openModal(this.src)">
+        <img src="../images/member-sightings/AP_UFO.png" alt="Close-up illustration of the teardrop vessel" onclick="openModal(this.src)">
       </div>
       <p style="margin-top: 1.25rem;">
         Source: Personal testimony of Andreas P. Illustrations generated based on witness description.
@@ -212,11 +255,18 @@
   </main>
 </div>
 
+<!-- THE MODAL (HIDDEN BY DEFAULT) -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
 <footer class="site-footer">
   © Fieland WebArts 2024–2026 · UAP Cyprus Centre
 </footer>
 
 <script>
+  // Navigation Dropdown Script
   document.querySelectorAll('.nav-menu > li > a').forEach(link => {
     link.addEventListener('click', e => {
       const parent = link.parentElement;
@@ -225,6 +275,26 @@
         parent.classList.toggle('open');
       }
     });
+  });
+
+  // Lightbox Script
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+
+  function openModal(src) {
+    modal.style.display = "block";
+    modalImg.src = src;
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 </script>
 
