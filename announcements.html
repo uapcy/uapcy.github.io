@@ -1,21 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcements — UAP Cyprus Centre</title>
+<link rel="stylesheet" href="style.css?v=17">
 <style>
+/* ---- ANNOUNCEMENT CARDS ---- */
 .announcement {
-  /* Dark background to make white text readable against the white page */
-  background: #1a2a40; 
+  background: #1a2a40; /* Dark background for readability */
   border: 1px solid rgba(56,189,248,0.2);
   border-radius: 12px;
   padding: 1.8rem;
   margin-bottom: 1.5rem;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
-/* Hover effect to make it feel interactive */
 .announcement:hover {
   background: #1e304a;
+  border-color: rgba(56,189,248,0.4);
 }
-/* Remove the bottom border logic since we now use full cards */
 .announcement:last-child { 
-  border-bottom: 1px solid rgba(56,189,248,0.2); 
-  padding-bottom: 1.8rem; 
   margin-bottom: 0;
 }
 
@@ -117,3 +121,511 @@
   }
 }
 </style>
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span class="mark">◉</span> UAP CYPRUS CENTRE</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('open')">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">About <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="announcements.html" class="active">Announcements <span class="badge-new">New</span></a></li>
+          <li><a href="updates.html">Updates, Testimonies & Videos</a></li>
+          <li><a href="friends.html">Friends & Associates</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Research <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="important-ufo-cases.html">Important UFO Cases</a></li>
+          <li><a href="assertions.html">Assertions: UFOs are Real</a></li>
+          <li><a href="investigation-groups.html">Scientific Investigation Groups</a></li>
+          <li><a href="scientific-papers.html">Scientific Papers</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Cyprus <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="cyprus.html">Cyprus</a></li>
+          <li><a href="cyprus-cases.html">Cyprus Cases</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Data <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="data-collection.html">Data Collection</a></li>
+          <li><a href="updb.html">UPDB (Open Database)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Get Involved <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="supplemental-links.html">Supplemental Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="report-uap.html" class="nav-cta">🛰 Report a UAP</a></li>
+      <li>
+        <div class="lang-toggle">
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button id="btn-el" onclick="setLang('el')">ΕΛ</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      <span class="lang-en-inline">Announcements</span>
+      <span class="lang-el-inline">Ανακοινώσεις</span>
+    </h1>
+    <p>
+      <span class="lang-en-inline">News and updates from the UAP Cyprus Centre</span>
+      <span class="lang-el-inline">Νέα και ενημερώσεις από το UAP Cyprus Centre</span>
+    </p>
+  </div>
+</section>
+
+<div class="galaxy-bg">
+  <main class="content">
+
+    <p class="lead card-1">
+      <span class="lang-en">
+        Official announcements from the UAP Cyprus Centre — including conference
+        appearances, European research initiatives, and press statements. Posts appear
+        in reverse chronological order, most recent first.
+      </span>
+      <span class="lang-el">
+        Επίσημες ανακοινώσεις του UAP Cyprus Centre — συμπεριλαμβανομένων συμμετοχών σε
+        συνέδρια, ευρωπαϊκών ερευνητικών πρωτοβουλιών και δελτίων τύπου. Οι ανακοινώσεις
+        εμφανίζονται με αντίστροφη χρονολογική σειρά, με την πιο πρόσφατη πρώτη.
+      </span>
+    </p>
+
+    <div class="section-block card-2">
+      <h2>
+        <span class="lang-en-inline">Latest Announcements</span>
+        <span class="lang-el-inline">Πρόσφατες Ανακοινώσεις</span>
+      </h2>
+
+      <!-- ============================================================ -->
+      <!-- 05/10/2026 — Cyprus Mail interview with Dr. Florides         -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">5 October 2026</span>
+          <span class="lang-el-inline">5 Οκτωβρίου 2026</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Dr. Georgios Florides interviewed by Cyprus Mail on UAP over Cyprus</span>
+          <span class="lang-el-inline">Ο Δρ. Γεώργιος Φλωρίδης μίλησε στην Cyprus Mail για τα UAP στην Κύπρο</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              <em>Cyprus Mail</em> has published an in-depth feature on UAP sightings over
+              Cyprus, titled <em>"Strange lights over Cyprus — what are people seeing?"</em>
+              The article includes an interview with Dr. Georgios Florides, President and
+              co-founder of the UAP Cyprus Centre.
+            </p>
+            <p>
+              Dr. Florides discussed the Centre's scientific approach to investigating
+              anomalous aerial phenomena, the well-known 1985 case off Chlorakas, and how
+              most unusual sightings ultimately have ordinary explanations — while still
+              underscoring the value of rigorous, evidence-based investigation. The article
+              also features commentary from Agapios Elia, Chief Operating Officer of the
+              Troodos Observatory, and George A. Danos, President of the Cyprus Space
+              Exploration Organisation (CSEO).
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Η εφημερίδα <em>Cyprus Mail</em> δημοσίευσε εκτενές αφιέρωμα για τις
+              παρατηρήσεις UAP πάνω από την Κύπρο, με τίτλο <em>"Strange lights over Cyprus
+              — what are people seeing?"</em> Το άρθρο περιλαμβάνει συνέντευξη του Δρ.
+              Γεώργιου Φλωρίδη, Προέδρου και συνιδρυτή του UAP Cyprus Centre.
+            </p>
+            <p>
+              Ο Δρ. Φλωρίδης ανέπτυξε την επιστημονική προσέγγιση του Κέντρου στη
+              διερεύνηση ανώμαλων εναέριων φαινομένων, την γνωστή υπόθεση του 1985 ανοιχτά
+              της Χλώρακας, και το πώς οι περισσότερες ασυνήθιστες παρατηρήσεις τελικά
+              έχουν συνηθισμένες εξηγήσεις — υπογραμμίζοντας παράλληλα την αξία της
+              αυστηρής, τεκμηριωμένης έρευνας. Το άρθρο περιλαμβάνει επίσης σχόλια του
+              Αγάπιου Ηλία, Διευθύνοντος Συμβούλου του Αστεροσκοπείου Τροόδους, και του
+              Γιώργου Α. Δάνου, Προέδρου του Κυπριακού Οργανισμού Εξερεύνησης Διαστήματος
+              (CSEO).
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="https://cyprus-mail.com/2026/10/05/strange-lights-over-cyprus-what-are-people-seeing" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📰 Read the article on Cyprus Mail →</span>
+            <span class="lang-el-inline">📰 Διαβάστε το άρθρο στην Cyprus Mail →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 03/10/2026 — Ion Panidis (video + text, split layout)        -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">3 October 2026</span>
+          <span class="lang-el-inline">3 Οκτωβρίου 2026</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Ion Panidis — Conference Recap, UAP &amp; High-Strangeness Phenomena, and the Atalanti Incident</span>
+          <span class="lang-el-inline">Ι. Πανίδης — Απολογισμός Συνεδρίου Αθήνας για UAP-Παράδοξα Φαινόμενα — Περιστατικό Αταλάντης</span>
+        </div>
+
+        <div class="split-layout">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/ugs9Rs78GPA"
+              title="Ion Panidis — UAP and the Atalanti Incident"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="split-text">
+            <span class="lang-en">
+              <p>
+                Ion Panidis has been part of research groups in Greece since 1990, visiting
+                landing sites, meeting contactees, and collecting UFO-related data. He has
+                written articles for <em>3rd Eye Magazine</em> and <em>Nexus Greece</em>,
+                and presents a program on Greek Radio called <em>"Invisible Travellers"</em>.
+                He is currently the President of the GRUFON–ERENZO Ufological Group in
+                Athens, Greece.
+              </p>
+              <p>
+                In this talk, Ion Panidis reviews the Athens conference on UAP and
+                high-strangeness phenomena, and discusses the Atalanti incident — one of
+                the most notable UFO cases in Greece.
+              </p>
+            </span>
+            <span class="lang-el">
+              <p>
+                Ο Ίων Πανίδης συμμετέχει σε ερευνητικές ομάδες στην Ελλάδα από το 1990,
+                επισκεπτόμενος τόπους προσγείωσης, συναντώντας μάρτυρες και συλλέγοντας
+                δεδομένα σχετικά με UFO. Έχει γράψει άρθρα για το περιοδικό
+                <em>3rd Eye Magazine</em> και το <em>Nexus Greece</em>, και παρουσιάζει
+                εκπομπή στον Ελληνικό Ραδιοφωνικό Σταθμό με τίτλο
+                <em>«Αόρατοι Ταξιδιώτες»</em>. Είναι σήμερα Πρόεδρος της ουφολογικής
+                ομάδας GRUFON–ERENZO στην Αθήνα.
+              </p>
+              <p>
+                Στην ομιλία του, ο Ίων Πανίδης κάνει απολογισμό του συνεδρίου της Αθήνας
+                για UAP και παράδοξα φαινόμενα, και συζητά το περιστατικό της Αταλάντης —
+                μία από τις πιο αξιοσημείωτες υποθέσεις UFO στην Ελλάδα.
+              </p>
+            </span>
+          </div>
+        </div>
+
+        <div class="announcement-links">
+          <a href="https://www.youtube.com/live/ugs9Rs78GPA" target="_blank" rel="noopener">
+            <span class="lang-en-inline">▶ Watch on YouTube</span>
+            <span class="lang-el-inline">▶ Παρακολουθήστε στο YouTube</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 30/09/2026 — Video presentation from GRUFON Conference        -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">30 September 2026</span>
+          <span class="lang-el-inline">30 Σεπτεμβρίου 2026</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Presentation of Dr. Florides at the GRUFON Conference</span>
+          <span class="lang-el-inline">Παρουσίαση του Δρ. Φλωρίδη στο Συνέδριο του GRUFON</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              The full presentation delivered by Dr. Georgios Florides, President of the
+              UAP Cyprus Centre, at the inaugural GRUFON Conference in Athens is now
+              available to watch. The conference, titled "High-Strangeness Phenomena,"
+              was held in Athens on 20 September 2026.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Η πλήρης παρουσίαση του Δρ. Γεώργιου Φλωρίδη, Προέδρου του UAP Cyprus Centre,
+              στο εναρκτήριο Συνέδριο του GRUFON στην Αθήνα είναι πλέον διαθέσιμη για
+              παρακολούθηση. Το συνέδριο, με τίτλο «Φαινόμενα Υψηλής Παραδοξότητας»,
+              πραγματοποιήθηκε στην Αθήνα στις 20 Σεπτεμβρίου 2026.
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="https://www.youtube.com/watch?v=bYqWwyrjugo&t=2s" target="_blank" rel="noopener">
+            <span class="lang-en-inline">▶ Watch presentation (YouTube)</span>
+            <span class="lang-el-inline">▶ Παρακολουθήστε την παρουσίαση (YouTube)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 20/09/2026 — GRUFON Conference                                -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">20 September 2026</span>
+          <span class="lang-el-inline">20 Σεπτεμβρίου 2026</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Dr. Florides to speak at the GRUFON Conference in Athens</span>
+          <span class="lang-el-inline">Ο Δρ. Φλωρίδης ομιλητής στο Συνέδριο του GRUFON στην Αθήνα</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              The President of the UAP Cyprus Centre, Dr. Georgios Florides, will represent
+              the organisation as a featured speaker at the inaugural GRUFON Conference in
+              Greece. The conference, titled "High-Strangeness Phenomena," is scheduled to
+              take place in Athens on 20 September 2026.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Ο Πρόεδρος του UAP Cyprus Centre, Δρ. Γεώργιος Φλωρίδης, θα εκπροσωπήσει τον
+              οργανισμό ως προσκεκλημένος ομιλητής στο εναρκτήριο Συνέδριο του GRUFON στην
+              Ελλάδα. Το συνέδριο, με τίτλο «Φαινόμενα Υψηλής Παραδοξότητας», είναι
+              προγραμματισμένο να πραγματοποιηθεί στην Αθήνα στις 20 Σεπτεμβρίου 2026.
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="https://www.grufon.org/en/phenomena-ypsilis-paradoxotitas" target="_blank" rel="noopener">
+            <span class="lang-en-inline">Conference details →</span>
+            <span class="lang-el-inline">Λεπτομέρειες συνεδρίου →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 20/03/2026 — European UAP Day                                 -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">20 March 2026</span>
+          <span class="lang-el-inline">20 Μαρτίου 2026</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">European UAP Day</span>
+          <span class="lang-el-inline">Ευρωπαϊκή Ημέρα UAP</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              The UAP Cyprus Centre joins European research organisations in marking
+              European UAP Day — a coordinated initiative across the continent to raise
+              public awareness of the scientific study of unidentified anomalous phenomena.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Το UAP Cyprus Centre συμμετέχει με ευρωπαϊκούς ερευνητικούς οργανισμούς στον
+              εορτασμό της Ευρωπαϊκής Ημέρας UAP — μιας συντονισμένης πρωτοβουλίας σε όλη
+              την ήπειρο για την ευαισθητοποίηση του κοινού σχετικά με την επιστημονική
+              μελέτη των αγνώστων αφύσικων φαινομένων.
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="announcements/european-uap-day-2026.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 Read announcement (PDF)</span>
+            <span class="lang-el-inline">📄 Διαβάστε την ανακοίνωση (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 24/12/2025 — European UAP Sightings in 2019-2024              -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">24 December 2025</span>
+          <span class="lang-el-inline">24 Δεκεμβρίου 2025</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">European UAP Sightings in 2019–2024</span>
+          <span class="lang-el-inline">Ευρωπαϊκές Παρατηρήσεις UAP 2019–2024</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              A review of UAP sightings reported across Europe during the period 2019
+              through 2024, compiled from national reporting bodies and independent
+              research organisations.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Μια επισκόπηση των παρατηρήσεων UAP που αναφέρθηκαν σε όλη την Ευρώπη κατά την
+              περίοδο 2019 έως 2024, συγκεντρωμένη από εθνικούς φορείς αναφοράς και
+              ανεξάρτητους ερευνητικούς οργανισμούς.
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="announcements/european-uap-sightings-2019-2024.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 Read report (PDF)</span>
+            <span class="lang-el-inline">📄 Διαβάστε την έκθεση (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 20/03/2025 — UAP Check 11 languages / 14 nations              -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">20 March 2025</span>
+          <span class="lang-el-inline">20 Μαρτίου 2025</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Joint article published simultaneously in 11 languages and 14 nations</span>
+          <span class="lang-el-inline">Κοινό άρθρο δημοσιευμένο ταυτόχρονα σε 11 γλώσσες και 14 έθνη</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              The article below is published simultaneously in 11 different languages and
+              in 14 nations, as part of a UAP Check initiative.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Το πιο κάτω άρθρο δημοσιεύεται ταυτόχρονα σε 11 διαφορετικές γλώσσες και σε
+              14 έθνη (πρωτοβουλία του UAP Check).
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="announcements/uap-check-2025.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 Read article (PDF)</span>
+            <span class="lang-el-inline">📄 Διαβάστε το άρθρο (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 25/11/2024 — European initiative press release                -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">25 November 2024</span>
+          <span class="lang-el-inline">25 Νοεμβρίου 2024</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Press release — participation in a European initiative for the study of UAP</span>
+          <span class="lang-el-inline">Δελτίο τύπου — συμμετοχή σε Ευρωπαϊκή πρωτοβουλία για μελέτη των UAP</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              Press release from the UAP Cyprus Research Centre regarding our participation
+              in a European initiative for the study of Unidentified Anomalous Phenomena.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Δελτίο τύπου του Ερευνητικού Κέντρου UAP CYPRUS που αφορά τη συμμετοχή σε
+              Ευρωπαϊκή πρωτοβουλία για μελέτη των Αγνώστων Αφύσικων Φαινομένων (UAP).
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="announcements/european-initiative-2024-11-25.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 Read press release (PDF)</span>
+            <span class="lang-el-inline">📄 Διαβάστε το δελτίο τύπου (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 25/11/2024 — Historic Call to Action                          -->
+      <!-- ============================================================ -->
+      <div class="announcement">
+        <div class="announcement-date">
+          <span class="lang-en-inline">25 November 2024</span>
+          <span class="lang-el-inline">25 Νοεμβρίου 2024</span>
+        </div>
+        <div class="announcement-title">
+          <span class="lang-en-inline">Historic Call to Action — Civil Society Organizations urge the EU to address UAP</span>
+          <span class="lang-el-inline">Ιστορικό κάλεσμα για δράση — Οι Οργανώσεις της Κοινωνίας των Πολιτών καλούν την ΕΕ</span>
+        </div>
+        <div class="announcement-body">
+          <span class="lang-en">
+            <p>
+              A historic call to action: civil society organisations urge the European
+              Union to address Unidentified Anomalous Phenomena. Available in both English
+              and Greek.
+            </p>
+          </span>
+          <span class="lang-el">
+            <p>
+              Ιστορικό κάλεσμα για δράση: Οι Οργανώσεις της κοινωνίας των πολιτών καλούν
+              την ΕΕ να χειριστεί το θέμα των Αγνώστων Αφύσικων Φαινομένων. Διαθέσιμο και
+              στα αγγλικά και στα ελληνικά.
+            </p>
+          </span>
+        </div>
+        <div class="announcement-links">
+          <a href="announcements/call-to-action-2024-11-25-en.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 English (PDF)</span>
+            <span class="lang-el-inline">📄 Αγγλικά (PDF)</span>
+          </a>
+          <a href="announcements/call-to-action-2024-11-25-el.pdf" target="_blank" rel="noopener">
+            <span class="lang-en-inline">📄 Greek (PDF)</span>
+            <span class="lang-el-inline">📄 Ελληνικά (PDF)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  © Fieland WebArts 2024–2026 · UAP Cyprus Centre
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'el' ? 'el' : 'en');
+    var btnEn = document.getElementById('btn-en');
+    var btnEl = document.getElementById('btn-el');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    if (btnEl) btnEl.classList.toggle('active', lang === 'el');
+    localStorage.setItem('uapcy_lang', lang);
+  }
+  const savedLang = localStorage.getItem('uapcy_lang');
+  if (savedLang === 'el') setLang('el');
+
+  document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+    link.addEventListener('click', e => {
+      const parent = link.parentElement;
+      if (parent.querySelector('.dropdown') && window.innerWidth <= 1000) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
